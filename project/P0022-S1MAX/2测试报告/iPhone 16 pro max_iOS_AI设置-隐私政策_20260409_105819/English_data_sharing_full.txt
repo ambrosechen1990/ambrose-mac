@@ -1,0 +1,7 @@
+Please note that when you turn on the function of AI-enabled intelligent recognition, your robot will
+Privacy Policy for AI-enabled Intelligent Recognition, identify the types of obstacles based on their characteristics, and determine the type of your pool. The photos may also include surrounding areas to improve the robot's AI functionality. Therefore, we remind you that the photos taken may contain personal information, such as your or others' privacy, portrait or facial recognition information.
+In order to maximize the security of your personal information, we have adopted strict protective measures. Only
+when you agree the function of data share, then while robot is charging, the photos will be encrypted and uploaded to the server for further analyse. When the transfer is complete, the local photos will be deleted automatically. You can turn this function on or off at any time. If you turn this function off, the photos will not uploaded to the server.
+However, when you use the feedback function to report an obstacle identification error, the reported photos will be uploaded to the server, and we will obtain the photos to analyze the reason for the identification error.
+For more information about this function, you can refer to the product function manual or the separate privacy protection instructions of this function.
+Thank you for taking the time to read this privacy policy!

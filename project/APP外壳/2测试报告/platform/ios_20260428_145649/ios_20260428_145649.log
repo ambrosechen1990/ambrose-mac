@@ -1,0 +1,40 @@
+2026-04-28 14:56:51,949 - INFO - 🔄 步骤0: 登出，确保从登出状态开始测试
+2026-04-28 14:56:51,949 - INFO - 开始登出流程...
+2026-04-28 14:57:22,939 - INFO - 未检测到home sel/mine sel/mine，跳过登出流程
+2026-04-28 14:57:22,941 - INFO - ✅ 步骤0: 登出，确保从登出状态开始测试 - 完成
+2026-04-28 14:57:24,946 - INFO - 🔄 步骤1: 验证在APP首页（登录页面）
+2026-04-28 14:57:25,118 - INFO - ✅ 步骤1: 验证在APP首页（登录页面） - 完成，确认在APP首页（登录页面）
+2026-04-28 14:57:27,119 - INFO - 🔄 步骤2: 点击Sign Up按钮进入注册页面
+2026-04-28 14:57:28,077 - INFO - ✅ 步骤2: 点击Sign Up按钮进入注册页面 - 完成
+2026-04-28 14:57:31,082 - INFO - 🔄 步骤3: 验证进入Sign Up页面
+2026-04-28 14:57:31,326 - INFO - ✅ 步骤3: 验证进入Sign Up页面 - 完成，确认已进入Sign Up注册页面
+2026-04-28 14:57:33,332 - INFO - 🔄 步骤4: 输入错误邮箱
+2026-04-28 14:57:35,154 - INFO - ✅ 步骤4: 输入错误邮箱 - 完成，输入错误邮箱: bad_email
+2026-04-28 14:57:37,158 - INFO - 🔄 步骤5: 勾选隐私政策和用户协议
+2026-04-28 14:57:43,200 - INFO - ✅ 隐私政策复选框已勾选
+2026-04-28 14:57:44,705 - INFO - 🔄 步骤5.1: 收起键盘（Done）
+2026-04-28 14:57:46,024 - INFO - ✅ 已点击Done收起键盘
+2026-04-28 14:57:47,024 - INFO - 🔄 步骤6: 点击Next按钮（错误邮箱）
+2026-04-28 14:57:55,361 - INFO - ❌ 步骤6: 点击Next按钮（错误邮箱）失败: 无法找到或点击Next按钮 - Message: 
+
+2026-04-28 14:57:55,363 - INFO - 
+============================================================
+2026-04-28 14:57:55,363 - INFO - ❌ 测试失败
+2026-04-28 14:57:55,363 - INFO - 📍 失败步骤: 步骤6: 点击Next按钮（错误邮箱）
+2026-04-28 14:57:55,363 - INFO - 📝 失败原因: 步骤6: 点击Next按钮（错误邮箱）失败: 无法找到或点击Next按钮 - Message: 
+
+2026-04-28 14:57:55,363 - INFO - ============================================================
+2026-04-28 14:57:55,374 - INFO - Traceback (most recent call last):
+
+2026-04-28 14:57:55,378 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/2注册/102209 验证修改错误邮箱，错误提示就会消失.py", line 217, in test_102209
+    next_btn = WebDriverWait(driver, 8).until(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-04-28 14:57:55,379 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-04-28 14:57:55,379 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+
+
+2026-04-28 14:57:55,681 - INFO - 已保存test_102207_failed失败截图: screenshots/test_102207_failed_1777359475.png
+2026-04-28 14:57:55,709 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260428_145649/ios_20260428_145649_report.xlsx

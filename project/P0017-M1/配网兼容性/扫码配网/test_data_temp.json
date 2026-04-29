@@ -1,0 +1,177 @@
+{
+  "total_tests": 18,
+  "success_count": 18,
+  "failure_count": 0,
+  "detailed_results": {
+    "google_pixel_9_pro": {
+      "routers": {}
+    },
+    "galaxy_s24_ultra": {
+      "routers": {}
+    },
+    "galaxy_s10": {
+      "routers": {}
+    },
+    "google_pixel_7_pro": {
+      "routers": {}
+    },
+    "1+11": {
+      "routers": {}
+    },
+    "galaxy_s25_ultra": {
+      "routers": {
+        "ASUS": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:17:13"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:20:23"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:23:36"
+            }
+          ]
+        },
+        "TP-Link_C87E": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:26:36"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:29:45"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:33:12"
+            }
+          ]
+        },
+        "Deco": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:36:11"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:39:21"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:42:31"
+            }
+          ]
+        },
+        "setup320D.ybd": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:45:31"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:48:37"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:51:48"
+            }
+          ]
+        },
+        "softtest": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:54:48"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:57:58"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "20:01:07"
+            }
+          ]
+        },
+        "NETGEAR34": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "20:04:08"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "20:07:17"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "20:10:23"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "test_config": {
+    "loop_count_per_router": 3,
+    "timeout_seconds": 180,
+    "success_rate_threshold": 0.8
+  },
+  "interrupted": false,
+  "timestamp": "2026-01-26 20:10:27"
+}

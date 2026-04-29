@@ -1,0 +1,52 @@
+{
+  "iPhone 16 pro max": {
+      "platform": "ios",
+      "port": 4736,
+      "device_name": "iPhone 16 pro max",
+      "platform_version": "26.2",
+      "bundle_id": "com.xingmai.tech",
+      "udid": "00008140-00041C980A50801C",
+      "description": "iPhone 16 pro max 设备",
+      "wda_team_id": "95PVV7PLLF",
+      "wda_bundle_id": "com.chenhao.WebDriverAgentRunner"
+    },
+  "galaxy_s25_ultra": {
+      "platform": "android",
+      "port": 4730,
+      "device_name": "RFCY10F52AW",
+      "platform_version": "15",
+      "app_package": "com.xingmai.tech",
+      "app_activity": "com.xingmai.splash.SplashActivity",
+      "description": "Samsung Galaxy S25 Ultra 设备"
+    },
+  "faq_validation_devices": [
+    "AquaSense X"
+  ],
+  "android_faq_validation_devices": [
+        "iSkim Ultra"
+
+  ],
+  "copywriting_library": {
+    "file_name": "20260130APP文案库.xlsx",
+    "description": "文案库Excel文件名，当文案库更新时，只需修改此文件名即可"
+  },
+  "extra_copywriting_sheets": [
+    "H5文案",
+    "APP框架文案"
+  ],
+  "device_to_sheet_map": {
+    "AquaSense X": "S1 Max FAQ",
+    
+    "description": "设备名称到文案库Sheet名称的映射，APP中选择的设备名称 -> 文案库Excel中的Sheet名称"
+  },
+  "privacy_policy_test_languages": [
+    "English",
+    "Français",
+    "Italiano",
+    "Deutsch",
+    "Español",
+    "Português"
+  ],
+  "test_languages_description": "要测试的语言列表。如果为空或不配置，则测试所有支持的语言。支持的语言：中文、English、Français、Italiano、Deutsch、Español、Português、Čeština"
+}
+

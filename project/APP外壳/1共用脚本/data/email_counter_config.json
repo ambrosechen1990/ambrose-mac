@@ -1,0 +1,11 @@
+{
+  "base_email": "1+2-3.4%5_6",
+  "domain": "@163.com",
+  "current_number": 27,
+  "start_number": 7,
+  "max_number": 999,
+  "unsupported_current_number": 11,
+  "unsupported_start_number": 7,
+  "unsupported_max_number": 999,
+  "simple_current_number": 94
+}

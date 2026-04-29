@@ -1,0 +1,179 @@
+{
+  "total_tests": 18,
+  "success_count": 18,
+  "failure_count": 0,
+  "detailed_results": {
+    "google_pixel_9_pro": {
+      "routers": {}
+    },
+    "galaxy_s24_ultra": {
+      "routers": {}
+    },
+    "galaxy_s10": {
+      "routers": {
+        "ASUS": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:11:13"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:14:52"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:19:11"
+            }
+          ]
+        },
+        "TP-Link_C87E": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:23:11"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:27:40"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:32:30"
+            }
+          ]
+        },
+        "Deco": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:36:10"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:39:51"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:43:37"
+            }
+          ]
+        },
+        "setup320D.ybd": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:47:13"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:51:04"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:54:48"
+            }
+          ]
+        },
+        "softtest": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "18:58:22"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:02:02"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:05:39"
+            }
+          ]
+        },
+        "NETGEAR34": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:09:25"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:13:13"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "19:17:32"
+            }
+          ]
+        }
+      }
+    },
+    "google_pixel_7_pro": {
+      "routers": {}
+    },
+    "1+11": {
+      "routers": {}
+    },
+    "galaxy_s25_ultra": {
+      "routers": {}
+    }
+  },
+  "test_config": {
+    "loop_count_per_router": 3,
+    "timeout_seconds": 180,
+    "success_rate_threshold": 0.8,
+    "robot_serial_port": "/dev/cu.usbserial-1120",
+    "robot_serial_baud": 115200
+  },
+  "interrupted": false,
+  "timestamp": "2026-03-25 19:17:46"
+}

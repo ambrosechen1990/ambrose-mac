@@ -1,0 +1,58 @@
+2026-04-29 14:50:16,331 - INFO - 🔄 步骤0: 登出，确保从登出状态开始测试
+2026-04-29 14:50:16,332 - INFO - 开始登出流程...
+2026-04-29 14:50:16,584 - INFO - 检测到home sel元素
+2026-04-29 14:50:27,965 - INFO - ✅ 点击mine按钮: //XCUIElementTypeButton[@name="mine"]
+2026-04-29 14:50:30,191 - INFO - ✅ 点击CommonEdit编辑按钮: //XCUIElementTypeButton[@name="CommonEdit"]
+2026-04-29 14:50:32,392 - INFO - ✅ 点击Log Out: //XCUIElementTypeButton[@name="Log Out"]
+2026-04-29 14:50:34,610 - INFO - ✅ 点击Confirm: //XCUIElementTypeButton[@name="Confirm"]
+2026-04-29 14:50:36,113 - INFO - 登出操作完成
+2026-04-29 14:50:36,481 - INFO - ✅ 成功回到登录页面
+2026-04-29 14:50:36,482 - INFO - ✅ 步骤0: 登出，确保从登出状态开始测试 - 完成
+2026-04-29 14:50:38,485 - INFO - 🔄 步骤1: 验证在APP首页（登录页面）
+2026-04-29 14:50:38,695 - INFO - ✅ 步骤1: 验证在APP首页（登录页面） - 完成，确认在APP首页（登录页面）
+2026-04-29 14:50:40,701 - INFO - 🔄 步骤2: 点击Sign Up按钮进入注册页面
+2026-04-29 14:50:41,725 - INFO - ✅ 步骤2: 点击Sign Up按钮进入注册页面 - 完成
+2026-04-29 14:50:44,730 - INFO - 🔄 步骤3: 验证进入Sign Up页面
+2026-04-29 14:50:44,990 - INFO - ✅ 步骤3: 验证进入Sign Up页面 - 完成，确认已进入Sign Up注册页面
+2026-04-29 14:50:46,990 - INFO - 🔄 步骤4: 输入邮箱
+2026-04-29 14:50:46,996 - INFO - 📧 生成简单邮箱地址: testuser93@163.com
+2026-04-29 14:50:48,946 - INFO - ✅ 步骤4: 输入邮箱 - 完成，邮箱: testuser93@163.com
+2026-04-29 14:50:50,948 - INFO - 🔄 步骤5: 勾选隐私政策和用户协议
+2026-04-29 14:50:56,970 - INFO - ✅ 隐私政策复选框已勾选
+2026-04-29 14:50:58,476 - INFO - 🔄 步骤5.1: 收起键盘（Done）
+2026-04-29 14:50:59,831 - INFO - ✅ 已点击Done收起键盘
+2026-04-29 14:51:00,841 - INFO - 🔄 步骤6: 点击Next进入set password页面
+2026-04-29 14:51:01,737 - INFO - ✅ 步骤6: 点击Next进入set password页面 - 完成，已点击Next按钮
+2026-04-29 14:51:04,743 - INFO - 🔄 步骤7: 验证进入set password页面
+2026-04-29 14:51:05,103 - INFO - ✅ 成功进入set password页面
+2026-04-29 14:51:06,604 - INFO - 🔄 步骤8: 输入密码并确认
+2026-04-29 14:51:08,645 - INFO - ✅ 已输入密码: Csx150128
+2026-04-29 14:51:10,706 - INFO - ✅ 已输入确认密码: Csx150128
+2026-04-29 14:51:12,976 - INFO - ✅ 密码页已点击Done收起键盘
+2026-04-29 14:51:13,982 - INFO - 🔄 步骤9: 点击Next进入Personal Information页面
+2026-04-29 14:51:14,974 - INFO - ✅ 已点击密码页Next按钮
+2026-04-29 14:51:17,976 - INFO - 🔄 步骤10: 不输入用户名，点击Submit并验证仍停留在页面
+2026-04-29 14:51:18,639 - INFO - ✅ 确认已进入Personal Information页面
+2026-04-29 14:51:28,167 - INFO - ❌ 步骤10: 不输入用户名，点击Submit并验证仍停留在页面失败: Message: 
+
+2026-04-29 14:51:28,168 - INFO - 
+============================================================
+2026-04-29 14:51:28,168 - INFO - ❌ 测试失败
+2026-04-29 14:51:28,168 - INFO - 📍 失败步骤: 步骤10: 不输入用户名，点击Submit并验证仍停留在页面
+2026-04-29 14:51:28,168 - INFO - 📝 失败原因: 步骤10: 不输入用户名，点击Submit并验证仍停留在页面失败: Message: 
+
+2026-04-29 14:51:28,168 - INFO - ============================================================
+2026-04-29 14:51:28,174 - INFO - Traceback (most recent call last):
+
+2026-04-29 14:51:28,175 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/2注册/102245 验证不输入用户名，点击"Submit"按钮.py", line 314, in test_102245
+    submit_btn = WebDriverWait(driver, 8).until(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-04-29 14:51:28,175 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-04-29 14:51:28,175 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+
+
+2026-04-29 14:51:28,455 - INFO - 已保存test_102245_failed失败截图: screenshots/test_102245_failed_1777445488.png
+2026-04-29 14:51:28,484 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260429_145014/ios_20260429_145014_report.xlsx
