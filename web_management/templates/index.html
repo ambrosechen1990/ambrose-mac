@@ -1,0 +1,3998 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件自动化测试平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+            background: white;
+        }
+
+        .header {
+            background: white;
+            color: #333;
+            padding: 20px 30px;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+
+        /* 左侧导航栏 */
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .nav-item-title {
+            font-size: 16px;
+        }
+
+        .nav-menu {
+            flex: 1;
+            padding: 10px 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item-title {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .nav-item-title:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-item.active > .nav-item-title {
+            background: rgba(102, 126, 234, 0.2);
+            color: white;
+        }
+
+        .nav-item-title::after {
+            content: '▶';
+            transition: transform 0.3s;
+            font-size: 12px;
+        }
+
+        .nav-item.expanded > .nav-item-title::after {
+            transform: rotate(90deg);
+        }
+
+        .nav-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-item.expanded > .nav-submenu {
+            max-height: 500px;
+        }
+
+        .nav-submenu-item {
+            padding: 12px 20px 12px 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        .nav-submenu-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .nav-submenu-item.active {
+            background: rgba(102, 126, 234, 0.3);
+            color: white;
+            border-left: 3px solid #667eea;
+        }
+
+        .nav-submenu-item span {
+            cursor: pointer;
+            padding: 0 5px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .nav-submenu-item span:hover {
+            opacity: 1;
+        }
+
+        .nav-submenu-item span {
+            cursor: pointer;
+            padding: 0 5px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .nav-submenu-item span:hover {
+            opacity: 1;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: #667eea;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        .platform-selector {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .platform-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .platform-btn:hover {
+            background: #f0f0ff;
+        }
+
+        .platform-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .platform-btn input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .device-list, .router-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .device-item, .router-item {
+            padding: 15px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .device-item:hover, .router-item:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .device-item.selected, .router-item.selected {
+            border-color: #667eea;
+            background: #f0f0ff;
+        }
+
+        .device-item input[type="checkbox"],
+        .router-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .device-info, .router-info {
+            flex: 1;
+        }
+
+        .device-name, .router-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .device-details, .router-details {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .select-all {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .select-all:hover {
+            border-color: #667eea;
+        }
+
+        .select-all input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+        }
+
+        .test-config {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .config-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .config-item label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .config-item input[type="number"] {
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            width: 80px;
+            font-size: 14px;
+        }
+
+        .config-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ffffff;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .log-container {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            max-height: 500px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .log-line {
+            margin-bottom: 4px;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .task-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .task-item {
+            padding: 20px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .task-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+        }
+
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .task-id {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .task-status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-running {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-completed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-failed {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-stopped {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .task-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .task-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert-success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+
+        .alert-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+
+        .alert-info {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #3b82f6;
+        }
+
+        .port-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .port-item:hover {
+            background: #f0f0f0;
+            border-color: #667eea;
+        }
+
+        .port-info {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .port-number {
+            font-weight: 600;
+            color: #333;
+            min-width: 60px;
+        }
+
+        .port-device {
+            color: #666;
+            font-size: 14px;
+            flex: 1;
+        }
+
+        .port-status {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .status-running {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-stopped {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-starting {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-stopping {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .port-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        /* 功能测试表单样式 */
+        .form-select, .form-input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .form-select:focus, .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .module-item {
+            padding: 12px 15px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .module-item:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .module-item.selected {
+            border-color: #667eea;
+            background: #f0f0ff;
+        }
+
+        .module-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .platform-btn input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        /* 端口设置样式 */
+        .port-settings-container {
+            display: flex;
+            gap: 20px;
+            min-height: 260px;
+        }
+
+        .port-settings-left {
+            width: 320px;
+            border-right: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .port-settings-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .port-settings-header-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .port-settings-header-left input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .port-settings-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .port-settings-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            background: #fafafa;
+        }
+
+        .port-settings-item-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .port-settings-item-left input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .port-device-name {
+            font-size: 13px;
+            color: #333;
+        }
+
+        .port-device-port {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .port-status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        .port-status-running {
+            background: #10b981;
+        }
+
+        .port-status-stopped {
+            background: #d1d5db;
+        }
+
+        .port-status-starting {
+            background: #3b82f6;
+        }
+
+        .port-status-stopping {
+            background: #f59e0b;
+        }
+
+        .port-settings-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 15px;
+        }
+
+        .port-monitor-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .port-monitor-body {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 15px;
+            background: #fafafa;
+            /* 占满右侧剩余高度，使黑色日志框与左侧列表底部大致对齐 */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .port-monitor-line {
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #10b981 0%, #22c55e 50%, #6ee7b7 100%);
+            opacity: 0;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .port-monitor-line-active {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+
+        .port-monitor-log {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            background: #111827;
+            color: #e5e7eb;
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+            font-size: 12px;
+            line-height: 1.5;
+            max-height: 260px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* 模块树样式 */
+        .module-tree-item {
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            user-select: none;
+            font-size: 14px; /* 全部用例的字体大小 */
+        }
+        
+        /* 模块（如"注册"）字体大小：比全部用例小1号 */
+        .module-tree-item.module-parent {
+            font-size: 13px;
+        }
+        
+        /* 平台（如"安卓"、"IOS"）字体大小：比全部用例小2号 */
+        .module-tree-item.module-platform {
+            font-size: 12px;
+        }
+
+        .module-tree-item:hover {
+            background: #f0f0f0;
+        }
+
+        .module-tree-item.active {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .module-tree-item .arrow {
+            width: 12px;
+            font-size: 10px;
+            transition: transform 0.2s;
+        }
+
+        .module-tree-item.expanded .arrow {
+            transform: rotate(90deg);
+        }
+
+        .module-tree-item .count {
+            margin-left: auto;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .module-tree-children {
+            padding-left: 20px;
+            display: none;
+        }
+
+        .module-tree-item.expanded + .module-tree-children {
+            display: block;
+        }
+
+        /* 测试用例表格样式 */
+        #testcase-table-body tr {
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 12px; /* 比标题小两号 */
+        }
+
+        #testcase-table-body tr:hover {
+            background: #f9f9f9;
+        }
+
+        #testcase-table-body td {
+            padding: 10px 15px;
+        }
+
+        /* 测试用例详情行样式 */
+        .testcase-detail-row td {
+            background: #fafafa;
+            border-top: none;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 12px;
+            color: #4b5563;
+        }
+
+        /* 测试用例表格复选框统一大小 */
+        #testcase-table-body input[type="checkbox"],
+        #select-all-testcases {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        /* 全选下拉菜单 */
+        .select-all-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .select-all-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            min-width: 120px;
+            margin-top: 4px;
+        }
+
+        .select-all-dropdown-menu.show {
+            display: block;
+        }
+
+        .select-all-dropdown-item {
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 13px;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .select-all-dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .select-all-dropdown-item:hover {
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧导航栏 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                自动化测试平台
+        </div>
+            <div class="nav-menu">
+                <div class="nav-item active expanded" data-nav="functional">
+                    <div class="nav-item-title" onclick="toggleNavItem('functional')">
+                        <span>功能测试</span>
+                    </div>
+                    <div class="nav-submenu" id="functional-projects-menu">
+                        <div style="padding: 10px 20px; color: rgba(255, 255, 255, 0.6); font-size: 12px;">加载中...</div>
+                    </div>
+                </div>
+                <div class="nav-item" data-nav="performance">
+                    <div class="nav-item-title" onclick="toggleNavItem('performance')">
+                        <span>性能测试</span>
+                    </div>
+                    <div class="nav-submenu">
+                        <div class="nav-submenu-item" onclick="switchTab('performance', event)">蓝牙配网</div>
+                    </div>
+                </div>
+                <div class="nav-item" data-nav="tools">
+                    <div class="nav-item-title" onclick="toggleNavItem('tools')">
+                        <span>测试工具</span>
+                    </div>
+                    <div class="nav-submenu">
+                        <div class="nav-submenu-item" onclick="switchTab('tools', event, 'port-settings')">端口设置</div>
+                        <div class="nav-submenu-item" onclick="switchTab('tools', event, 'task-status')">任务状态</div>
+                        <div class="nav-submenu-item" onclick="switchTab('tools', event, 'test-reports')">测试报告</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主内容区 -->
+        <div class="content-wrapper">
+            <div class="header">
+                <h1 id="page-title" style="font-size: 24px; margin: 0; color: #333;">功能测试</h1>
+            </div>
+        <div class="content">
+            <!-- 功能测试标签页 -->
+            <div id="functional" class="tab-content active">
+                <div id="functional-alert-container"></div>
+                
+                <!-- 功能测试配置 -->
+                <div class="section">
+                    <!-- 平台选择 -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-weight: 500; margin-bottom: 10px; color: #333;">平台 <span style="color: #ef4444;">*</span></label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr auto auto; gap: 15px; align-items: end;">
+                            <div>
+                                <label style="display: flex; align-items: center; gap: 8px; font-weight: 500; margin-bottom: 8px; color: #666; font-size: 14px;">
+                                    <input type="checkbox" id="platform-android-check" onchange="togglePlatformEnabled('android')" style="width: 18px; height: 18px; cursor: pointer;">
+                                    Android
+                                </label>
+                                <select id="functional-device-android" class="form-select" onchange="onDeviceChange()" disabled>
+                                    <option value="">请选择设备型号</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style="display: flex; align-items: center; gap: 8px; font-weight: 500; margin-bottom: 8px; color: #666; font-size: 14px;">
+                                    <input type="checkbox" id="platform-ios-check" onchange="togglePlatformEnabled('ios')" style="width: 18px; height: 18px; cursor: pointer;">
+                                    iOS
+                                </label>
+                                <select id="functional-device-ios" class="form-select" onchange="onDeviceChange()" disabled>
+                                    <option value="">请选择设备型号</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button id="functional-test-btn" class="btn btn-success" onclick="toggleFunctionalTest(event)" style="white-space: nowrap;">
+                                    启动测试
+                                </button>
+                            </div>
+                            <div>
+                                <button class="btn btn-secondary" onclick="resetFunctionalForm()" style="white-space: nowrap;">
+                                    重置表单
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 版本信息（非必填） -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                        <div>
+                            <label style="display: block; font-weight: 500; margin-bottom: 8px; color: #666; font-size: 14px;">
+                                固件版本 <span style="color: #999; font-size: 12px;">(非必填)</span>
+                            </label>
+                            <input type="text" id="functional-firmware" class="form-input" placeholder="请输入固件版本" list="firmware-history" onchange="saveVersionHistory('firmware', this.value)">
+                            <datalist id="firmware-history"></datalist>
+                        </div>
+                        <div>
+                            <label style="display: block; font-weight: 500; margin-bottom: 8px; color: #666; font-size: 14px;">
+                                外壳版本 <span style="color: #999; font-size: 12px;">(非必填)</span>
+                            </label>
+                            <input type="text" id="functional-shell" class="form-input" placeholder="请输入外壳版本" list="shell-history" onchange="saveVersionHistory('shell', this.value)">
+                            <datalist id="shell-history"></datalist>
+                        </div>
+                        <div>
+                            <label style="display: block; font-weight: 500; margin-bottom: 8px; color: #666; font-size: 14px;">
+                                插件版本 <span style="color: #999; font-size: 12px;">(非必填)</span>
+                            </label>
+                            <input type="text" id="functional-plugin" class="form-input" placeholder="请输入插件版本" list="plugin-history" onchange="saveVersionHistory('plugin', this.value)">
+                            <datalist id="plugin-history"></datalist>
+                        </div>
+                    </div>
+                    
+                    <!-- 测试用例选择 -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-weight: 500; margin-bottom: 10px; color: #333;">
+                            测试用例 <span style="color: #ef4444;">*</span>
+                        </label>
+                        <div id="testcase-container" style="display: flex; gap: 15px; min-height: 400px; border: 1px solid #e0e0e0; border-radius: 6px; overflow: hidden; opacity: 0.5; pointer-events: none;">
+                            <!-- 左侧：模块列表 -->
+                            <div style="width: 250px; background: #f9f9f9; border-right: 1px solid #e0e0e0; display: flex; flex-direction: column;">
+                                <div style="flex: 1; overflow-y: auto; padding: 10px 0;">
+                                    <div id="module-tree-container">
+                                        <div style="padding: 10px 15px; color: #999; text-align: center;">请先选择项目和设备</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 右侧：测试用例列表 -->
+                            <div style="flex: 1; display: flex; flex-direction: column; background: white;">
+                                <div style="padding: 15px; border-bottom: 1px solid #e0e0e0; font-weight: 500; color: #333;">
+                                    <span id="testcase-header">全部用例</span>
+                                </div>
+                                <div style="flex: 1; overflow-y: auto;">
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <thead style="background: #f5f5f5; position: sticky; top: 0;">
+                                            <tr>
+                                                <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; width: 50px;">
+                                                    <div class="select-all-dropdown">
+                                                        <input type="checkbox" id="select-all-testcases" onclick="toggleSelectAllDropdown(event)">
+                                                        <div class="select-all-dropdown-menu" id="select-all-dropdown-menu">
+                                                            <div class="select-all-dropdown-item" onclick="selectAllCurrentPage()">全选当页</div>
+                                                            <div class="select-all-dropdown-item" onclick="selectAllPages()">全选所有页</div>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; cursor: pointer;" onclick="sortTestCases('id')">
+                                                    ID <span style="font-size: 12px; color: #999;">↕</span>
+                                                </th>
+                                                <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; cursor: pointer;" onclick="sortTestCases('name')">
+                                                    用例名称 <span style="font-size: 12px; color: #999;">↕</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="testcase-table-body">
+                                            <tr>
+                                                <td colspan="3" style="padding: 40px; text-align: center; color: #999;">
+                                                    请先选择项目和设备
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div style="padding: 8px 15px; border-top: 1px solid #e5e7eb; display: flex; justify-content: flex-end; align-items: center; gap: 12px; font-size: 12px; color: #666;">
+                                    <span id="testcase-total-text">共 0 条</span>
+                                    <span>10条/页</span>
+                                    <span>前往</span>
+                                    <input id="testcase-current-page-input" value="1" style="width: 40px; padding: 2px 4px; font-size: 12px; text-align: center; border: 1px solid #d1d5db; border-radius: 4px;" onkeydown="if(event.key==='Enter'){goTestcasePage();}">
+                                    <span>页 / 共 <span id="testcase-total-pages">1</span> 页</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- 性能测试标签页 -->
+            <div id="performance" class="tab-content">
+                <div id="alert-container"></div>
+
+                <!-- 2蓝牙配网 -->
+                <div class="section">
+                    <div class="section-title">蓝牙配网</div>
+                    
+                    <!-- Appium 管理 -->
+                    <div class="section" style="margin-top: 15px;">
+                        <div class="section-title" style="font-size: 18px;">Appium 端口管理</div>
+                    <div class="action-buttons">
+                            <button class="btn btn-primary" onclick="startAppium(event)">
+                            一键启动 Appium 端口
+                        </button>
+                            <button class="btn btn-danger" onclick="stopAppium(event)">
+                            一键停止 Appium 端口
+                        </button>
+                            <button class="btn btn-secondary" onclick="togglePortList()" id="toggle-port-btn">
+                                查看端口状态
+                        </button>
+                        </div>
+                        
+                        <!-- 端口状态列表（可展开/收起） -->
+                        <div id="port-list-container" style="display: none; margin-top: 20px;">
+                            <div style="background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                                    <div style="font-weight: 600; color: #333;">端口状态列表</div>
+                                    <button class="btn btn-secondary btn-small" onclick="refreshPortStatus()">
+                                        刷新
+                                    </button>
+                                </div>
+                                <div id="port-list" style="display: grid; gap: 10px;">
+                                    <!-- 端口列表将动态加载 -->
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <!-- 平台选择 -->
+                    <div class="section" style="margin-top: 15px;">
+                        <div class="section-title" style="font-size: 18px;">选择测试平台（可多选）</div>
+                    <div class="platform-selector">
+                            <div class="platform-btn active" data-platform="android" onclick="togglePlatform('android', event)">
+                                <input type="checkbox" id="platform-android" checked onchange="updatePlatformSelection('android', this.checked)">
+                                <label for="platform-android" style="cursor: pointer; margin: 0;">Android</label>
+                        </div>
+                            <div class="platform-btn active" data-platform="ios" onclick="togglePlatform('ios', event)">
+                                <input type="checkbox" id="platform-ios" checked onchange="updatePlatformSelection('ios', this.checked)">
+                                <label for="platform-ios" style="cursor: pointer; margin: 0;">iOS</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 测试手机选择 -->
+                    <div class="section" style="margin-top: 15px;">
+                        <div class="section-title" style="font-size: 18px;">测试手机</div>
+                    <div class="select-all" onclick="toggleSelectAll('devices')">
+                        <input type="checkbox" id="select-all-devices">
+                        <label for="select-all-devices">全选所有手机</label>
+                    </div>
+                    <div id="device-list" class="device-list"></div>
+                </div>
+
+                <!-- 路由器选择 -->
+                    <div class="section" style="margin-top: 15px;">
+                        <div class="section-title" style="font-size: 18px;">路由器选择</div>
+                    <div class="select-all" onclick="toggleSelectAll('routers')">
+                        <input type="checkbox" id="select-all-routers">
+                        <label for="select-all-routers">全选所有路由器</label>
+                    </div>
+                    <div id="router-list" class="router-list"></div>
+                </div>
+
+                <!-- 测试配置 -->
+                    <div class="section" style="margin-top: 15px;">
+                        <div class="section-title" style="font-size: 18px;">测试配置</div>
+                    <div class="test-config">
+                        <div class="config-item">
+                            <label>测试次数:</label>
+                            <input type="number" id="test-count" value="3" min="1" max="10">
+                        </div>
+                        <div class="config-item">
+                            <input type="checkbox" id="clear-logs" checked>
+                            <label for="clear-logs">启动前清除机器日志</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 操作按钮 -->
+                    <div class="section" style="margin-top: 15px;">
+                        <div class="section-title" style="font-size: 18px;">测试操作</div>
+                    <div class="action-buttons">
+                            <button class="btn btn-success" onclick="startTest(event)">
+                            一键启动测试
+                        </button>
+                        <button class="btn btn-danger" onclick="stopCurrentTest()" id="stop-btn" disabled>
+                            一键停止测试
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 测试日志 -->
+                    <div class="section" id="log-section" style="display: none; margin-top: 15px;">
+                        <div class="section-title" style="font-size: 18px;">测试日志</div>
+                    <div id="log-container" class="log-container"></div>
+                </div>
+                </div>
+            </div>
+
+            <!-- 测试工具标签页 -->
+            <div id="tools" class="tab-content">
+                <!-- 端口设置 -->
+                <div id="tools-port-settings" class="tools-subsection">
+                <div class="section">
+                        <div class="section-title">端口设置</div>
+                        <div class="port-settings-container">
+                            <!-- 左侧：端口列表 -->
+                            <div class="port-settings-left">
+                                <div class="port-settings-header">
+                                    <div class="port-settings-header-left">
+                                        <input type="checkbox" id="select-all-ports" onchange="toggleSelectAllPorts()">
+                                        <span>全部端口</span>
+                </div>
+                                    <button id="start-all-ports-btn" class="btn btn-secondary btn-small" onclick="startAllSelectedPorts()" disabled style="white-space: nowrap;">
+                                        启动
+                                    </button>
+                                </div>
+                                <div id="managed-port-list" class="port-settings-list">
+                                    <!-- 端口列表由 JS 渲染 -->
+                                </div>
+                            </div>
+
+                            <!-- 右侧：端口运行状态 -->
+                            <div class="port-settings-right">
+                                <div class="port-monitor-header">
+                                    <span id="port-monitor-title" style="font-weight: 500; color: #333;">端口运行状态</span>
+                                    <span id="port-monitor-status-text" style="font-size: 13px; color: #666;">请选择左侧端口</span>
+                                </div>
+                                <div class="port-monitor-body">
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <div id="port-monitor-dot" class="port-status-dot port-status-stopped"></div>
+                                        <span id="port-monitor-detail" style="font-size: 14px; color: #333;">暂无端口信息</span>
+                                    </div>
+                                    <div id="port-monitor-line" class="port-monitor-line"></div>
+                                    <div id="port-monitor-extra" style="font-size: 12px; color: #6b7280;">当端口运行时，将实时显示状态与日志。</div>
+                                    <div id="port-monitor-log" class="port-monitor-log">暂无日志</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 任务状态 -->
+                <div id="tools-task-status" class="tools-subsection" style="display: none;">
+                    <div class="section">
+                        <div class="section-title">任务状态</div>
+                        <div style="margin-bottom: 15px;">
+                            <button class="btn btn-secondary btn-small" onclick="refreshTaskStatus()" style="white-space: nowrap;">刷新</button>
+                        </div>
+                        <div id="task-status-container">
+                            <div style="text-align: center; padding: 40px; color: #999;">加载中...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2测试报告 -->
+                <div id="tools-test-reports" class="tools-subsection" style="display: none;">
+                    <div class="section">
+                        <div class="section-title">测试报告</div>
+                        <div style="margin-bottom: 15px;">
+                            <button class="btn btn-secondary btn-small" onclick="refreshTestReports()" style="white-space: nowrap;">刷新</button>
+                        </div>
+                        <div id="test-reports-container">
+                            <div style="text-align: center; padding: 40px; color: #999;">加载中...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedPlatforms = ['android', 'ios']; // 默认全选（性能测试用）
+        let currentTaskId = null;
+        let logInterval = null;
+        let managedPorts = [
+            // Android 设备
+            { id: 'google_pixel_9_pro', name: 'Google Pixel 9 Pro', port: 4725, platform: 'android' },
+            { id: 'galaxy_s24_ultra', name: 'Galaxy S24 Ultra', port: 4726, platform: 'android' },
+            { id: 'galaxy_s10', name: 'Samsung Galaxy S10', port: 4727, platform: 'android' },
+            { id: 'google_pixel_7_pro', name: 'Google_pixel_7_pro', port: 4728, platform: 'android' },
+            { id: 'one_plus_11', name: '1+11', port: 4729, platform: 'android' },
+            // iOS 设备
+            { id: 'iphone_15', name: 'iPhone 15', port: 4735, platform: 'ios' },
+            { id: 'iphone_16_pro_max', name: 'iPhone 16 pro max', port: 4736, platform: 'ios' },
+            { id: 'iphone_13_mini', name: 'iPhone 13 mini', port: 4737, platform: 'ios' },
+        ];
+        let currentMonitorPort = null;
+        let portMonitorInterval = null;
+
+        // 切换导航项展开/收起
+        function toggleNavItem(navName) {
+            const navItem = document.querySelector(`[data-nav="${navName}"]`);
+            if (navItem) {
+                navItem.classList.toggle('expanded');
+            }
+        }
+
+        // 切换某个模块下的平台展开/收起
+        function toggleModulePlatforms(moduleName, event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            const parent = document.querySelector(`.module-parent[data-module="${moduleName}"]`);
+            const children = document.getElementById(`module-platforms-${moduleName}`);
+            if (parent && children) {
+                parent.classList.toggle('expanded');
+                if (parent.classList.contains('expanded')) {
+                    children.style.display = 'block';
+                } else {
+                    children.style.display = 'none';
+                }
+            }
+        }
+
+        // 初始化端口设置视图（不影响端口真实运行状态）
+        async function initPortSettingsView() {
+            try {
+                // 强制刷新所有托管端口的状态
+                await Promise.all(
+                    managedPorts.map(p => checkPortStatus(p.port, true))
+                );
+            } catch (e) {
+                console.error('初始化端口状态失败:', e);
+            } finally {
+                // 根据最新状态渲染列表并选择默认监控端口
+                renderManagedPortList();
+            }
+        }
+
+        // 切换标签页
+        function switchTab(tabName, event, subsection) {
+            // 记住当前标签页
+            try {
+                localStorage.setItem('lastActiveTab', tabName);
+                if (subsection) {
+                    localStorage.setItem('lastActiveSubsection', subsection);
+                }
+            } catch (e) {}
+            // 隐藏所有内容
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // 显示选中的内容
+            document.getElementById(tabName).classList.add('active');
+
+            // 更新导航项状态
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            
+            const navItem = document.querySelector(`[data-nav="${tabName}"]`);
+            if (navItem) {
+                navItem.classList.add('active');
+                navItem.classList.add('expanded');
+                
+                // 如果是功能测试，不自动激活子菜单项（由项目选择控制）
+                if (tabName !== 'functional') {
+                    document.querySelectorAll('.nav-submenu-item').forEach(item => item.classList.remove('active'));
+                    if (event && event.target && event.target.classList.contains('nav-submenu-item')) {
+                        event.target.classList.add('active');
+                    } else {
+                        const submenuItem = navItem.querySelector('.nav-submenu-item');
+                        if (submenuItem) {
+                            submenuItem.classList.add('active');
+                        }
+                    }
+                    
+                    // 处理测试工具的子菜单
+            if (tabName === 'tools') {
+                        // 隐藏所有子区域
+                        document.querySelectorAll('.tools-subsection').forEach(section => {
+                            section.style.display = 'none';
+                        });
+                        
+                        // 显示选中的子区域
+                        const targetSubsection = subsection || localStorage.getItem('lastActiveSubsection') || 'port-settings';
+                        const subsectionElement = document.getElementById(`tools-${targetSubsection}`);
+                        if (subsectionElement) {
+                            subsectionElement.style.display = 'block';
+                        }
+                        
+                        // 更新页面标题
+                        const titleElement = document.getElementById('page-title');
+                        if (titleElement) {
+                            const titleMap = {
+                                'port-settings': '测试工具 / 端口设置',
+                                'task-status': '测试工具 / 任务状态',
+                                'test-reports': '测试工具 / 测试报告'
+                            };
+                            titleElement.textContent = titleMap[targetSubsection] || '测试工具 / 端口设置';
+                        }
+                        
+                        // 根据子区域加载数据
+                        if (targetSubsection === 'task-status') {
+                            loadTaskStatus();
+                        } else if (targetSubsection === 'test-reports') {
+                            loadTestReports();
+                        } else if (targetSubsection === 'port-settings') {
+                            initPortSettingsView();
+                        }
+                    }
+                } else {
+                    // 功能测试：如果有选中的项目，激活对应的项目项
+                    if (selectedFunctionalProject) {
+                        document.querySelectorAll('.nav-submenu-item').forEach(item => item.classList.remove('active'));
+                        const projectItem = document.querySelector(`[data-project-id="${selectedFunctionalProject}"]`);
+                        if (projectItem) {
+                            projectItem.classList.add('active');
+                        }
+                    }
+                }
+            }
+
+            const titleElement = document.getElementById('page-title');
+
+            if (tabName === 'performance') {
+                if (titleElement) {
+                    titleElement.textContent = '性能测试';
+                }
+                // 性能测试标签页激活时，加载蓝牙配网配置
+                loadConfig();
+            } else if (tabName === 'functional') {
+                // 功能测试标签页激活时，加载项目列表
+                loadFunctionalProjects();
+                // 更新页面标题
+                updatePageTitle();
+            }
+        }
+
+        // 切换平台选择
+        function togglePlatform(platform, event) {
+            // 阻止事件冒泡，避免重复触发
+            if (event) {
+                event.stopPropagation();
+            }
+            const checkbox = document.getElementById(`platform-${platform}`);
+            checkbox.checked = !checkbox.checked;
+            updatePlatformSelection(platform, checkbox.checked);
+        }
+
+        // 更新平台选择
+        function updatePlatformSelection(platform, checked) {
+            const btn = document.querySelector(`[data-platform="${platform}"]`);
+            
+            if (checked) {
+                if (!selectedPlatforms.includes(platform)) {
+                    selectedPlatforms.push(platform);
+                }
+                btn.classList.add('active');
+            } else {
+                selectedPlatforms = selectedPlatforms.filter(p => p !== platform);
+                btn.classList.remove('active');
+            }
+            
+            // 至少选择一个平台
+            if (selectedPlatforms.length === 0) {
+                // 如果全部取消，恢复默认选择
+                selectedPlatforms = ['android'];
+                document.getElementById('platform-android').checked = true;
+                document.querySelector('[data-platform="android"]').classList.add('active');
+            }
+            
+            // 重新加载配置
+            loadConfig();
+        }
+
+        // 加载配置（支持多平台）
+        async function loadConfig() {
+            try {
+                if (selectedPlatforms.length === 0) {
+                    showAlert('请至少选择一个平台', 'error');
+                    return;
+                }
+
+                // 加载所有选中平台的配置
+                const allDevices = [];
+                let routers = [];
+                let testConfig = null;
+
+                for (const platform of selectedPlatforms) {
+                    try {
+                        const response = await fetch(`/api/config/${platform}`);
+                const data = await response.json();
+
+                        // 合并设备列表
+                        if (data.devices) {
+                            data.devices.forEach(device => {
+                                device.platform = platform;
+                                allDevices.push(device);
+                            });
+                        }
+
+                        // 使用第一个平台的路由器和测试配置（它们应该是一样的）
+                        if (!routers.length && data.routers) {
+                            routers = data.routers;
+                        }
+                        if (!testConfig && data.test_config) {
+                            testConfig = data.test_config;
+                        }
+                    } catch (error) {
+                        console.error(`加载 ${platform} 配置失败:`, error);
+                    }
+                }
+
+                // 渲染设备列表
+                renderDeviceList(allDevices);
+                
+                // 渲染路由器列表
+                renderRouterList(routers);
+
+                // 设置测试次数
+                if (testConfig && testConfig.loop_count_per_router) {
+                    document.getElementById('test-count').value = testConfig.loop_count_per_router;
+                }
+            } catch (error) {
+                showAlert('加载配置失败: ' + error.message, 'error');
+            }
+        }
+
+        // 设备数据存储（用于获取平台信息）
+        let deviceDataMap = {};
+
+        // 渲染设备列表
+        function renderDeviceList(devices) {
+            const container = document.getElementById('device-list');
+            deviceDataMap = {}; // 重置设备数据映射
+            
+            container.innerHTML = devices.map(device => {
+                // 保存设备数据
+                deviceDataMap[device.id] = device;
+                
+                const platformLabel = device.platform === 'ios' ? 'iOS' : 'Android';
+                return `
+                <div class="device-item" onclick="toggleDevice('${device.id}')">
+                        <input type="checkbox" id="device-${device.id}" data-id="${device.id}" data-platform="${device.platform || 'android'}">
+                    <div class="device-info">
+                            <div class="device-name">${device.name} <span style="color: #667eea; font-size: 12px;">[${platformLabel}]</span></div>
+                        <div class="device-details">
+                            端口: ${device.port} | 设备: ${device.device_name} | 版本: ${device.platform_version}
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        // 渲染路由器列表
+        function renderRouterList(routers) {
+            const container = document.getElementById('router-list');
+            container.innerHTML = routers.map((router, index) => `
+                <div class="router-item" onclick="toggleRouter(${index})">
+                    <input type="checkbox" id="router-${index}" data-index="${index}">
+                    <div class="router-info">
+                        <div class="router-name">${router.name}</div>
+                        <div class="router-details">${router.description || ''}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 切换设备选择
+        function toggleDevice(deviceId) {
+            const checkbox = document.getElementById(`device-${deviceId}`);
+            checkbox.checked = !checkbox.checked;
+            updateDeviceSelection(deviceId);
+        }
+
+        // 更新设备选择状态
+        function updateDeviceSelection(deviceId) {
+            const checkbox = document.getElementById(`device-${deviceId}`);
+            const item = checkbox.closest('.device-item');
+            if (checkbox.checked) {
+                item.classList.add('selected');
+            } else {
+                item.classList.remove('selected');
+            }
+            updateSelectAllState('devices');
+        }
+
+        // 切换路由器选择
+        function toggleRouter(index) {
+            const checkbox = document.getElementById(`router-${index}`);
+            checkbox.checked = !checkbox.checked;
+            updateRouterSelection(index);
+        }
+
+        // 更新路由器选择状态
+        function updateRouterSelection(index) {
+            const checkbox = document.getElementById(`router-${index}`);
+            const item = checkbox.closest('.router-item');
+            if (checkbox.checked) {
+                item.classList.add('selected');
+            } else {
+                item.classList.remove('selected');
+            }
+            updateSelectAllState('routers');
+        }
+
+        // 全选/取消全选
+        function toggleSelectAll(type) {
+            const checkbox = document.getElementById(`select-all-${type}`);
+            checkbox.checked = !checkbox.checked;
+            
+            const items = document.querySelectorAll(`#${type === 'devices' ? 'device' : 'router'}-list input[type="checkbox"]`);
+            items.forEach(item => {
+                item.checked = checkbox.checked;
+                const itemElement = item.closest(`.${type === 'devices' ? 'device' : 'router'}-item`);
+                if (checkbox.checked) {
+                    itemElement.classList.add('selected');
+                } else {
+                    itemElement.classList.remove('selected');
+                }
+            });
+        }
+
+        // 更新全选状态
+        function updateSelectAllState(type) {
+            const items = document.querySelectorAll(`#${type === 'devices' ? 'device' : 'router'}-list input[type="checkbox"]`);
+            const allChecked = Array.from(items).every(item => item.checked);
+            const allUnchecked = Array.from(items).every(item => !item.checked);
+            const selectAllCheckbox = document.getElementById(`select-all-${type}`);
+            
+            if (allChecked) {
+                selectAllCheckbox.checked = true;
+                selectAllCheckbox.indeterminate = false;
+            } else if (allUnchecked) {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = false;
+            } else {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = true;
+            }
+        }
+
+        // 端口状态数据
+        let portStatuses = {};
+
+        // 切换端口列表显示/隐藏
+        function togglePortList() {
+            const container = document.getElementById('port-list-container');
+            const btn = document.getElementById('toggle-port-btn');
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+                btn.innerHTML = '隐藏端口状态';
+                loadPortStatus();
+            } else {
+                container.style.display = 'none';
+                btn.innerHTML = '查看端口状态';
+            }
+        }
+
+        // 加载端口状态
+        async function loadPortStatus() {
+            try {
+                // 获取所有平台的配置
+                const androidConfig = await fetch('/api/config/android').then(r => r.json());
+                const iosConfig = await fetch('/api/config/ios').then(r => r.json());
+                
+                const allPorts = [];
+                
+                // 收集 Android 端口
+                if (androidConfig.devices) {
+                    androidConfig.devices.forEach(device => {
+                        allPorts.push({
+                            port: device.port,
+                            device: device.name,
+                            deviceName: device.device_name,
+                            platform: 'Android'
+                        });
+                    });
+                }
+                
+                // 收集 iOS 端口
+                if (iosConfig.devices) {
+                    iosConfig.devices.forEach(device => {
+                        allPorts.push({
+                            port: device.port,
+                            device: device.name,
+                            deviceName: device.device_name,
+                            platform: 'iOS'
+                        });
+                    });
+                }
+                
+                // 检查每个端口状态（并行检查以提高速度，强制刷新）
+                const statusPromises = allPorts.map(portInfo => checkPortStatus(portInfo.port, true));
+                await Promise.all(statusPromises);
+                
+                // 渲染端口列表
+                renderPortList(allPorts);
+            } catch (error) {
+                console.error('加载端口状态失败:', error);
+            }
+        }
+
+        // 检查单个端口状态
+        async function checkPortStatus(port, forceCheck = false) {
+            try {
+                // 如果强制检查，添加时间戳避免缓存
+                const url = forceCheck 
+                    ? `/api/appium/status/${port}?t=${Date.now()}`
+                    : `/api/appium/status/${port}`;
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                const newStatus = data.status || 'stopped';
+                portStatuses[port] = newStatus;
+                return newStatus;
+            } catch (error) {
+                // 如果检查失败，默认设为已停止
+                portStatuses[port] = 'stopped';
+                return 'stopped';
+            }
+        }
+
+        // 渲染端口列表
+        function renderPortList(ports) {
+            const container = document.getElementById('port-list');
+            container.innerHTML = ports.map(portInfo => {
+                const status = portStatuses[portInfo.port] || 'stopped';
+                const statusText = {
+                    'running': '运行中',
+                    'stopped': '已停止',
+                    'starting': '启动中',
+                    'stopping': '停止中'
+                }[status] || '未知';
+                
+                return `
+                    <div class="port-item">
+                        <div class="port-info">
+                            <div class="port-number">端口 ${portInfo.port}</div>
+                            <div class="port-device">${portInfo.device} (${portInfo.platform})</div>
+                            <div class="port-status status-${status}">${statusText}</div>
+                        </div>
+                        <div class="port-actions">
+                            ${status === 'running' || status === 'starting' ? 
+                                `<button class="btn btn-danger btn-small" onclick="stopSinglePort(${portInfo.port}, event)">
+                                    停止
+                                </button>` :
+                                `<button class="btn btn-success btn-small" onclick="startSinglePort(${portInfo.port}, event)">
+                                    启动
+                                </button>`
+                            }
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 刷新端口状态
+        async function refreshPortStatus() {
+            const container = document.getElementById('port-list-container');
+            if (container.style.display !== 'none') {
+                await loadPortStatus();
+                showAlert('端口状态已刷新', 'success');
+            }
+        }
+
+        // 启动单个端口
+        async function startSinglePort(port, event) {
+                const btn = event.target.closest('.btn');
+            const originalHTML = btn.innerHTML;
+            
+            try {
+                btn.disabled = true;
+                btn.innerHTML = '<span class="loading"></span> 启动中...';
+                
+                // 更新状态为启动中
+                portStatuses[port] = 'starting';
+                await loadPortStatus();
+
+                const response = await fetch('/api/appium/start', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ports: [port] })
+                });
+                
+                const data = await response.json();
+                if (data.success) {
+                    portStatuses[port] = 'running';
+                    showAlert(`端口 ${port} 启动成功`, 'success');
+                    // 单个端口启动成功后，若当前没有监控端口，则切到该端口
+                    if (!currentMonitorPort) {
+                        startPortMonitor(port);
+                    }
+                } else {
+                    portStatuses[port] = 'stopped';
+                    showAlert(`端口 ${port} 启动失败: ${data.error || '未知错误'}`, 'error');
+                }
+            } catch (error) {
+                portStatuses[port] = 'stopped';
+                showAlert(`端口 ${port} 启动失败: ${error.message}`, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalHTML;
+                await loadPortStatus();
+            }
+        }
+
+        // 渲染测试工具中的端口设置列表
+        function renderManagedPortList() {
+            const container = document.getElementById('managed-port-list');
+            if (!container) return;
+
+            container.innerHTML = managedPorts.map(item => {
+                const status = portStatuses[item.port] || 'stopped';
+                const isRunning = (status === 'running' || status === 'starting');
+                const statusTextMap = {
+                    'running': '运行中',
+                    'starting': '启动中',
+                    'stopping': '停止中',
+                    'stopped': '未启动'
+                };
+                const statusText = statusTextMap[status] || '未知';
+                return `
+                    <div class="port-settings-item" data-port="${item.port}" onclick="onPortItemClick(${item.port}, event)">
+                        <div class="port-settings-item-left">
+                            <input type="checkbox" class="port-select-checkbox" data-port="${item.port}" onchange="updatePortButtonState()" ${isRunning ? 'checked disabled' : ''}>
+                            <div>
+                                <div class="port-device-name">${item.name}</div>
+                                <div class="port-device-port">端口 ${item.port}</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span id="managed-port-status-${item.port}" style="font-size: 12px; color: #666;">${statusText}</span>
+                            <button class="btn btn-secondary btn-small" onclick="toggleManagedPort(${item.port}, this)" ${isRunning ? '' : 'disabled'}>
+                                ${isRunning ? '运行' : '启动'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // 初始更新按钮可用状态
+            updatePortButtonState();
+
+            // 根据当前运行中的端口，自动选择一个默认监控端口
+            updateDefaultMonitorPort();
+        }
+
+        // 点击端口行时，切换右侧监控的端口（不影响勾选和按钮点击）
+        function onPortItemClick(port, event) {
+            // 如果点击的是勾选框或按钮，则不切换监控端口
+            if (event.target.closest('input') || event.target.closest('button')) {
+                return;
+            }
+            startPortMonitor(port);
+        }
+
+        // 当有多个端口运行时，默认选择端口号最小的进行监控
+        function updateDefaultMonitorPort() {
+            const runningPorts = managedPorts
+                .map(p => p.port)
+                .filter(port => portStatuses[port] === 'running' || portStatuses[port] === 'starting')
+                .sort((a, b) => a - b);
+
+            if (runningPorts.length === 0) {
+                return;
+            }
+
+            // 如果当前监控端口不存在或已不在运行列表中，则切换到最小端口
+            if (!currentMonitorPort || !runningPorts.includes(currentMonitorPort)) {
+                startPortMonitor(runningPorts[0]);
+            }
+        }
+
+        // 全选 / 取消全选端口
+        function toggleSelectAllPorts() {
+            const checked = document.getElementById('select-all-ports').checked;
+            document.querySelectorAll('.port-select-checkbox').forEach(cb => {
+                // 已在运行的端口复选框是禁用的，不随“全部端口”改变
+                if (!cb.disabled) {
+                    cb.checked = checked;
+                }
+            });
+            updatePortButtonState();
+            updateStartAllButtonState();
+        }
+
+        // 根据勾选状态更新每行“启动”按钮可用性
+        function updatePortButtonState() {
+            document.querySelectorAll('.port-settings-item').forEach(item => {
+                const checkbox = item.querySelector('.port-select-checkbox');
+                const btn = item.querySelector('button');
+                if (checkbox && btn) {
+                    // 已在运行的端口：按钮始终可用，用于停止；仅未运行端口受勾选控制
+                    if (checkbox.disabled) {
+                        btn.disabled = false;
+                    } else {
+                        btn.disabled = !checkbox.checked;
+                    }
+                }
+            });
+            updateStartAllButtonState();
+        }
+
+        // 更新“全部端口”启动按钮状态
+        function updateStartAllButtonState() {
+            const selectAllCheckbox = document.getElementById('select-all-ports');
+            const startAllBtn = document.getElementById('start-all-ports-btn');
+            if (selectAllCheckbox && startAllBtn) {
+                // 只有存在“可启动”的端口且勾选了“全部端口”时才允许一键启动
+                const hasStartablePort = managedPorts.some(p => {
+                    const status = portStatuses[p.port] || 'stopped';
+                    return status !== 'running' && status !== 'starting';
+                });
+                startAllBtn.disabled = !selectAllCheckbox.checked || !hasStartablePort;
+            }
+        }
+
+        // 启动所有选中的端口
+        async function startAllSelectedPorts() {
+            const selectAllCheckbox = document.getElementById('select-all-ports');
+            if (!selectAllCheckbox || !selectAllCheckbox.checked) {
+                showAlert('请先勾选全部端口', 'error');
+                return;
+            }
+
+            const btn = document.getElementById('start-all-ports-btn');
+            const originalHTML = btn.innerHTML;
+            
+            try {
+                btn.disabled = true;
+                btn.innerHTML = '<span class="loading"></span> 启动中...';
+
+                // 只获取“未运行”的端口，已运行的端口不受影响
+                const allPorts = managedPorts
+                    .filter(p => {
+                        const status = portStatuses[p.port] || 'stopped';
+                        return status !== 'running' && status !== 'starting';
+                    })
+                    .map(p => p.port);
+
+                if (allPorts.length === 0) {
+                    showAlert('所有端口均已在运行，无需重复启动', 'info');
+                    return;
+                }
+                
+                // 更新所有端口状态为启动中
+                allPorts.forEach(port => {
+                    portStatuses[port] = 'starting';
+                });
+                renderManagedPortList();
+
+                // 启动所有端口
+                const response = await fetch('/api/appium/start', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ports: allPorts })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    const startedPorts = data.started || data.ports || allPorts;
+                    showAlert(`已启动 ${startedPorts.length} 个端口`, 'success');
+                    // 更新端口状态
+                    startedPorts.forEach(port => {
+                        portStatuses[port] = 'running';
+                    });
+                    // 刷新端口列表
+                    setTimeout(async () => {
+                        await Promise.all(allPorts.map(port => checkPortStatus(port, true)));
+                        renderManagedPortList();
+                    }, 1000);
+                } else {
+                    showAlert('启动失败: ' + (data.error || '未知错误'), 'error');
+                    allPorts.forEach(port => {
+                        if (portStatuses[port] === 'starting') {
+                            portStatuses[port] = 'stopped';
+                        }
+                    });
+                    renderManagedPortList();
+                }
+            } catch (error) {
+                showAlert('启动失败: ' + error.message, 'error');
+                managedPorts.forEach(p => {
+                    if (portStatuses[p.port] === 'starting') {
+                        portStatuses[p.port] = 'stopped';
+                    }
+                });
+                renderManagedPortList();
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalHTML;
+                updateStartAllButtonState();
+            }
+        }
+
+        // 启动 / 停止单个托管端口
+        async function toggleManagedPort(port, btn) {
+            try {
+                btn.disabled = true;
+                const currentStatus = await checkPortStatus(port, true);
+
+                if (currentStatus === 'running' || currentStatus === 'starting') {
+                    // 当前在运行，执行停止
+                    btn.innerHTML = '<span class="loading"></span> 停止中...';
+                    const response = await fetch('/api/appium/stop', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ ports: [port] })
+                    });
+                    const data = await response.json();
+                    if (!data.success) {
+                        showAlert(`端口 ${port} 停止失败: ${data.error || '未知错误'}`, 'error');
+                    }
+                } else {
+                    // 当前未运行，执行启动
+                    btn.innerHTML = '<span class="loading"></span> 启动中...';
+                    const response = await fetch('/api/appium/start', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ ports: [port] })
+                    });
+                    const data = await response.json();
+                    if (!data.success) {
+                        showAlert(`端口 ${port} 启动失败: ${data.error || '未知错误'}`, 'error');
+                    }
+                }
+            } catch (error) {
+                showAlert(`端口 ${port} 操作失败: ${error.message}`, 'error');
+            } finally {
+                btn.disabled = false;
+                // 更新端口状态显示
+                updateManagedPortStatus(port);
+                // 启动右侧监控
+                startPortMonitor(port);
+            }
+        }
+
+        // 更新托管端口的状态显示
+        async function updateManagedPortStatus(port) {
+            const status = await checkPortStatus(port, true);
+            const statusTextMap = {
+                'running': '运行中',
+                'starting': '启动中',
+                'stopping': '停止中',
+                'stopped': '未启动'
+            };
+            const statusText = statusTextMap[status] || '未知';
+            const item = document.querySelector(`.port-settings-item[data-port="${port}"]`);
+            const statusSpan = document.getElementById(`managed-port-status-${port}`);
+            const btn = item ? item.querySelector('button') : null;
+            const checkbox = item ? item.querySelector('.port-select-checkbox') : null;
+
+            if (statusSpan) statusSpan.textContent = statusText;
+            if (btn) btn.textContent = (status === 'running' || status === 'starting') ? '运行' : '启动';
+
+            // 根据最新状态更新复选框（运行中：勾选且置灰；未运行：可重新选择）
+            if (checkbox) {
+                const isRunning = (status === 'running' || status === 'starting');
+                if (isRunning) {
+                    checkbox.checked = true;
+                    checkbox.disabled = true;
+                } else {
+                    checkbox.disabled = false;
+                    checkbox.checked = false;
+                }
+            }
+
+            // 同步更新各行按钮与“全部端口”按钮状态
+            updatePortButtonState();
+        }
+
+        // 启动端口运行状态监控
+        function startPortMonitor(port) {
+            currentMonitorPort = port;
+            const item = managedPorts.find(p => p.port === port);
+            const titleEl = document.getElementById('port-monitor-title');
+            const detailEl = document.getElementById('port-monitor-detail');
+            const lineEl = document.getElementById('port-monitor-line');
+
+            if (titleEl && item) {
+                titleEl.textContent = `端口运行状态 - ${item.name} (${port})`;
+            }
+
+            if (portMonitorInterval) {
+                clearInterval(portMonitorInterval);
+            }
+
+            // 立即刷新一次状态
+            refreshPortMonitor();
+
+            // 周期性刷新
+            portMonitorInterval = setInterval(refreshPortMonitor, 2000);
+
+            if (lineEl) {
+                lineEl.classList.add('port-monitor-line-active');
+            }
+        }
+
+        // 刷新右侧监控区域状态
+        async function refreshPortMonitor() {
+            if (!currentMonitorPort) return;
+            const status = await checkPortStatus(currentMonitorPort, true);
+            const statusTextMap = {
+                'running': '运行中',
+                'starting': '启动中',
+                'stopping': '停止中',
+                'stopped': '未启动'
+            };
+            const statusColorMap = {
+                'running': 'port-status-running',
+                'starting': 'port-status-starting',
+                'stopping': 'port-status-stopping',
+                'stopped': 'port-status-stopped'
+            };
+
+            const dotEl = document.getElementById('port-monitor-dot');
+            const statusTextEl = document.getElementById('port-monitor-status-text');
+            const detailEl = document.getElementById('port-monitor-detail');
+            const logEl = document.getElementById('port-monitor-log');
+
+            if (statusTextEl) {
+                statusTextEl.textContent = `当前端口 ${currentMonitorPort} 状态：${statusTextMap[status] || '未知'}`;
+            }
+
+            if (detailEl) {
+                detailEl.textContent = `端口 ${currentMonitorPort} 当前${statusTextMap[status] || '未知'}。`;
+            }
+
+            if (dotEl) {
+                dotEl.className = 'port-status-dot ' + (statusColorMap[status] || 'port-status-stopped');
+            }
+
+            // 加载日志内容
+            if (logEl) {
+                try {
+                    const resp = await fetch(`/api/appium/log/${currentMonitorPort}`);
+                    if (resp.ok) {
+                        const data = await resp.json();
+                        logEl.textContent = data.content && data.content.trim()
+                            ? data.content
+                            : '暂无日志';
+                    } else {
+                        logEl.textContent = '获取日志失败';
+                    }
+                } catch (e) {
+                    logEl.textContent = '获取日志失败: ' + e.message;
+                }
+            }
+        }
+
+        // 停止单个端口
+        async function stopSinglePort(port, event) {
+            const btn = event.target.closest('.btn');
+            const originalHTML = btn.innerHTML;
+            
+            try {
+                btn.disabled = true;
+                btn.innerHTML = '<span class="loading"></span> 停止中...';
+                
+                // 更新状态为停止中
+                portStatuses[port] = 'stopping';
+                await loadPortStatus();
+                
+                const response = await fetch('/api/appium/stop', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ports: [port] })
+                });
+                
+                const data = await response.json();
+                if (data.success) {
+                    // 等待一下让进程完全退出
+                    await new Promise(resolve => setTimeout(resolve, 800));
+                    // 强制重新检查端口状态
+                    const actualStatus = await checkPortStatus(port, true);
+                    showAlert(`端口 ${port} 停止成功`, 'success');
+                } else {
+                    // 停止失败，重新检查实际状态
+                    const actualStatus = await checkPortStatus(port, true);
+                    showAlert(`端口 ${port} 停止失败: ${data.error || '未知错误'}`, 'error');
+                }
+            } catch (error) {
+                // 出错时也重新检查实际状态
+                await checkPortStatus(port, true);
+                showAlert(`端口 ${port} 停止失败: ${error.message}`, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalHTML;
+                // 延迟一下再刷新，确保状态已更新
+                setTimeout(async () => {
+                    await loadPortStatus();
+                }, 300);
+            }
+        }
+
+        // 启动 Appium
+        async function startAppium(event) {
+            const btn = event.target.closest('.btn');
+            const originalHTML = btn.innerHTML;
+            
+            try {
+                btn.disabled = true;
+                btn.innerHTML = '<span class="loading"></span> 启动中...';
+
+                // 获取所有端口并更新状态为"启动中"
+                const container = document.getElementById('port-list-container');
+                if (container.style.display !== 'none') {
+                    const androidConfig = await fetch('/api/config/android').then(r => r.json());
+                    const iosConfig = await fetch('/api/config/ios').then(r => r.json());
+                    const allPorts = [];
+                    if (androidConfig.devices) {
+                        androidConfig.devices.forEach(d => allPorts.push(d.port));
+                    }
+                    if (iosConfig.devices) {
+                        iosConfig.devices.forEach(d => allPorts.push(d.port));
+                    }
+                    allPorts.forEach(port => {
+                        portStatuses[port] = 'starting';
+                    });
+                    await loadPortStatus();
+                }
+
+                const response = await fetch('/api/appium/start', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ platforms: selectedPlatforms.length > 0 ? selectedPlatforms : ['android', 'ios'] })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    showAlert(data.message, 'success');
+                    // 更新所有端口状态为运行中
+                    if (data.ports) {
+                        data.ports.forEach(port => {
+                            portStatuses[port] = 'running';
+                        });
+                    }
+                } else {
+                    showAlert('启动失败: ' + (data.error || '未知错误'), 'error');
+                    // 更新所有端口状态为已停止
+                    Object.keys(portStatuses).forEach(port => {
+                        if (portStatuses[port] === 'starting') {
+                            portStatuses[port] = 'stopped';
+                        }
+                    });
+                }
+            } catch (error) {
+                showAlert('启动失败: ' + error.message, 'error');
+                // 更新所有端口状态为已停止
+                Object.keys(portStatuses).forEach(port => {
+                    if (portStatuses[port] === 'starting') {
+                        portStatuses[port] = 'stopped';
+                    }
+                });
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalHTML;
+                // 刷新端口列表
+                const container = document.getElementById('port-list-container');
+                if (container.style.display !== 'none') {
+                    await loadPortStatus();
+                }
+            }
+        }
+
+        // 停止 Appium
+        async function stopAppium(event) {
+                const btn = event.target.closest('.btn');
+            const originalHTML = btn.innerHTML;
+            
+            try {
+                btn.disabled = true;
+                btn.innerHTML = '<span class="loading"></span> 停止中...';
+
+                // 获取所有端口并更新状态为"停止中"
+                const container = document.getElementById('port-list-container');
+                if (container.style.display !== 'none') {
+                    const androidConfig = await fetch('/api/config/android').then(r => r.json());
+                    const iosConfig = await fetch('/api/config/ios').then(r => r.json());
+                    const allPorts = [];
+                    if (androidConfig.devices) {
+                        androidConfig.devices.forEach(d => allPorts.push(d.port));
+                    }
+                    if (iosConfig.devices) {
+                        iosConfig.devices.forEach(d => allPorts.push(d.port));
+                    }
+                    allPorts.forEach(port => {
+                        if (portStatuses[port] === 'running' || portStatuses[port] === 'starting') {
+                            portStatuses[port] = 'stopping';
+                        }
+                    });
+                    await loadPortStatus();
+                }
+
+                const response = await fetch('/api/appium/stop', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    showAlert(data.message, 'success');
+                    // 等待一下让进程完全退出
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    
+                    // 重新检查所有端口状态（不依赖返回的端口列表）
+                    const container = document.getElementById('port-list-container');
+                    if (container.style.display !== 'none') {
+                        // 重新加载端口状态以获取最新状态
+                        await loadPortStatus();
+                    } else {
+                        // 如果端口列表未显示，至少更新已知的端口状态
+                        if (data.ports && data.ports.length > 0) {
+                            data.ports.forEach(port => {
+                                portStatuses[port] = 'stopped';
+                            });
+                        } else {
+                            // 更新所有已知端口为已停止
+                            Object.keys(portStatuses).forEach(port => {
+                                if (portStatuses[port] === 'stopping' || portStatuses[port] === 'running' || portStatuses[port] === 'starting') {
+                                    portStatuses[port] = 'stopped';
+                                }
+                            });
+                        }
+                    }
+                } else {
+                    showAlert('停止失败: ' + (data.error || '未知错误'), 'error');
+                    // 恢复端口状态
+                    Object.keys(portStatuses).forEach(port => {
+                        if (portStatuses[port] === 'stopping') {
+                            portStatuses[port] = 'running';
+                        }
+                    });
+                }
+            } catch (error) {
+                showAlert('停止失败: ' + error.message, 'error');
+                // 恢复端口状态
+                Object.keys(portStatuses).forEach(port => {
+                    if (portStatuses[port] === 'stopping') {
+                        portStatuses[port] = 'running';
+                    }
+                });
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalHTML;
+                // 刷新端口列表（确保状态是最新的）
+                const container = document.getElementById('port-list-container');
+                if (container.style.display !== 'none') {
+                    // 延迟一下再刷新，确保进程已完全退出
+                    setTimeout(async () => {
+                        // 强制重新检查所有端口状态
+                        const androidConfig = await fetch('/api/config/android').then(r => r.json());
+                        const iosConfig = await fetch('/api/config/ios').then(r => r.json());
+                        const allPorts = [];
+                        if (androidConfig.devices) {
+                            androidConfig.devices.forEach(d => allPorts.push(d.port));
+                        }
+                        if (iosConfig.devices) {
+                            iosConfig.devices.forEach(d => allPorts.push(d.port));
+                        }
+                        // 强制检查所有端口
+                        await Promise.all(allPorts.map(port => checkPortStatus(port, true)));
+                        await loadPortStatus();
+                    }, 1000);
+                }
+            }
+        }
+
+        // 启动测试
+        async function startTest(event) {
+            const btn = event.target.closest('.btn');
+            const originalHTML = btn.innerHTML;
+            
+            try {
+                // 获取选中的设备
+                const selectedDevices = Array.from(document.querySelectorAll('#device-list input[type="checkbox"]:checked'))
+                    .map(cb => cb.dataset.id);
+                
+                // 获取选中的路由器
+                const selectedRouters = Array.from(document.querySelectorAll('#router-list input[type="checkbox"]:checked'))
+                    .map(cb => parseInt(cb.dataset.index));
+
+                if (selectedDevices.length === 0) {
+                    showAlert('请至少选择一个测试设备', 'error');
+                    return;
+                }
+
+                if (selectedRouters.length === 0) {
+                    showAlert('请至少选择一个路由器', 'error');
+                    return;
+                }
+
+                btn.disabled = true;
+                btn.innerHTML = '<span class="loading"></span> 启动中...';
+
+                // 获取路由器配置（使用第一个选中平台）
+                const firstPlatform = selectedPlatforms[0];
+                const configResponse = await fetch(`/api/config/${firstPlatform}`);
+                const configData = await configResponse.json();
+                const selectedRouterConfigs = selectedRouters.map(idx => configData.routers[idx]);
+
+                // 按平台分组选中的设备
+                const devicesByPlatform = {};
+                selectedDevices.forEach(deviceId => {
+                    const device = deviceDataMap[deviceId];
+                    if (device) {
+                        const platform = device.platform || 'android';
+                        if (!devicesByPlatform[platform]) {
+                            devicesByPlatform[platform] = [];
+                        }
+                        devicesByPlatform[platform].push(deviceId);
+                    }
+                });
+
+                const response = await fetch('/api/test/start', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        devices: selectedDevices,
+                        devices_by_platform: devicesByPlatform,
+                        routers: selectedRouterConfigs,
+                        test_count: parseInt(document.getElementById('test-count').value),
+                        platforms: selectedPlatforms,
+                        clear_logs: document.getElementById('clear-logs').checked
+                    })
+                });
+
+                const data = await response.json();
+                if (data.task_id) {
+                    currentTaskId = data.task_id;
+                    showAlert('测试任务已启动: ' + data.task_id, 'success');
+                    document.getElementById('stop-btn').disabled = false;
+                    document.getElementById('log-section').style.display = 'block';
+                    startLogStream(data.task_id);
+                    
+                    // 保持按钮为"测试中"状态
+                    btn.innerHTML = '<span class="loading"></span> 测试中...';
+                    btn.disabled = true; // 测试运行时禁用按钮
+                    
+                    // 定期检查任务状态
+                    checkTaskStatus(data.task_id, btn, originalHTML);
+                } else {
+                    showAlert('启动失败: ' + (data.error || '未知错误'), 'error');
+                    btn.disabled = false;
+                    btn.innerHTML = originalHTML;
+                }
+            } catch (error) {
+                showAlert('启动失败: ' + error.message, 'error');
+                btn.disabled = false;
+                btn.innerHTML = originalHTML;
+            }
+        }
+
+        // 检查任务状态
+        function checkTaskStatus(taskId, btn, originalHTML) {
+            const statusInterval = setInterval(async () => {
+                try {
+                    const response = await fetch(`/api/test/status/${taskId}`);
+                    const data = await response.json();
+                    
+                    if (data.status !== 'running') {
+                        // 任务已完成或失败
+                        clearInterval(statusInterval);
+                        btn.disabled = false;
+                        btn.innerHTML = originalHTML;
+                        
+                        if (data.status === 'completed') {
+                            showAlert('测试任务已完成', 'success');
+                        } else if (data.status === 'failed') {
+                            showAlert('测试任务失败: ' + (data.error || '未知错误'), 'error');
+                        }
+                    }
+                } catch (error) {
+                    console.error('检查任务状态失败:', error);
+                }
+            }, 2000); // 每2秒检查一次
+        }
+
+        // 停止测试
+        async function stopCurrentTest() {
+            if (!currentTaskId) return;
+
+            try {
+                const response = await fetch(`/api/test/stop/${currentTaskId}`, {
+                    method: 'POST'
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    showAlert('测试任务已停止', 'info');
+                    document.getElementById('stop-btn').disabled = true;
+                    
+                    // 恢复启动按钮状态
+                    const startBtn = document.querySelector('.btn-success[onclick*="startTest"]');
+                    if (startBtn) {
+                        startBtn.disabled = false;
+                        startBtn.innerHTML = '一键启动测试';
+                    }
+                    
+                    if (logInterval) {
+                        clearInterval(logInterval);
+                    }
+                }
+            } catch (error) {
+                showAlert('停止失败: ' + error.message, 'error');
+            }
+        }
+
+        // 开始日志流
+        function startLogStream(taskId) {
+            const logContainer = document.getElementById('log-container');
+            let lastPosition = 0;
+
+            logInterval = setInterval(async () => {
+                try {
+                    const response = await fetch(`/api/test/log/${taskId}`);
+                    const text = await response.text();
+                    if (text) {
+                        logContainer.innerHTML += text;
+                        logContainer.scrollTop = logContainer.scrollHeight;
+                    }
+
+                    // 检查任务状态
+                    const statusResponse = await fetch(`/api/test/status/${taskId}`);
+                    const status = await statusResponse.json();
+                    if (status.status !== 'running') {
+                        clearInterval(logInterval);
+                        document.getElementById('stop-btn').disabled = true;
+                        if (status.status === 'completed') {
+                            showAlert('测试任务已完成', 'success');
+                        } else if (status.status === 'failed') {
+                            showAlert('测试任务失败: ' + (status.error || ''), 'error');
+                        }
+                    }
+                } catch (error) {
+                    console.error('获取日志失败:', error);
+                }
+            }, 1000);
+        }
+
+        // 加载任务列表
+        async function loadTaskList() {
+            try {
+                const response = await fetch('/api/test/list');
+                const data = await response.json();
+                renderTaskList(data.tasks);
+            } catch (error) {
+                console.error('加载任务列表失败:', error);
+            }
+        }
+
+        // 渲染任务列表
+        function renderTaskList(tasks) {
+            const container = document.getElementById('task-list');
+            if (tasks.length === 0) {
+                container.innerHTML = '<p style="color: #666; padding: 20px; text-align: center;">暂无测试任务</p>';
+                return;
+            }
+
+            container.innerHTML = tasks.map(task => `
+                <div class="task-item">
+                    <div class="task-header">
+                        <div class="task-id">任务 ID: ${task.task_id}</div>
+                        <div class="task-status status-${task.status}">${getStatusText(task.status)}</div>
+                    </div>
+                    <div class="task-info">
+                        <div>开始时间: ${new Date(task.start_time).toLocaleString('zh-CN')}</div>
+                        <div>设备数: ${task.devices ? task.devices.length : 0}</div>
+                        <div>路由器数: ${task.routers ? task.routers.length : 0}</div>
+                        <div>测试次数: ${task.test_count || 3}</div>
+                        ${task.end_time ? `<div>结束时间: ${new Date(task.end_time).toLocaleString('zh-CN')}</div>` : ''}
+                    </div>
+                    <div class="task-actions">
+                        <button class="btn btn-primary btn-small" onclick="downloadTask('${task.task_id}')">
+                            下载结果
+                        </button>
+                        ${task.status === 'running' ? `
+                            <button class="btn btn-danger btn-small" onclick="stopTask('${task.task_id}')">
+                                停止
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 获取状态文本
+        function getStatusText(status) {
+            const statusMap = {
+                'running': '运行中',
+                'completed': '已完成',
+                'failed': '失败',
+                'stopped': '已停止'
+            };
+            return statusMap[status] || status;
+        }
+
+        // 下载任务结果
+        async function downloadTask(taskId) {
+            try {
+                window.open(`/api/test/download/${taskId}`, '_blank');
+            } catch (error) {
+                showAlert('下载失败: ' + error.message, 'error');
+            }
+        }
+
+        // 停止任务
+        async function stopTask(taskId) {
+            try {
+                const response = await fetch(`/api/test/stop/${taskId}`, {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                if (data.success) {
+                    showAlert('任务已停止', 'info');
+                }
+            } catch (error) {
+                showAlert('停止失败: ' + error.message, 'error');
+            }
+        }
+
+        // 显示提示信息
+        function showAlert(message, type) {
+            const container = document.getElementById('alert-container');
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+            container.innerHTML = '';
+            container.appendChild(alert);
+            container.style.display = 'block';
+
+            setTimeout(() => {
+                container.style.display = 'none';
+            }, 5000);
+        }
+
+        // 功能测试相关变量
+        let functionalProjects = [];
+        let functionalModules = { android: [], ios: [] };
+        let autoSelectFunctionalProject = true;
+
+        // 切换功能测试平台
+        function toggleFunctionalPlatform(platform, event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            const radio = document.getElementById(`functional-platform-${platform}`);
+            radio.checked = true;
+            
+            // 更新按钮样式
+            document.querySelectorAll('.platform-btn').forEach(btn => btn.classList.remove('active'));
+            const btn = document.querySelector(`[data-platform="${platform}"]`);
+            if (btn) {
+                btn.classList.add('active');
+            }
+            
+            onPlatformChange();
+        }
+
+        // 监听平台单选按钮变化
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('input[name="functional-platform"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    // 更新按钮样式
+                    document.querySelectorAll('.platform-btn').forEach(btn => btn.classList.remove('active'));
+                    const btn = document.querySelector(`[data-platform="${this.value}"]`);
+                    if (btn) {
+                        btn.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // 更新页面标题
+        function updatePageTitle() {
+            const titleElement = document.getElementById('page-title');
+            if (selectedFunctionalProject) {
+                const project = functionalProjects.find(p => p.id === selectedFunctionalProject);
+                if (project) {
+                    titleElement.textContent = `功能测试 / ${project.name}`;
+                } else {
+                    titleElement.textContent = '功能测试';
+                }
+            } else {
+                titleElement.textContent = '功能测试';
+            }
+        }
+
+        // 项目改变
+        async function onProjectChange() {
+            const projectId = selectedFunctionalProject;
+            
+            // 更新页面标题
+            updatePageTitle();
+            
+            // 更新导航栏状态
+            renderFunctionalProjectsMenu();
+            
+            if (!projectId) {
+                document.getElementById('functional-modules-container').innerHTML = 
+                    '<p style="color: #999; grid-column: 1 / -1; padding: 20px; text-align: center;">请先选择项目和平台</p>';
+                // 清空设备下拉框
+                document.getElementById('functional-device-android').innerHTML = '<option value="">请选择设备型号</option>';
+                document.getElementById('functional-device-ios').innerHTML = '<option value="">请选择设备型号</option>';
+                return;
+            }
+            
+            // 加载设备列表
+            await loadFunctionalDevices();
+            
+            // 加载测试用例
+            await loadTestCases();
+        }
+
+        // 加载功能测试设备列表
+        async function loadFunctionalDevices() {
+            try {
+                const androidChecked = document.getElementById('platform-android-check').checked;
+                const iosChecked = document.getElementById('platform-ios-check').checked;
+
+                // 从端口设置（managedPorts）中加载设备，保持两个页面一致
+                // Android 设备
+                const androidDevices = managedPorts.filter(p => p.platform === 'android');
+                // iOS 设备
+                const iosDevices = managedPorts.filter(p => p.platform === 'ios');
+
+                if (androidChecked) {
+                    const androidSelect = document.getElementById('functional-device-android');
+                    if (androidSelect) {
+                        const currentValue = androidSelect.value;
+                        androidSelect.innerHTML = '<option value="">请选择设备型号</option>' +
+                            androidDevices.map(d => `<option value="${d.id}">${d.name} (端口 ${d.port})</option>`).join('');
+                        if (currentValue) {
+                            androidSelect.value = currentValue;
+                        }
+                    }
+                }
+
+                if (iosChecked) {
+                    const iosSelect = document.getElementById('functional-device-ios');
+                    if (iosSelect) {
+                        const currentValue = iosSelect.value;
+                        iosSelect.innerHTML = '<option value="">请选择设备型号</option>' +
+                            iosDevices.map(d => `<option value="${d.id}">${d.name} (端口 ${d.port})</option>`).join('');
+                        if (currentValue) {
+                            iosSelect.value = currentValue;
+                        }
+                    }
+                }
+
+                // 更新下面的选中设备摘要（√ + 型号）
+                updateFunctionalDeviceSummary();
+            } catch (error) {
+                console.error('加载设备列表失败:', error);
+            }
+        }
+
+        // 设备摘要展示取消，仅保留下拉勾选，保留空函数避免报错
+        function updateFunctionalDeviceSummary() {}
+
+        // 版本历史记录管理
+        function getVersionHistory(type) {
+            const key = `version_history_${type}`;
+            const history = localStorage.getItem(key);
+            return history ? JSON.parse(history) : [];
+        }
+
+        function saveVersionHistory(type, value) {
+            if (!value || value.trim() === '') return;
+            
+            const key = `version_history_${type}`;
+            let history = getVersionHistory(type);
+            
+            // 移除重复项
+            history = history.filter(v => v !== value);
+            // 添加到开头
+            history.unshift(value);
+            // 限制最多保存20条
+            history = history.slice(0, 20);
+            
+            localStorage.setItem(key, JSON.stringify(history));
+            updateVersionDatalist(type);
+        }
+
+        function updateVersionDatalist(type) {
+            const history = getVersionHistory(type);
+            const datalist = document.getElementById(`${type}-history`);
+            if (datalist) {
+                datalist.innerHTML = history.map(v => `<option value="${v}">`).join('');
+            }
+        }
+
+        // 初始化版本历史记录
+        function initVersionHistory() {
+            ['firmware', 'shell', 'plugin'].forEach(type => {
+                updateVersionDatalist(type);
+            });
+        }
+
+        // 测试用例数据
+        let testCasesData = null;
+        let selectedModule = null;
+        let allTestCases = [];
+
+        // 切换平台启用状态
+        function togglePlatformEnabled(platform) {
+            const checkbox = document.getElementById(`platform-${platform}-check`);
+            const select = document.getElementById(`functional-device-${platform}`);
+            
+            if (checkbox.checked) {
+                // 启用设备选择
+                select.disabled = false;
+                // 如果项目已选择，加载设备列表
+                if (selectedFunctionalProject) {
+                    loadFunctionalDevices();
+                }
+            } else {
+                // 禁用设备选择
+                select.disabled = true;
+                select.value = '';
+                // 清空测试用例
+                renderModuleTree();
+                renderTestCases([]);
+            }
+            
+            // 检查是否至少有一个平台被选中
+            const androidChecked = document.getElementById('platform-android-check').checked;
+            const iosChecked = document.getElementById('platform-ios-check').checked;
+            
+            // 禁用/启用测试用例选择区域
+            const testcaseContainer = document.getElementById('testcase-container');
+            if (testcaseContainer) {
+                testcaseContainer.style.opacity = (androidChecked || iosChecked) ? '1' : '0.5';
+                testcaseContainer.style.pointerEvents = (androidChecked || iosChecked) ? 'auto' : 'none';
+            }
+            
+            // 触发设备改变事件
+            onDeviceChange();
+        }
+
+        // 设备改变
+        function onDeviceChange() {
+            const androidChecked = document.getElementById('platform-android-check').checked;
+            const iosChecked = document.getElementById('platform-ios-check').checked;
+            const androidDevice = document.getElementById('functional-device-android').value;
+            const iosDevice = document.getElementById('functional-device-ios').value;
+
+            // 更新已选设备摘要（√ + 设备型号）
+            updateFunctionalDeviceSummary();
+            
+            // 确定选中的平台
+            let selectedPlatform = null;
+            if (androidChecked && androidDevice) {
+                selectedPlatform = 'android';
+            } else if (iosChecked && iosDevice) {
+                selectedPlatform = 'ios';
+            }
+            
+            // 加载测试用例
+            if (selectedPlatform && selectedFunctionalProject) {
+                loadTestCases();
+            } else {
+                renderModuleTree();
+                renderTestCases([]);
+            }
+        }
+
+        // 加载测试用例
+        async function loadTestCases() {
+            if (!selectedFunctionalProject) {
+                renderModuleTree();
+                renderTestCases([]);
+                return;
+            }
+            
+            const androidChecked = document.getElementById('platform-android-check').checked;
+            const iosChecked = document.getElementById('platform-ios-check').checked;
+            const androidDevice = document.getElementById('functional-device-android').value;
+            const iosDevice = document.getElementById('functional-device-ios').value;
+            
+            // 检查是否至少有一个平台被选中且有设备
+            if (!androidChecked && !iosChecked) {
+                renderModuleTree();
+                renderTestCases([]);
+                return;
+            }
+            
+            const selectedPlatform = (androidChecked && androidDevice) ? 'android' : ((iosChecked && iosDevice) ? 'ios' : null);
+            
+            if (!selectedPlatform) {
+                renderModuleTree();
+                renderTestCases([]);
+                return;
+            }
+            
+            try {
+                const response = await fetch(`/api/functional/testcases/${selectedFunctionalProject}`);
+                const data = await response.json();
+                if (data.error) {
+                    showFunctionalAlert('加载测试用例失败: ' + data.error, 'error');
+                    return;
+                }
+                
+                testCasesData = data;
+                allTestCases = [];
+                
+                if (selectedPlatform && data.modules) {
+                    for (const [moduleName, platforms] of Object.entries(data.modules)) {
+                        const cases = platforms[selectedPlatform] || [];
+                        allTestCases.push(...cases.map(c => ({...c, module: moduleName})));
+                    }
+                }
+                
+                renderModuleTree();
+                renderTestCases(allTestCases);
+            } catch (error) {
+                showFunctionalAlert('加载测试用例失败: ' + error.message, 'error');
+            }
+        }
+
+        // 渲染模块树
+        function renderModuleTree() {
+            const container = document.getElementById('module-tree-container');
+            
+            const androidChecked = document.getElementById('platform-android-check').checked;
+            const iosChecked = document.getElementById('platform-ios-check').checked;
+            const androidDevice = document.getElementById('functional-device-android').value;
+            const iosDevice = document.getElementById('functional-device-ios').value;
+            
+            if (!testCasesData || !testCasesData.modules) {
+                if (!androidChecked && !iosChecked) {
+                    container.innerHTML = '<div style="padding: 10px 15px; color: #999; text-align: center;">请先勾选平台</div>';
+                } else {
+                    container.innerHTML = '<div style="padding: 10px 15px; color: #999; text-align: center;">请先选择项目和设备</div>';
+                }
+                return;
+            }
+            
+            const selectedPlatform = (androidChecked && androidDevice) ? 'android' : ((iosChecked && iosDevice) ? 'ios' : null);
+            
+            if (!selectedPlatform) {
+                container.innerHTML = '<div style="padding: 10px 15px; color: #999; text-align: center;">请先选择设备</div>';
+                return;
+            }
+            
+            // 计算总数与模块/平台层级结构
+            let totalCount = 0;
+            const moduleList = [];
+            for (const [moduleName, platforms] of Object.entries(testCasesData.modules)) {
+                const androidCases = (platforms['android'] || []).length;
+                const iosCases = (platforms['ios'] || []).length;
+                const moduleCount = androidCases + iosCases;
+                totalCount += moduleCount;
+                moduleList.push({
+                    name: moduleName,
+                    total: moduleCount,
+                    android: androidCases,
+                    ios: iosCases
+                });
+            }
+            
+            // 渲染全部用例和模块->平台列表（默认收起）
+            container.innerHTML = `
+                <div class="module-tree-item ${!selectedModule ? 'active' : ''}" onclick="toggleAllCases()">
+                    <span class="arrow">▶</span>
+                    <span>全部用例</span>
+                    <span class="count">(${totalCount})</span>
+                </div>
+                <div class="module-tree-children" id="module-children" style="display: none;">
+                    ${moduleList.map(module => `
+                        <div class="module-tree-item module-parent" data-module="${module.name}" onclick="toggleModulePlatforms('${module.name}', event)">
+                            <span class="arrow">▶</span>
+                            <span>${module.name}</span>
+                            <span class="count">(${module.total})</span>
+                        </div>
+                        <div class="module-tree-children module-platforms" id="module-platforms-${module.name}" style="display: none;">
+                            <div class="module-tree-item module-platform ${selectedModule === module.name + '-android' ? 'active' : ''}" data-module="${module.name}" data-platform="android" onclick="selectModulePlatform('${module.name}','android', event)">
+                                <span>安卓</span>
+                                <span class="count">(${module.android})</span>
+                            </div>
+                            <div class="module-tree-item module-platform ${selectedModule === module.name + '-ios' ? 'active' : ''}" data-module="${module.name}" data-platform="ios" onclick="selectModulePlatform('${module.name}','ios', event)">
+                                <span>IOS</span>
+                                <span class="count">(${module.ios})</span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            // 默认选中全部用例并显示
+            if (!selectedModule) {
+                selectModule(null);
+            }
+        }
+
+        // 切换全部用例展开/收起
+        function toggleAllCases() {
+            const allItem = document.querySelector('#module-tree-container .module-tree-item');
+            const children = document.getElementById('module-children');
+            
+            if (allItem && children) {
+                allItem.classList.toggle('expanded');
+                if (allItem.classList.contains('expanded')) {
+                    children.style.display = 'block';
+                } else {
+                    children.style.display = 'none';
+                }
+            }
+            
+            // 选择全部用例
+            selectModule(null);
+        }
+
+        // 选择模块（全部用例或仅按模块名，不区分平台）
+        function selectModule(moduleName, event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            
+            selectedModule = moduleName;
+            
+            // 更新选中状态
+            document.querySelectorAll('.module-tree-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            if (moduleName === null) {
+                // 选中全部用例
+                const allItem = document.querySelector('#module-tree-container .module-tree-item');
+                if (allItem) allItem.classList.add('active');
+                renderTestCases(allTestCases);
+                document.getElementById('testcase-header').textContent = `全部用例 (${allTestCases.length})`;
+            }
+        }
+
+        // 选择具体 模块 + 平台
+        function selectModulePlatform(moduleName, platform, event) {
+            if (event) {
+                event.stopPropagation();
+            }
+
+            selectedModule = `${moduleName}-${platform}`;
+
+            // 更新选中状态
+            document.querySelectorAll('.module-tree-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            const item = document.querySelector(`.module-platform[data-module="${moduleName}"][data-platform="${platform}"]`);
+            if (item) {
+                item.classList.add('active');
+            }
+
+            if (testCasesData && testCasesData.modules[moduleName]) {
+                const cases = testCasesData.modules[moduleName][platform] || [];
+                // 确保每个用例都有 module 字段
+                const casesWithModule = cases.map(c => ({...c, module: moduleName}));
+                renderTestCases(casesWithModule);
+                document.getElementById('testcase-header').textContent = `${moduleName} / ${platform === 'android' ? '安卓' : 'IOS'} (${cases.length})`;
+            }
+        }
+
+        // 测试用例分页相关变量
+        let currentTestCases = [];
+        const testcasePageSize = 10;
+        let testcaseCurrentPage = 1;
+
+        // 渲染测试用例列表（带分页）
+        function renderTestCases(cases, resetPage = true) {
+            currentTestCases = cases || [];
+            if (resetPage) {
+                testcaseCurrentPage = 1;
+                // 切换用例列表时，清空跨页选中状态（除非是分页切换）
+                selectedTestcaseIds.clear();
+            }
+            renderPagedTestCases();
+        }
+
+        // 按当前页渲染用例表格和分页信息
+        function renderPagedTestCases() {
+            const tbody = document.getElementById('testcase-table-body');
+            const total = currentTestCases.length;
+            const totalPages = total === 0 ? 1 : Math.ceil(total / testcasePageSize);
+            if (testcaseCurrentPage > totalPages) {
+                testcaseCurrentPage = totalPages;
+            }
+
+            if (total === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="3" style="padding: 40px; text-align: center; color: #999;">
+                            暂无测试用例
+                        </td>
+                    </tr>
+                `;
+            } else {
+                const start = (testcaseCurrentPage - 1) * testcasePageSize;
+                const pageCases = currentTestCases.slice(start, start + testcasePageSize);
+                tbody.innerHTML = pageCases.map(testcase => {
+                    const isSelected = selectedTestcaseIds.has(String(testcase.id));
+                    const steps = testcase.steps || '暂无操作步骤（可在脚本中补充）';
+                    const expected = testcase.expected || '暂无期望结果（可在脚本中补充）';
+                    return `
+                    <tr onclick="toggleTestcaseDetail('${testcase.id}', event)">
+                        <td>
+                            <input type="checkbox" class="testcase-checkbox" data-id="${testcase.id}" data-module="${testcase.module || ''}" 
+                                   ${isSelected ? 'checked' : ''} onchange="onTestcaseCheckboxChange(this); event.stopPropagation();">
+                        </td>
+                        <td>${testcase.id}</td>
+                        <td>${testcase.name}</td>
+                    </tr>
+                    <tr id="testcase-detail-${testcase.id}" class="testcase-detail-row" style="display: none;">
+                        <td></td>
+                        <td colspan="2" style="padding: 12px 15px; background: #f9f9f9;">
+                            <div style="margin-bottom: 8px;"><strong>操作步骤：</strong></div>
+                            <div style="white-space: pre-wrap; font-size: 12px; color: #555; line-height: 1.6; margin-bottom: 12px;">${steps || '暂无操作步骤（可在脚本中补充）'}</div>
+                            <div style="margin-bottom: 8px;"><strong>期望结果：</strong></div>
+                            <div style="white-space: pre-wrap; font-size: 12px; color: #555; line-height: 1.6;">${expected || '暂无期望结果（可在脚本中补充）'}</div>
+                        </td>
+                    </tr>
+                `;
+                }).join('');
+            
+            // 更新全选复选框状态
+            updateSelectAllCheckboxState();
+            }
+
+            // 更新底部分页文字
+            const totalTextEl = document.getElementById('testcase-total-text');
+            const pageInput = document.getElementById('testcase-current-page-input');
+            const totalPagesEl = document.getElementById('testcase-total-pages');
+            if (totalTextEl) totalTextEl.textContent = `共 ${total} 条`;
+            if (pageInput) pageInput.value = testcaseCurrentPage;
+            if (totalPagesEl) totalPagesEl.textContent = totalPages;
+        }
+
+        // 前往指定页
+        function goTestcasePage() {
+            const input = document.getElementById('testcase-current-page-input');
+            if (!input) return;
+            let page = parseInt(input.value, 10);
+            const total = currentTestCases.length;
+            const totalPages = total === 0 ? 1 : Math.ceil(total / testcasePageSize);
+            if (isNaN(page) || page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
+            testcaseCurrentPage = page;
+            renderPagedTestCases();
+        }
+
+        // 展开/收起单条测试用例详情（步骤 + 期望结果）
+        function toggleTestcaseDetail(testcaseId, event) {
+            // 点击复选框时不触发展开/收起
+            if (event && event.target && event.target.closest('input[type="checkbox"]')) {
+                return;
+            }
+            const row = document.getElementById(`testcase-detail-${testcaseId}`);
+            if (row) {
+                row.style.display = (row.style.display === 'none' || row.style.display === '') ? 'table-row' : 'none';
+            }
+        }
+
+        // 过滤模块
+        function filterModules() {
+            const searchText = document.getElementById('module-search').value.toLowerCase();
+            const items = document.querySelectorAll('#module-tree-container .module-tree-item');
+            
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchText)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // 全选用例的选中状态（跨页跟踪）
+        let selectedTestcaseIds = new Set();
+
+        // 切换全选下拉菜单显示
+        function toggleSelectAllDropdown(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('select-all-dropdown-menu');
+            if (menu) {
+                menu.classList.toggle('show');
+            }
+        }
+
+        // 点击页面其他地方时关闭下拉菜单
+        document.addEventListener('click', function(event) {
+            const dropdown = document.querySelector('.select-all-dropdown');
+            const menu = document.getElementById('select-all-dropdown-menu');
+            if (dropdown && menu && !dropdown.contains(event.target)) {
+                menu.classList.remove('show');
+            }
+        });
+
+        // 全选当页
+        function selectAllCurrentPage() {
+            const checkboxes = document.querySelectorAll('#testcase-table-body .testcase-checkbox');
+            checkboxes.forEach(cb => {
+                cb.checked = true;
+                const testcaseId = cb.dataset.id;
+                if (testcaseId) {
+                    selectedTestcaseIds.add(testcaseId);
+                }
+            });
+            // 更新全选复选框状态
+            updateSelectAllCheckboxState();
+            // 关闭下拉菜单
+            const menu = document.getElementById('select-all-dropdown-menu');
+            if (menu) menu.classList.remove('show');
+        }
+
+        // 全选所有页
+        function selectAllPages() {
+            // 选中所有用例（包括不在当前页的）
+            currentTestCases.forEach(testcase => {
+                selectedTestcaseIds.add(String(testcase.id));
+            });
+            // 更新当前页的复选框显示
+            const checkboxes = document.querySelectorAll('#testcase-table-body .testcase-checkbox');
+            checkboxes.forEach(cb => {
+                const testcaseId = cb.dataset.id;
+                cb.checked = selectedTestcaseIds.has(testcaseId);
+            });
+            // 更新全选复选框状态
+            updateSelectAllCheckboxState();
+            // 关闭下拉菜单
+            const menu = document.getElementById('select-all-dropdown-menu');
+            if (menu) menu.classList.remove('show');
+        }
+
+        // 更新全选复选框状态
+        function updateSelectAllCheckboxState() {
+            const selectAll = document.getElementById('select-all-testcases');
+            if (!selectAll) return;
+            
+            // 检查当前页是否全部选中
+            const currentPageCheckboxes = document.querySelectorAll('#testcase-table-body .testcase-checkbox');
+            const allCurrentPageSelected = currentPageCheckboxes.length > 0 && 
+                Array.from(currentPageCheckboxes).every(cb => cb.checked);
+            
+            // 检查所有页是否全部选中
+            const allPagesSelected = currentTestCases.length > 0 && 
+                currentTestCases.every(tc => selectedTestcaseIds.has(String(tc.id)));
+            
+            // 如果所有页都选中，复选框为选中状态；如果只是当前页选中，为不确定状态
+            selectAll.checked = allPagesSelected;
+            selectAll.indeterminate = !allPagesSelected && allCurrentPageSelected;
+        }
+
+        // 单个用例复选框变化时更新状态
+        function onTestcaseCheckboxChange(checkbox) {
+            const testcaseId = checkbox.dataset.id;
+            if (checkbox.checked) {
+                selectedTestcaseIds.add(testcaseId);
+            } else {
+                selectedTestcaseIds.delete(testcaseId);
+            }
+            updateSelectAllCheckboxState();
+        }
+
+        // 排序测试用例
+        function sortTestCases(field) {
+            // TODO: 实现排序功能
+            console.log('排序字段:', field);
+        }
+
+        // 切换模块选择
+        function toggleModule(moduleId) {
+            const checkbox = document.getElementById(`module-${moduleId}`);
+            checkbox.checked = !checkbox.checked;
+            updateModuleSelection(moduleId);
+        }
+
+        // 更新模块选择状态
+        function updateModuleSelection(moduleId) {
+            const checkbox = document.getElementById(`module-${moduleId}`);
+            const item = checkbox.closest('.module-item');
+            if (checkbox.checked) {
+                item.classList.add('selected');
+            } else {
+                item.classList.remove('selected');
+            }
+        }
+
+        // 当前选中的功能测试项目
+        let selectedFunctionalProject = null;
+
+        // 加载功能测试项目列表
+        async function loadFunctionalProjects() {
+            try {
+                const response = await fetch('/api/functional/projects');
+                const data = await response.json();
+                if (data.error) {
+                    showFunctionalAlert('加载项目列表失败: ' + data.error, 'error');
+                    return;
+                }
+                functionalProjects = data.projects || [];
+                
+                // 更新下拉选择框
+                const select = document.getElementById('functional-project');
+                if (select) {
+                    select.innerHTML = '<option value="">请选择项目</option>' + 
+                        functionalProjects.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+                    // 如果之前有选中的项目，恢复选中状态
+                    if (selectedFunctionalProject) {
+                        select.value = selectedFunctionalProject;
+                    }
+                }
+                
+                // 更新导航栏项目列表
+                renderFunctionalProjectsMenu();
+                
+                // 默认选中APP(new)项目（仅在允许自动选择时）
+                if (autoSelectFunctionalProject && functionalProjects.length > 0 && !selectedFunctionalProject) {
+                    const appProject = functionalProjects.find(p => p.id === 'APP(new)');
+                    if (appProject) {
+                        selectFunctionalProject('APP(new)', null);
+                    }
+                }
+            } catch (error) {
+                showFunctionalAlert('加载项目列表失败: ' + error.message, 'error');
+            }
+        }
+
+        // 渲染功能测试导航栏项目列表
+        function renderFunctionalProjectsMenu() {
+            const menu = document.getElementById('functional-projects-menu');
+            if (!menu) return;
+            
+            if (functionalProjects.length === 0) {
+                menu.innerHTML = '<div style="padding: 10px 20px; color: rgba(255, 255, 255, 0.6); font-size: 12px;">暂无项目</div>';
+                return;
+            }
+            
+            menu.innerHTML = functionalProjects.map(project => {
+                const isActive = selectedFunctionalProject === project.id;
+                return `
+                    <div class="nav-submenu-item ${isActive ? 'active' : ''}" 
+                         onclick="selectFunctionalProject('${project.id}', event)"
+                         data-project-id="${project.id}">
+                        ${project.name}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 选择功能测试项目
+        function selectFunctionalProject(projectId, event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            
+            // 如果点击的是取消按钮
+            if (event && event.target.tagName === 'SPAN') {
+                clearFunctionalProject(event);
+                return;
+            }
+            
+            selectedFunctionalProject = projectId;
+            
+            // 更新导航栏状态
+            document.querySelectorAll('.nav-submenu-item').forEach(item => item.classList.remove('active'));
+            const clickedItem = event ? event.currentTarget : document.querySelector(`[data-project-id="${projectId}"]`);
+            if (clickedItem) {
+                clickedItem.classList.add('active');
+            }
+            
+            // 切换到功能测试页面
+            switchTab('functional', null);
+            
+            // 触发项目改变事件，加载模块和设备
+            onProjectChange();
+            
+            // 重新渲染导航栏（显示取消按钮）
+            renderFunctionalProjectsMenu();
+        }
+
+        // 清除功能测试项目选择
+        function clearFunctionalProject(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            
+            selectedFunctionalProject = null;
+            
+            // 更新页面标题
+            updatePageTitle();
+            
+            // 清除模块列表
+            document.getElementById('functional-modules-container').innerHTML = 
+                '<p style="color: #999; grid-column: 1 / -1; padding: 20px; text-align: center;">请先选择项目和设备</p>';
+            
+            // 清空设备下拉框
+            document.getElementById('functional-device-android').innerHTML = '<option value="">请选择设备型号</option>';
+            document.getElementById('functional-device-ios').innerHTML = '<option value="">请选择设备型号</option>';
+            
+            // 重新渲染导航栏
+            renderFunctionalProjectsMenu();
+        }
+
+        // 功能测试状态
+        let functionalTestStatus = 'idle'; // 'idle' | 'running'
+        let functionalTestTaskId = null;
+        let functionalTestStatusInterval = null;
+
+        // 切换功能测试状态（启动/结束）
+        async function toggleFunctionalTest(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
+            console.log('toggleFunctionalTest 被调用, 当前状态:', functionalTestStatus);
+            const btn = document.getElementById('functional-test-btn');
+            
+            if (!btn) {
+                console.error('找不到 functional-test-btn 按钮');
+                return;
+            }
+            
+            if (btn.disabled) {
+                console.log('按钮已被禁用，忽略点击');
+                return;
+            }
+            
+            if (functionalTestStatus === 'idle') {
+                // 启动测试
+                console.log('准备启动测试...');
+                await startFunctionalTest(event);
+            } else {
+                // 结束测试
+                console.log('准备结束测试...');
+                await stopFunctionalTest(event);
+            }
+        }
+
+        // 启动功能测试
+        async function startFunctionalTest(event) {
+            console.log('startFunctionalTest 开始执行');
+            const btn = document.getElementById('functional-test-btn');
+            
+            if (!btn) {
+                console.error('找不到 functional-test-btn 按钮');
+                return;
+            }
+            
+            try {
+                console.log('开始验证必填项...');
+                // 验证必填项
+                if (!selectedFunctionalProject) {
+                    showFunctionalAlert('请选择项目', 'error');
+                    return;
+                }
+                
+                const androidChecked = document.getElementById('platform-android-check').checked;
+                const iosChecked = document.getElementById('platform-ios-check').checked;
+                const androidDevice = document.getElementById('functional-device-android').value;
+                const iosDevice = document.getElementById('functional-device-ios').value;
+                
+                if (!androidChecked && !iosChecked) {
+                    showFunctionalAlert('请至少勾选一个平台', 'error');
+                    return;
+                }
+                
+                if ((androidChecked && !androidDevice) || (iosChecked && !iosDevice)) {
+                    showFunctionalAlert('请为已勾选的平台选择设备型号', 'error');
+                    return;
+                }
+                
+                // 从跨页选中状态获取所有选中的用例
+                const selectedModules = currentTestCases
+                    .filter(tc => selectedTestcaseIds.has(String(tc.id)))
+                    .map(tc => ({
+                        id: String(tc.id),
+                        module: tc.module || ''
+                    }));
+                
+                if (selectedModules.length === 0) {
+                    showFunctionalAlert('请至少选择一个模块', 'error');
+                    return;
+                }
+                
+                btn.disabled = true;
+                btn.innerHTML = '<span class="loading"></span> 启动中...';
+                
+                // 收集表单数据
+                const testConfig = {
+                    project: selectedFunctionalProject,
+                    android_device: androidDevice,
+                    ios_device: iosDevice,
+                    modules: selectedModules,
+                    firmware: document.getElementById('functional-firmware').value,
+                    shell: document.getElementById('functional-shell').value,
+                    plugin: document.getElementById('functional-plugin').value
+                };
+                
+                // 发送测试请求到后端
+                console.log('发送测试配置:', testConfig);
+                const response = await fetch('/api/functional/test/start', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(testConfig)
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({ error: `HTTP ${response.status}: ${response.statusText}` }));
+                    throw new Error(errorData.error || '启动失败');
+                }
+                
+                const data = await response.json();
+                console.log('后端响应:', data);
+                if (!data.success) {
+                    throw new Error(data.error || '启动失败');
+                }
+                
+                // 更新状态
+                functionalTestStatus = 'running';
+                functionalTestTaskId = data.task_id;
+                
+                // 更新按钮状态
+                btn.disabled = false;
+                btn.classList.remove('btn-success');
+                btn.classList.add('btn-danger');
+                btn.innerHTML = '结束测试';
+                
+                // 禁用表单输入
+                disableFunctionalForm(true);
+                
+                showFunctionalAlert('测试已启动', 'success');
+                
+                // 开始轮询测试状态（每2秒检查一次）
+                if (functionalTestStatusInterval) {
+                    clearInterval(functionalTestStatusInterval);
+                }
+                functionalTestStatusInterval = setInterval(checkFunctionalTestStatus, 2000);
+                
+            } catch (error) {
+                showFunctionalAlert('启动失败: ' + error.message, 'error');
+                btn.disabled = false;
+                btn.innerHTML = '启动测试';
+            }
+        }
+
+        // 结束功能测试
+        async function stopFunctionalTest(event) {
+            const btn = document.getElementById('functional-test-btn');
+            
+            try {
+                btn.disabled = true;
+                btn.innerHTML = '<span class="loading"></span> 停止中...';
+                
+                // 发送停止测试请求到后端
+                if (functionalTestTaskId) {
+                    const response = await fetch(`/api/functional/test/stop/${functionalTestTaskId}`, { method: 'POST' });
+                    const data = await response.json();
+                    if (!data.success) {
+                        throw new Error(data.error || '停止失败');
+                    }
+                }
+                
+                // 更新状态
+                functionalTestStatus = 'idle';
+                functionalTestTaskId = null;
+                
+                // 更新按钮状态
+                btn.disabled = false;
+                btn.classList.remove('btn-danger');
+                btn.classList.add('btn-success');
+                btn.innerHTML = '启动测试';
+                
+                // 启用表单输入
+                disableFunctionalForm(false);
+                
+                showFunctionalAlert('测试已停止', 'info');
+                
+                // 停止状态轮询
+                if (functionalTestStatusInterval) {
+                    clearInterval(functionalTestStatusInterval);
+                    functionalTestStatusInterval = null;
+                }
+                
+            } catch (error) {
+                showFunctionalAlert('停止失败: ' + error.message, 'error');
+                btn.disabled = false;
+            }
+        }
+
+        // 检查功能测试状态
+        async function checkFunctionalTestStatus() {
+            if (!functionalTestTaskId) return;
+            
+            try {
+                const response = await fetch(`/api/functional/test/status/${functionalTestTaskId}`);
+                const data = await response.json();
+                
+                if (data.status === 'completed' || data.status === 'failed' || data.status === 'stopped') {
+                    // 测试结束
+                    functionalTestStatus = 'idle';
+                    functionalTestTaskId = null;
+                    
+                    // 更新按钮状态
+                    const btn = document.getElementById('functional-test-btn');
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.classList.remove('btn-danger');
+                        btn.classList.add('btn-success');
+                        btn.innerHTML = '启动测试';
+                    }
+                    
+                    // 启用表单输入
+                    disableFunctionalForm(false);
+                    
+                    // 显示结果
+                    if (data.status === 'completed') {
+                        showFunctionalAlert('测试已完成', 'success');
+                    } else if (data.status === 'failed') {
+                        showFunctionalAlert('测试失败: ' + (data.error || '未知错误'), 'error');
+                    } else {
+                        showFunctionalAlert('测试已停止', 'info');
+                    }
+                    
+                    // 停止轮询
+                    if (functionalTestStatusInterval) {
+                        clearInterval(functionalTestStatusInterval);
+                        functionalTestStatusInterval = null;
+                    }
+                }
+            } catch (error) {
+                console.error('检查测试状态失败:', error);
+            }
+        }
+
+        // 禁用/启用功能测试表单
+        function disableFunctionalForm(disabled) {
+            const androidSelect = document.getElementById('functional-device-android');
+            const iosSelect = document.getElementById('functional-device-ios');
+            const firmwareInput = document.getElementById('functional-firmware');
+            const shellInput = document.getElementById('functional-shell');
+            const pluginInput = document.getElementById('functional-plugin');
+            const moduleCheckboxes = document.querySelectorAll('#functional-modules-container input[type="checkbox"]');
+            
+            [androidSelect, iosSelect, firmwareInput, shellInput, pluginInput].forEach(el => {
+                if (el) el.disabled = disabled;
+            });
+            
+            moduleCheckboxes.forEach(cb => {
+                cb.disabled = disabled;
+            });
+        }
+
+        // 重置功能测试表单
+        function resetFunctionalForm() {
+            // 如果测试正在运行，先停止
+            if (functionalTestStatus === 'running') {
+                if (confirm('测试正在运行，确定要重置表单吗？这将停止当前测试。')) {
+                    stopFunctionalTest(null);
+                } else {
+                    return;
+                }
+            }
+            
+            // 重置平台复选框
+            document.getElementById('platform-android-check').checked = false;
+            document.getElementById('platform-ios-check').checked = false;
+            
+            // 重置设备选择
+            document.getElementById('functional-device-android').value = '';
+            document.getElementById('functional-device-android').disabled = true;
+            document.getElementById('functional-device-ios').value = '';
+            document.getElementById('functional-device-ios').disabled = true;
+            
+            // 重置版本输入
+            document.getElementById('functional-firmware').value = '';
+            document.getElementById('functional-shell').value = '';
+            document.getElementById('functional-plugin').value = '';
+            
+            // 重置测试用例
+            selectedTestcaseIds.clear(); // 清空跨页选中状态
+            renderModuleTree();
+            renderTestCases([]);
+            
+            // 重置所有测试用例复选框
+            document.querySelectorAll('#testcase-table-body .testcase-checkbox').forEach(cb => {
+                cb.checked = false;
+            });
+            const selectAll = document.getElementById('select-all-testcases');
+            if (selectAll) {
+                selectAll.checked = false;
+                selectAll.indeterminate = false;
+            }
+        }
+
+        // 显示功能测试提示信息
+        function showFunctionalAlert(message, type) {
+            const container = document.getElementById('functional-alert-container');
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+            container.innerHTML = '';
+            container.appendChild(alert);
+            container.style.display = 'block';
+
+            setTimeout(() => {
+                container.style.display = 'none';
+            }, 5000);
+        }
+
+        // 页面加载时初始化（记住上次停留的页面）
+        window.addEventListener('DOMContentLoaded', () => {
+            // 初始化版本历史记录
+            initVersionHistory();
+
+            // 初始化其他标签页的数据（但不显示）
+            loadConfig();
+
+            // 读取上次停留的标签页，默认功能测试
+            const lastTab = localStorage.getItem('lastActiveTab') || 'functional';
+
+             // 根据上次停留的页面决定是否自动选中功能测试项目
+             autoSelectFunctionalProject = (lastTab === 'functional');
+             // 始终加载功能测试项目，用于左侧下拉显示 APP(new)
+             loadFunctionalProjects();
+
+            // 如果是测试工具页面，需要传入子菜单参数
+            if (lastTab === 'tools') {
+                const lastSubsection = localStorage.getItem('lastActiveSubsection') || 'port-settings';
+                switchTab(lastTab, null, lastSubsection);
+            } else {
+                switchTab(lastTab, null);
+            } 
+        });
+
+        // 加载任务状态
+        async function loadTaskStatus() {
+            const container = document.getElementById('task-status-container');
+            if (!container) return;
+            
+            try {
+                container.innerHTML = '<div style="text-align: center; padding: 20px; color: #999;">加载中...</div>';
+                
+                const response = await fetch('/api/tasks/list');
+                const data = await response.json();
+                
+                if (data.error) {
+                    container.innerHTML = `<div style="text-align: center; padding: 20px; color: #ef4444;">加载失败: ${data.error}</div>`;
+                    return;
+                }
+                
+                const tasks = data.tasks || [];
+                
+                if (tasks.length === 0) {
+                    container.innerHTML = '<div style="text-align: center; padding: 40px; color: #999;">暂无任务</div>';
+                    return;
+                }
+                
+                // 渲染任务列表
+                container.innerHTML = `
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                            <thead>
+                                <tr style="background-color: #f5f5f5; border-bottom: 2px solid #e5e5e5;">
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">任务ID</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">类型</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">状态</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">开始时间</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">结束时间</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">详情</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${tasks.map(task => {
+                                    const statusColors = {
+                                        'running': '#10b981',
+                                        'completed': '#3b82f6',
+                                        'failed': '#ef4444',
+                                        'stopped': '#f59e0b',
+                                        'idle': '#6b7280'
+                                    };
+                                    const statusTexts = {
+                                        'running': '运行中',
+                                        'completed': '已完成',
+                                        'failed': '失败',
+                                        'stopped': '已停止',
+                                        'idle': '空闲'
+                                    };
+                                    const statusColor = statusColors[task.status] || '#6b7280';
+                                    const statusText = statusTexts[task.status] || task.status;
+                                    
+                                    let details = '';
+                                    if (task.type === '功能测试') {
+                                        details = `项目: ${task.project_id || 'N/A'}<br>`;
+                                        if (task.android_device) details += `Android: ${task.android_device}<br>`;
+                                        if (task.ios_device) details += `iOS: ${task.ios_device}<br>`;
+                                        details += `用例数: ${task.testcase_count || 0}`;
+                                    } else {
+                                        details = `平台: ${(task.platforms || []).join(', ') || 'N/A'}<br>`;
+                                        details += `设备数: ${(task.devices || []).length || 0}`;
+                                    }
+                                    
+                                    return `
+                                        <tr style="border-bottom: 1px solid #e5e5e5;">
+                                            <td style="padding: 12px; color: #333;">${task.task_id}</td>
+                                            <td style="padding: 12px; color: #333;">${task.type}</td>
+                                            <td style="padding: 12px;">
+                                                <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; background-color: ${statusColor}20; color: ${statusColor}; font-size: 12px;">
+                                                    ${statusText}
+                                                </span>
+                                            </td>
+                                            <td style="padding: 12px; color: #666; font-size: 13px;">${task.start_time ? new Date(task.start_time).toLocaleString('zh-CN') : 'N/A'}</td>
+                                            <td style="padding: 12px; color: #666; font-size: 13px;">${task.end_time ? new Date(task.end_time).toLocaleString('zh-CN') : '-'}</td>
+                                            <td style="padding: 12px; color: #666; font-size: 12px;">${details}</td>
+                                        </tr>
+                                    `;
+                                }).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            } catch (error) {
+                container.innerHTML = `<div style="text-align: center; padding: 20px; color: #ef4444;">加载失败: ${error.message}</div>`;
+            }
+        }
+
+        // 刷新任务状态
+        function refreshTaskStatus() {
+            loadTaskStatus();
+        }
+
+        // 加载测试报告
+        async function loadTestReports() {
+            const container = document.getElementById('test-reports-container');
+            if (!container) return;
+            
+            try {
+                container.innerHTML = '<div style="text-align: center; padding: 20px; color: #999;">加载中...</div>';
+                
+                const response = await fetch('/api/functional/test/reports');
+                const data = await response.json();
+                
+                if (data.error) {
+                    container.innerHTML = `<div style="text-align: center; padding: 20px; color: #ef4444;">加载失败: ${data.error}</div>`;
+                    return;
+                }
+                
+                const reports = data.reports || [];
+                
+                if (reports.length === 0) {
+                    container.innerHTML = '<div style="text-align: center; padding: 40px; color: #999;">暂无测试报告</div>';
+                    return;
+                }
+                
+                // 渲染报告列表
+                container.innerHTML = `
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                            <thead>
+                                <tr style="background-color: #f5f5f5; border-bottom: 2px solid #e5e5e5;">
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">任务ID</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">项目</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">状态</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">设备</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">用例数</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">完成时间</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 500; color: #333;">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${reports.map(report => {
+                                    const statusColors = {
+                                        'completed': '#3b82f6',
+                                        'failed': '#ef4444'
+                                    };
+                                    const statusTexts = {
+                                        'completed': '成功',
+                                        'failed': '失败'
+                                    };
+                                    const statusColor = statusColors[report.status] || '#6b7280';
+                                    const statusText = statusTexts[report.status] || report.status;
+                                    
+                                    const devices = [];
+                                    if (report.android_device) devices.push(`Android: ${report.android_device}`);
+                                    if (report.ios_device) devices.push(`iOS: ${report.ios_device}`);
+                                    const deviceText = devices.join('<br>') || 'N/A';
+                                    
+                                    return `
+                                        <tr style="border-bottom: 1px solid #e5e5e5;">
+                                            <td style="padding: 12px; color: #333;">${report.task_id}</td>
+                                            <td style="padding: 12px; color: #333;">${report.project_id || 'N/A'}</td>
+                                            <td style="padding: 12px;">
+                                                <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; background-color: ${statusColor}20; color: ${statusColor}; font-size: 12px;">
+                                                    ${statusText}
+                                                </span>
+                                            </td>
+                                            <td style="padding: 12px; color: #666; font-size: 12px;">${deviceText}</td>
+                                            <td style="padding: 12px; color: #666;">${report.testcase_count || 0}</td>
+                                            <td style="padding: 12px; color: #666; font-size: 13px;">${report.end_time ? new Date(report.end_time).toLocaleString('zh-CN') : '-'}</td>
+                                            <td style="padding: 12px;">
+                                                <button class="btn btn-secondary btn-small" onclick="viewReportDetail('${report.task_id}')" style="white-space: nowrap;">查看详情</button>
+                                            </td>
+                                        </tr>
+                                    `;
+                                }).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            } catch (error) {
+                container.innerHTML = `<div style="text-align: center; padding: 20px; color: #ef4444;">加载失败: ${error.message}</div>`;
+            }
+        }
+
+        // 刷新测试报告
+        function refreshTestReports() {
+            loadTestReports();
+        }
+
+        // 查看报告详情
+        async function viewReportDetail(taskId) {
+            try {
+                const response = await fetch(`/api/functional/test/status/${taskId}`);
+                const data = await response.json();
+                
+                if (data.error) {
+                    alert('获取报告详情失败: ' + data.error);
+                    return;
+                }
+                
+                // 创建详情弹窗
+                const modal = document.createElement('div');
+                modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;';
+                modal.innerHTML = `
+                    <div style="background: white; border-radius: 8px; padding: 24px; max-width: 800px; max-height: 80vh; overflow-y: auto; width: 90%;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h3 style="margin: 0; font-size: 18px; color: #333;">测试报告详情 - ${taskId}</h3>
+                            <button onclick="this.closest('div[style*=\"position: fixed\"]').remove()" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">×</button>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <strong>项目:</strong> ${data.project_id || 'N/A'}<br>
+                            <strong>状态:</strong> ${data.status || 'N/A'}<br>
+                            <strong>开始时间:</strong> ${data.start_time ? new Date(data.start_time).toLocaleString('zh-CN') : 'N/A'}<br>
+                            <strong>结束时间:</strong> ${data.end_time ? new Date(data.end_time).toLocaleString('zh-CN') : '-'}<br>
+                            ${data.android_device ? `<strong>Android设备:</strong> ${data.android_device}<br>` : ''}
+                            ${data.ios_device ? `<strong>iOS设备:</strong> ${data.ios_device}<br>` : ''}
+                            <strong>测试用例数:</strong> ${(data.testcase_ids || []).length}
+                        </div>
+                        ${data.output ? `
+                            <div style="margin-top: 20px;">
+                                <strong>测试输出:</strong>
+                                <pre style="background: #f5f5f5; padding: 15px; border-radius: 4px; overflow-x: auto; font-size: 12px; max-height: 400px; overflow-y: auto;">${data.output}</pre>
+                            </div>
+                        ` : ''}
+                        ${data.error ? `
+                            <div style="margin-top: 20px; color: #ef4444;">
+                                <strong>错误信息:</strong> ${data.error}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+                document.body.appendChild(modal);
+                
+                // 点击背景关闭
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.remove();
+                    }
+                });
+            } catch (error) {
+                alert('获取报告详情失败: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>
+
