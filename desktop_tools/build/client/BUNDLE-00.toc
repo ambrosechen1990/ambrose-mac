@@ -1,0 +1,1 @@
+([('client', '/Users/ambrose/Desktop/iot/client/dist/client', 'EXECUTABLE')],)
