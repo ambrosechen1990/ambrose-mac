@@ -1,0 +1,66 @@
+2026-05-11 21:29:26,654 - INFO - 🔄 步骤0: 登出，确保从登出状态开始测试
+2026-05-11 21:29:26,655 - INFO - 开始登出流程...
+2026-05-11 21:29:57,565 - INFO - 未检测到home sel/mine sel/mine，跳过登出流程
+2026-05-11 21:29:57,566 - INFO - ✅ 步骤0: 登出，确保从登出状态开始测试 - 完成
+2026-05-11 21:29:59,576 - INFO - 🔄 步骤1: 点击Sign Up按钮进入注册页面
+2026-05-11 21:30:00,541 - INFO - ✅ 步骤1: 点击Sign Up按钮进入注册页面 - 完成
+2026-05-11 21:30:02,550 - INFO - 🔄 步骤2: 输入邮箱地址
+2026-05-11 21:30:02,554 - INFO - 📧 生成邮箱地址: 1+2-3.4%5_636@163.com
+2026-05-11 21:30:04,557 - INFO - ✅ 步骤2: 输入邮箱地址 - 完成，邮箱: 1+2-3.4%5_636@163.com
+2026-05-11 21:30:06,566 - INFO - 🔄 步骤3: 同意隐私政策
+2026-05-11 21:30:07,574 - INFO - ✅ 步骤3: 同意隐私政策 - 完成
+2026-05-11 21:30:09,584 - INFO - 🔄 步骤4: 点击Done按钮（收起键盘）
+2026-05-11 21:30:10,830 - INFO - ✅ 步骤4: 点击Done按钮（收起键盘） - 完成
+2026-05-11 21:30:12,837 - INFO - 🔄 步骤5: 点击Next按钮进入密码设置
+2026-05-11 21:30:13,538 - INFO - ✅ 步骤5: 点击Next按钮进入密码设置 - 完成
+2026-05-11 21:30:15,548 - INFO - 🔄 步骤6: 设置密码
+2026-05-11 21:30:20,610 - INFO - ✅ 步骤6: 设置密码 - 完成
+2026-05-11 21:30:22,620 - INFO - 🔄 步骤7: 点击Done按钮（收起键盘）
+2026-05-11 21:30:23,833 - INFO - ✅ 步骤7: 点击Done按钮（收起键盘） - 完成
+2026-05-11 21:30:25,841 - INFO - 🔄 步骤8: 点击Next按钮进入个人信息页面
+2026-05-11 21:30:26,848 - INFO - ✅ 步骤8: 点击Next按钮进入个人信息页面 - 完成
+2026-05-11 21:30:28,853 - INFO - 🔄 步骤9: 验证用户名输入框存在但不输入任何信息
+2026-05-11 21:30:39,521 - INFO - ❌ 步骤9: 验证用户名输入框存在但不输入任何信息失败: 无法找到用户名输入框或验证失败 - Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-11 21:30:39,522 - INFO - 
+============================================================
+2026-05-11 21:30:39,522 - INFO - ❌ 测试失败
+2026-05-11 21:30:39,522 - INFO - 📍 失败步骤: 步骤9: 验证用户名输入框存在但不输入任何信息
+2026-05-11 21:30:39,522 - INFO - 📝 失败原因: 步骤9: 验证用户名输入框存在但不输入任何信息失败: 无法找到用户名输入框或验证失败 - Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-11 21:30:39,523 - INFO - ============================================================
+2026-05-11 21:30:39,528 - INFO - Traceback (most recent call last):
+
+2026-05-11 21:30:39,529 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/2注册/102247验证不输入用户名，点击返回按钮.py", line 246, in test_102247
+    username_input = WebDriverWait(driver, 10).until(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-11 21:30:39,529 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-11 21:30:39,529 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-11 21:30:39,787 - INFO - 已保存test_102247_failed失败截图: screenshots/test_102247_failed_1778506239.png
+2026-05-11 21:30:39,817 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260511_212924/ios_20260511_212924_report.xlsx

@@ -1,0 +1,37 @@
+2026-05-08 22:25:12,381 - INFO - 🔄 步骤1: 重启APP并处理登录状态
+2026-05-08 22:25:33,643 - INFO - ✅ 步骤1: 重启APP并处理登录状态 - 完成
+2026-05-08 22:25:33,643 - INFO - 🔄 步骤2: 点击Sign In进入登录页
+2026-05-08 22:25:36,584 - INFO - ✅ 步骤2: 点击Sign In进入登录页 - 完成
+2026-05-08 22:25:36,584 - INFO - 🔄 步骤3: 点击Forgot password进入忘记密码页
+2026-05-08 22:25:39,603 - INFO - ✅ 步骤3: 点击Forgot password进入忘记密码页 - 完成
+2026-05-08 22:25:39,603 - INFO - 🔄 步骤4: 输入邮箱并点击Next进入验证码页
+2026-05-08 22:25:49,925 - INFO - ✅ 步骤4: 输入邮箱并点击Next进入验证码页 - 完成，邮箱: haoc51888@gmail.com
+2026-05-08 22:25:49,926 - INFO - 🔄 步骤5: Gmail获取最新验证码code
+2026-05-08 22:27:32,913 - INFO - ✅ 步骤5: Gmail获取最新验证码code - 完成，code: 884818
+2026-05-08 22:27:32,915 - INFO - 🔄 步骤6: 输入验证码进入Set Password页
+2026-05-08 22:27:42,254 - INFO - ✅ 步骤6: 输入验证码进入Set Password页 - 完成
+2026-05-08 22:27:42,254 - INFO - 🔄 步骤7: 输入6位密码(两次)并收起键盘
+2026-05-08 22:27:47,625 - INFO - ✅ 步骤7: 输入6位密码(两次)并收起键盘 - 完成，密码: Csx150
+2026-05-08 22:27:47,626 - INFO - 🔄 步骤8: 点击Submit/完成并断言可提交成功
+2026-05-08 22:28:11,804 - INFO - 
+============================================================
+2026-05-08 22:28:11,804 - INFO - ❌ 测试失败
+2026-05-08 22:28:11,805 - INFO - 📍 失败步骤: 步骤8: 点击Submit/完成并断言可提交成功
+2026-05-08 22:28:11,805 - INFO - 📝 失败原因: 步骤8: 点击Submit/完成并断言可提交成功失败
+2026-05-08 22:28:11,805 - INFO - ============================================================
+2026-05-08 22:28:11,807 - INFO - Traceback (most recent call last):
+
+2026-05-08 22:28:11,808 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102148验证密码等于6个字符时，“完成”按钮可点击.py", line 463, in test_102148
+    _assert_submit_enabled_and_success(
+
+2026-05-08 22:28:11,808 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102148验证密码等于6个字符时，“完成”按钮可点击.py", line 324, in _assert_submit_enabled_and_success
+    WebDriverWait(driver, timeout_s).until(lambda d: _left_set_password(d))
+
+2026-05-08 22:28:11,808 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-08 22:28:11,808 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+
+
+2026-05-08 22:28:12,101 - INFO - 已保存test_102148_failed失败截图: screenshots/test_102148_failed_1778250491.png
+2026-05-08 22:28:12,121 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260508_222510/ios_20260508_222510_report.xlsx

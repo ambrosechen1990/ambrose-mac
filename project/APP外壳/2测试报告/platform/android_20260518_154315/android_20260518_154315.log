@@ -1,0 +1,25 @@
+2026-05-18 15:43:20,551 - INFO - 🔄 步骤1: 重启APP
+2026-05-18 15:43:20,552 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-18 15:43:25,436 - INFO -     ✅ APP 已重启
+2026-05-18 15:43:25,436 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-18 15:43:25,436 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-18 15:43:25,442 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-18 15:43:25,568 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-18 15:43:26,179 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-18 15:43:26,180 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-18 15:43:26,224 - INFO -     ✅ 已处于登录/注册入口页（可见 Sign In 或 Sign Up）
+2026-05-18 15:43:26,758 - INFO -     ✅ 入口页可见 Sign In: //*[@text="Sign In" or @content-desc="Sign In"]
+2026-05-18 15:43:26,810 - INFO -     ✅ 入口页可见 Sign Up: //*[@text="Sign Up" or @content-desc="Sign Up"]
+2026-05-18 15:43:26,811 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-18 15:43:26,811 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-18 15:43:26,811 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-18 15:43:26,868 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-18 15:43:27,512 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-18 15:43:29,015 - INFO - 🔄 步骤4: 点击返回并断言入口页显示 Sign Up
+2026-05-18 15:43:29,016 - INFO -     🔄 定位返回按钮: //android.widget.ImageView[@content-desc="back"]
+2026-05-18 15:43:29,159 - INFO -     ✅ 已点击返回
+2026-05-18 15:43:31,161 - INFO -     🔄 断言 Sign Up 可见: //android.widget.TextView[@text="Sign Up"]
+2026-05-18 15:43:31,241 - INFO -     ✅ Sign Up 已显示: //android.widget.TextView[@text="Sign Up"]
+2026-05-18 15:43:31,241 - INFO - ✅ 步骤4: 点击返回并断言入口页显示 Sign Up - 完成，用例执行成功
+2026-05-18 15:43:31,241 - INFO - 🎉 测试用例 200001 执行成功！
+2026-05-18 15:43:31,267 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260518_154315/android_20260518_154315_report.xlsx

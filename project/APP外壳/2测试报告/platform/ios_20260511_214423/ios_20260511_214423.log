@@ -1,0 +1,36 @@
+2026-05-11 21:44:24,784 - INFO - 🔄 步骤1: 重启APP并处理登录状态
+2026-05-11 21:44:46,006 - INFO - ✅ 步骤1: 重启APP并处理登录状态 - 完成
+2026-05-11 21:44:46,007 - INFO - 🔄 步骤2: 点击Sign In进入登录页
+2026-05-11 21:44:49,068 - INFO - ✅ 步骤2: 点击Sign In进入登录页 - 完成
+2026-05-11 21:44:49,069 - INFO - 🔄 步骤3: 点击Forgot password进入忘记密码页
+2026-05-11 21:44:52,093 - INFO - ✅ 步骤3: 点击Forgot password进入忘记密码页 - 完成
+2026-05-11 21:44:52,094 - INFO - 🔄 步骤4: 输入邮箱并点击Next进入验证码页
+2026-05-11 21:45:04,496 - INFO - ✅ 步骤4: 输入邮箱并点击Next进入验证码页 - 完成，邮箱: haoc51888@gmail.com
+2026-05-11 21:45:04,497 - INFO - 🔄 步骤5: Gmail获取验证码code
+2026-05-11 21:47:54,284 - INFO - 
+============================================================
+2026-05-11 21:47:54,286 - INFO - ❌ 测试失败
+2026-05-11 21:47:54,286 - INFO - 📍 失败步骤: 步骤5: Gmail获取验证码code
+2026-05-11 21:47:54,286 - INFO - 📝 失败原因: 步骤5: Gmail获取验证码code失败
+2026-05-11 21:47:54,286 - INFO - ============================================================
+2026-05-11 21:47:54,292 - INFO - Traceback (most recent call last):
+
+2026-05-11 21:47:54,293 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102140验证过期验证码，会提示重填.py", line 401, in test_102140
+    code = get_gmail_verification_code(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-11 21:47:54,293 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/1共用脚本/gmail_otp_utils.py", line 636, in get_gmail_verification_code
+    return _via_app()
+           ^^^^^^^^^^
+
+2026-05-11 21:47:54,293 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/1共用脚本/gmail_otp_utils.py", line 624, in _via_app
+    return _fetch_latest_code_via_gmail_app(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-11 21:47:54,293 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/1共用脚本/gmail_otp_utils.py", line 579, in _fetch_latest_code_via_gmail_app
+    raise TimeoutError(f"Gmail App 获取验证码超时（最后错误: {last_err}）")
+
+2026-05-11 21:47:54,293 - INFO - TimeoutError: Gmail App 获取验证码超时（最后错误: 打开邮件但未提取到验证码）
+
+2026-05-11 21:47:54,735 - INFO - 已保存test_102140_failed失败截图: screenshots/test_102140_failed_1778507274.png
+2026-05-11 21:47:54,751 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260511_214423/ios_20260511_214423_report.xlsx

@@ -1,0 +1,28 @@
+2026-04-30 11:20:04,736 - INFO - 🔄 步骤1: 重启APP并处理登录状态
+2026-04-30 11:20:26,086 - INFO - ✅ 步骤1: 重启APP并处理登录状态 - 完成
+2026-04-30 11:20:26,088 - INFO - 🔄 步骤2: 点击Sign In进入登录页
+2026-04-30 11:20:29,022 - INFO - ✅ 步骤2: 点击Sign In进入登录页 - 完成
+2026-04-30 11:20:29,022 - INFO - 🔄 步骤3: 点击Forgot password进入忘记密码页
+2026-04-30 11:20:32,083 - INFO - ✅ 步骤3: 点击Forgot password进入忘记密码页 - 完成
+2026-04-30 11:20:32,084 - INFO - 🔄 步骤4: 输入邮箱
+2026-04-30 11:20:34,754 - INFO - ✅ 步骤4: 输入邮箱 - 完成，邮箱: haoc51888@gmail.com
+2026-04-30 11:20:34,754 - INFO - 🔄 步骤5: 点击Next进入验证码页并触发发码
+2026-04-30 11:20:35,632 - INFO - 
+============================================================
+2026-04-30 11:20:35,632 - INFO - ❌ 测试失败
+2026-04-30 11:20:35,632 - INFO - 📍 失败步骤: 步骤5: 点击Next进入验证码页并触发发码
+2026-04-30 11:20:35,632 - INFO - 📝 失败原因: 步骤5: 点击Next进入验证码页并触发发码失败
+2026-04-30 11:20:35,633 - INFO - ============================================================
+2026-04-30 11:20:35,641 - INFO - Traceback (most recent call last):
+
+2026-04-30 11:20:35,648 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102135验证重新发送验证码后，上次的验证码会失效，会提示重填.py", line 265, in test_102135
+    _click_with_tap_fallback(
+
+2026-04-30 11:20:35,648 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102135验证重新发送验证码后，上次的验证码会失效，会提示重填.py", line 95, in _click_with_tap_fallback
+    raise TimeoutException("未找到可点击元素")
+
+2026-04-30 11:20:35,649 - INFO - selenium.common.exceptions.TimeoutException: Message: 未找到可点击元素
+
+
+2026-04-30 11:20:35,912 - INFO - 已保存test_102135_failed失败截图: screenshots/test_102135_failed_1777519235.png
+2026-04-30 11:20:35,942 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260430_112001/ios_20260430_112001_report.xlsx

@@ -1,0 +1,78 @@
+2026-05-18 15:11:07,676 - INFO - 🔄 步骤1: 重置APP，检测登录状态并登出
+2026-05-18 15:11:07,676 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-18 15:11:12,557 - INFO -     ✅ APP已重置
+2026-05-18 15:11:12,568 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-18 15:11:12,701 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-18 15:11:13,324 - INFO -     ℹ️ 未检测到 More，跳过登出
+2026-05-18 15:11:13,325 - INFO -     🔄 等待落地页元素: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-18 15:11:13,375 - INFO -     ✅ 已出现 Sign In / Sign Up 落地页
+2026-05-18 15:11:13,375 - INFO - ✅ 步骤1: 重置APP，检测登录状态并登出 - 完成
+2026-05-18 15:11:13,375 - INFO - 🔄 步骤2: 点击登录按钮进入Sign in页面
+2026-05-18 15:11:13,375 - INFO -     🔄 定位 Sign In: //*[@text="Sign In"]
+2026-05-18 15:11:13,447 - INFO -     ✅ 找到 Sign In: //*[@text="Sign In"]
+2026-05-18 15:11:14,078 - INFO - ✅ 步骤2: 点击登录按钮进入Sign in页面 - 完成
+2026-05-18 15:11:15,582 - INFO - 🔄 步骤3: 点击用户协议按钮
+2026-05-18 15:11:15,582 - INFO -     🔄 尝试 User Agreement 可点击节点: //*[@clickable="true" and @text="User Agreement"]
+2026-05-18 15:11:20,641 - INFO -     🔄 尝试 User Agreement 可点击节点: //*[@clickable="true" and contains(@text,"User Agreement") and string-length(@text)<48]
+2026-05-18 15:11:25,700 - INFO -     🔄 尝试 User Agreement 可点击节点: //android.widget.Button[contains(@text,"User Agreement")]
+2026-05-18 15:11:30,744 - INFO -     🔄 未找到独立链接，定位免责声明 TextView: //android.widget.TextView[@text="I have read and understood the Privacy Policy and agree to the User Agreement."]
+2026-05-18 15:11:30,841 - INFO -     🔄 在免责声明上坐标点击 User Agreement: (1261, 1443), ratio=0.90
+2026-05-18 15:11:31,697 - INFO -     🔄 等待用户协议页: //*[contains(@text,"Last Modified")]
+2026-05-18 15:11:58,920 - INFO -     🔄 改用: //*[@text="Introduction" or contains(@text,"Introduction")]
+2026-05-18 15:12:26,175 - INFO - ❌ 步骤3: 点击用户协议按钮失败: 无法找到或点击User Agreement按钮 - Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-18 15:12:26,176 - INFO - 
+============================================================
+2026-05-18 15:12:26,176 - INFO - ❌ 测试失败
+2026-05-18 15:12:26,177 - INFO - 📍 失败步骤: 步骤3: 点击用户协议按钮
+2026-05-18 15:12:26,177 - INFO - 📝 失败原因: 步骤3: 点击用户协议按钮失败: 无法找到或点击User Agreement按钮 - Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-18 15:12:26,177 - INFO - ============================================================
+2026-05-18 15:12:26,181 - INFO - Traceback (most recent call last):
+
+2026-05-18 15:12:26,181 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200013验证点击用户协议中，点击返回.py", line 274, in test_200013
+    WebDriverWait(driver, 24).until(
+
+2026-05-18 15:12:26,181 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-18 15:12:26,182 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-18 15:12:26,182 - INFO - 
+During handling of the above exception, another exception occurred:
+
+
+2026-05-18 15:12:26,182 - INFO - Traceback (most recent call last):
+
+2026-05-18 15:12:26,182 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200013验证点击用户协议中，点击返回.py", line 279, in test_200013
+    WebDriverWait(driver, 24).until(
+
+2026-05-18 15:12:26,182 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-18 15:12:26,182 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-18 15:12:26,728 - INFO - 已保存test_200013_failed失败截图: screenshots/test_200013_failed_1779088346.png
+2026-05-18 15:12:26,737 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260518_151102/android_20260518_151102_report.xlsx

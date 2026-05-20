@@ -1,0 +1,28 @@
+2026-05-07 22:30:27,694 - INFO - 🔄 步骤1: 重启APP并处理登录状态
+2026-05-07 22:30:49,001 - INFO - ✅ 步骤1: 重启APP并处理登录状态 - 完成
+2026-05-07 22:30:49,001 - INFO - 🔄 步骤2: 点击Sign In进入登录页
+2026-05-07 22:30:51,952 - INFO - ✅ 步骤2: 点击Sign In进入登录页 - 完成
+2026-05-07 22:30:51,952 - INFO - 🔄 步骤3: 点击Forgot password进入忘记密码页
+2026-05-07 22:30:54,991 - INFO - ✅ 步骤3: 点击Forgot password进入忘记密码页 - 完成
+2026-05-07 22:30:54,992 - INFO - 🔄 步骤4: 输入邮箱
+2026-05-07 22:30:57,696 - INFO - ✅ 步骤4: 输入邮箱 - 完成，邮箱: haoc51888@gmail.com
+2026-05-07 22:30:57,696 - INFO - 🔄 步骤5: 点击Next进入验证码页
+2026-05-07 22:30:58,637 - INFO - 
+============================================================
+2026-05-07 22:30:58,637 - INFO - ❌ 测试失败
+2026-05-07 22:30:58,638 - INFO - 📍 失败步骤: 步骤5: 点击Next进入验证码页
+2026-05-07 22:30:58,638 - INFO - 📝 失败原因: 步骤5: 点击Next进入验证码页失败
+2026-05-07 22:30:58,638 - INFO - ============================================================
+2026-05-07 22:30:58,639 - INFO - Traceback (most recent call last):
+
+2026-05-07 22:30:58,640 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102134验证从验证码页面通过“返回键”，返回忘记密码页，填写的信息仍然存在.py", line 258, in test_102134
+    _click_with_tap_fallback(
+
+2026-05-07 22:30:58,640 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102134验证从验证码页面通过“返回键”，返回忘记密码页，填写的信息仍然存在.py", line 94, in _click_with_tap_fallback
+    raise TimeoutException("未找到可点击元素")
+
+2026-05-07 22:30:58,640 - INFO - selenium.common.exceptions.TimeoutException: Message: 未找到可点击元素
+
+
+2026-05-07 22:30:58,900 - INFO - 已保存test_102134_failed失败截图: screenshots/test_102134_failed_1778164258.png
+2026-05-07 22:30:58,920 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260507_223025/ios_20260507_223025_report.xlsx

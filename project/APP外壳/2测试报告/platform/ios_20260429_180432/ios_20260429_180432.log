@@ -1,0 +1,46 @@
+2026-04-29 18:04:34,374 - INFO - 🔄 步骤0: 登出，确保从登出状态开始测试
+2026-04-29 18:04:34,374 - INFO - 开始登出流程...
+2026-04-29 18:04:34,605 - INFO - 检测到home sel元素
+2026-04-29 18:04:46,155 - INFO - ✅ 点击mine按钮: //XCUIElementTypeButton[@name="mine"]
+2026-04-29 18:04:48,393 - INFO - ✅ 点击CommonEdit编辑按钮: //XCUIElementTypeButton[@name="CommonEdit"]
+2026-04-29 18:04:50,753 - INFO - ✅ 点击Log Out: //XCUIElementTypeButton[@name="Log Out"]
+2026-04-29 18:04:52,973 - INFO - ✅ 点击Confirm: //XCUIElementTypeButton[@name="Confirm"]
+2026-04-29 18:04:54,477 - INFO - 登出操作完成
+2026-04-29 18:04:54,823 - INFO - ✅ 成功回到登录页面
+2026-04-29 18:04:54,823 - INFO - ✅ 步骤0: 登出，确保从登出状态开始测试 - 完成
+2026-04-29 18:04:56,828 - INFO - 🔄 步骤1: 验证在APP首页（登录页面）
+2026-04-29 18:04:57,003 - INFO - ✅ 步骤1: 验证在APP首页（登录页面） - 完成，确认在APP首页（登录页面）
+2026-04-29 18:04:59,008 - INFO - 🔄 步骤2: 点击Sign Up按钮进入注册页面
+2026-04-29 18:04:59,999 - INFO - ✅ 步骤2: 点击Sign Up按钮进入注册页面 - 完成
+2026-04-29 18:05:03,002 - INFO - 🔄 步骤3: 验证进入Sign Up页面
+2026-04-29 18:05:03,279 - INFO - ✅ 步骤3: 验证进入Sign Up页面 - 完成，确认已进入Sign Up注册页面
+2026-04-29 18:05:05,282 - INFO - 🔄 步骤4: 邮箱输入错误格式
+2026-04-29 18:05:07,147 - INFO - ✅ 步骤4: 邮箱输入错误格式 - 完成，输入错误邮箱: adn只s@163.com
+2026-04-29 18:05:09,149 - INFO - 🔄 步骤5: 勾选隐私政策和用户协议
+2026-04-29 18:05:15,167 - INFO - ✅ 隐私政策复选框已勾选
+2026-04-29 18:05:16,670 - INFO - 🔄 步骤5.1: 收起键盘（Done）
+2026-04-29 18:05:18,028 - INFO - ✅ 已点击Done收起键盘
+2026-04-29 18:05:19,033 - INFO - 🔄 步骤6: 点击Next按钮
+2026-04-29 18:05:27,450 - INFO - ❌ 步骤6: 点击Next按钮失败: 无法找到或点击Next按钮 - Message: 
+
+2026-04-29 18:05:27,451 - INFO - 
+============================================================
+2026-04-29 18:05:27,451 - INFO - ❌ 测试失败
+2026-04-29 18:05:27,451 - INFO - 📍 失败步骤: 步骤6: 点击Next按钮
+2026-04-29 18:05:27,451 - INFO - 📝 失败原因: 步骤6: 点击Next按钮失败: 无法找到或点击Next按钮 - Message: 
+
+2026-04-29 18:05:27,451 - INFO - ============================================================
+2026-04-29 18:05:27,456 - INFO - Traceback (most recent call last):
+
+2026-04-29 18:05:27,457 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/2注册/102672 验证输入邮箱格式不正确.py", line 218, in test_102672
+    next_btn = WebDriverWait(driver, 8).until(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-04-29 18:05:27,457 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-04-29 18:05:27,457 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+
+
+2026-04-29 18:05:27,754 - INFO - 已保存test_102672_failed失败截图: screenshots/test_102672_failed_1777457127.png
+2026-04-29 18:05:27,782 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260429_180432/ios_20260429_180432_report.xlsx

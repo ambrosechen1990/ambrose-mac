@@ -1,0 +1,84 @@
+2026-05-08 10:39:02,807 - INFO - 🔄 步骤0: 登出，确保从登出状态开始测试
+2026-05-08 10:39:02,808 - INFO - 开始登出流程...
+2026-05-08 10:39:02,990 - INFO - 检测到home sel元素
+2026-05-08 10:39:14,343 - INFO - ✅ 点击mine按钮: //XCUIElementTypeButton[@name="mine"]
+2026-05-08 10:39:16,527 - INFO - ✅ 点击CommonEdit编辑按钮: //XCUIElementTypeButton[@name="CommonEdit"]
+2026-05-08 10:39:18,723 - INFO - ✅ 点击Log Out: //XCUIElementTypeButton[@name="Log Out"]
+2026-05-08 10:39:20,923 - INFO - ✅ 点击Confirm: //XCUIElementTypeButton[@name="Confirm"]
+2026-05-08 10:39:22,427 - INFO - 登出操作完成
+2026-05-08 10:39:22,757 - INFO - ✅ 成功回到登录页面
+2026-05-08 10:39:22,757 - INFO - ✅ 步骤0: 登出，确保从登出状态开始测试 - 完成
+2026-05-08 10:39:24,760 - INFO - 🔄 步骤1: 验证在APP首页（登录页面）
+2026-05-08 10:39:24,919 - INFO - ✅ 步骤1: 验证在APP首页（登录页面） - 完成，确认在APP首页（登录页面）
+2026-05-08 10:39:26,921 - INFO - 🔄 步骤2: 点击Sign Up按钮进入注册页面
+2026-05-08 10:39:27,892 - INFO - ✅ 步骤2: 点击Sign Up按钮进入注册页面 - 完成
+2026-05-08 10:39:30,894 - INFO - 🔄 步骤3: 验证进入Sign Up页面
+2026-05-08 10:39:31,131 - INFO - ✅ 步骤3: 验证进入Sign Up页面 - 完成，确认已进入Sign Up注册页面
+2026-05-08 10:39:33,134 - INFO - 🔄 步骤4: 国家切为china
+2026-05-08 10:39:34,229 - INFO - ✅ 已点击国家栏下拉按钮
+2026-05-08 10:40:46,509 - INFO - ✅ 已输入搜索关键词: China
+2026-05-08 10:40:49,882 - INFO - ✅ 已选择国家: china，命中的元素: China
+2026-05-08 10:40:52,887 - INFO - ✅ 步骤4: 国家切为china - 完成，已切换国家为china
+2026-05-08 10:40:54,891 - INFO - 🔄 步骤5: 输入正确邮箱（调用共用脚本生成）
+2026-05-08 10:40:54,895 - INFO - 📧 生成简单邮箱地址: testuser132@163.com
+2026-05-08 10:40:56,778 - INFO - ✅ 步骤5: 输入正确邮箱（调用共用脚本生成） - 完成，邮箱: testuser132@163.com
+2026-05-08 10:40:58,780 - INFO - 🔄 步骤6: 点击Done按钮收起键盘
+2026-05-08 10:41:00,056 - INFO - ✅ 步骤6: 点击Done按钮收起键盘 - 完成
+2026-05-08 10:41:02,061 - INFO - 🔄 步骤7: 勾选隐私政策和用户协议
+2026-05-08 10:41:07,815 - INFO - ✅ 隐私政策复选框已勾选
+2026-05-08 10:41:08,821 - INFO - ✅ 步骤7: 勾选隐私政策和用户协议 - 完成
+2026-05-08 10:41:10,823 - INFO - 🔄 步骤8: 点击Next按钮进入密码设置
+2026-05-08 10:41:11,546 - INFO - ✅ 步骤8: 点击Next按钮进入密码设置 - 完成
+2026-05-08 10:41:14,550 - INFO - 🔄 步骤9: 设置密码
+2026-05-08 10:41:19,602 - INFO - ✅ 步骤9: 设置密码 - 完成
+2026-05-08 10:41:21,605 - INFO - 🔄 步骤10: 点击Done按钮收起键盘
+2026-05-08 10:41:22,827 - INFO - ✅ 步骤10: 点击Done按钮收起键盘 - 完成
+2026-05-08 10:41:24,831 - INFO - 🔄 步骤11: 点击Next按钮进入个人信息页面
+2026-05-08 10:41:25,790 - INFO - ✅ 步骤11: 点击Next按钮进入个人信息页面 - 完成
+2026-05-08 10:41:28,795 - INFO - 🔄 步骤12: 点击Submit按钮完成注册
+2026-05-08 10:41:39,808 - INFO - ✅ 步骤12: 点击Submit按钮完成注册 - 完成
+2026-05-08 10:41:44,811 - INFO - 🔄 步骤13: 验证注册成功，跳转到APP主页面
+2026-05-08 10:42:01,078 - INFO - ❌ 步骤13: 验证注册成功，跳转到APP主页面失败: 未成功跳转到主页面，注册可能失败 - Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-08 10:42:01,079 - INFO - 
+============================================================
+2026-05-08 10:42:01,079 - INFO - ❌ 测试失败
+2026-05-08 10:42:01,079 - INFO - 📍 失败步骤: 步骤13: 验证注册成功，跳转到APP主页面
+2026-05-08 10:42:01,079 - INFO - 📝 失败原因: 步骤13: 验证注册成功，跳转到APP主页面失败: 未成功跳转到主页面，注册可能失败 - Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-08 10:42:01,079 - INFO - ============================================================
+2026-05-08 10:42:01,083 - INFO - Traceback (most recent call last):
+
+2026-05-08 10:42:01,084 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/2注册/102195 验证注册地为"中国"，正确邮箱，可以注册.py", line 387, in test_102195
+    home_btn = WebDriverWait(driver, 15).until(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-08 10:42:01,084 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-08 10:42:01,085 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-08 10:42:01,386 - INFO - 已保存test_102195_failed失败截图: screenshots/test_102195_failed_1778208121.png
+2026-05-08 10:42:01,408 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260508_103901/ios_20260508_103901_report.xlsx

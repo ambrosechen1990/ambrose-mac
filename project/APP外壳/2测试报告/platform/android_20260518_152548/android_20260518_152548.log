@@ -1,0 +1,38 @@
+2026-05-18 15:25:53,994 - INFO - 🔄 步骤1: 重置APP，检测登录状态并登出
+2026-05-18 15:25:53,994 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-18 15:25:58,870 - INFO -     ✅ APP已重置
+2026-05-18 15:25:58,884 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-18 15:25:59,009 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-18 15:26:00,088 - INFO -     ℹ️ 未检测到 More，跳过登出
+2026-05-18 15:26:00,089 - INFO -     🔄 等待落地页元素: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-18 15:26:00,135 - INFO -     ✅ 已出现 Sign In / Sign Up 落地页
+2026-05-18 15:26:00,135 - INFO - ✅ 步骤1: 重置APP，检测登录状态并登出 - 完成
+2026-05-18 15:26:00,136 - INFO - 🔄 步骤2: 点击登录按钮进入Sign in页面
+2026-05-18 15:26:00,136 - INFO -     🔄 定位 Sign In: //*[@text="Sign In"]
+2026-05-18 15:26:00,206 - INFO -     ✅ 找到 Sign In: //*[@text="Sign In"]
+2026-05-18 15:26:00,850 - INFO - ✅ 步骤2: 点击登录按钮进入Sign in页面 - 完成
+2026-05-18 15:26:02,356 - INFO - 🔄 步骤3: 点击用户协议按钮
+2026-05-18 15:26:02,356 - INFO -     🔄 点击 User Agreement 链接（与 200012 点击 Privacy Policy 相同策略）
+2026-05-18 15:26:02,356 - INFO -     ℹ️ 实现：tap_user_agreement_on_sign_in_disclaimer → wait_until_user_agreement_navigation_opened
+2026-05-18 15:27:07,818 - INFO - ❌ 步骤3: 点击用户协议按钮失败: 无法找到或点击User Agreement按钮 - Message: 多次点击仍未进入用户协议页。请尝试环境变量 ANDROID_USER_AGREEMENT_LINK_X_RATIO（约 0.15~0.35 表示第二行左，0.88~0.97 表示行末右），或确认免责声明是否换行、文案是否与 DISCLAIMER_TEXT 一致。
+
+2026-05-18 15:27:07,819 - INFO - 
+============================================================
+2026-05-18 15:27:07,819 - INFO - ❌ 测试失败
+2026-05-18 15:27:07,819 - INFO - 📍 失败步骤: 步骤3: 点击用户协议按钮
+2026-05-18 15:27:07,819 - INFO - 📝 失败原因: 步骤3: 点击用户协议按钮失败: 无法找到或点击User Agreement按钮 - Message: 多次点击仍未进入用户协议页。请尝试环境变量 ANDROID_USER_AGREEMENT_LINK_X_RATIO（约 0.15~0.35 表示第二行左，0.88~0.97 表示行末右），或确认免责声明是否换行、文案是否与 DISCLAIMER_TEXT 一致。
+
+2026-05-18 15:27:07,820 - INFO - ============================================================
+2026-05-18 15:27:07,824 - INFO - Traceback (most recent call last):
+
+2026-05-18 15:27:07,824 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200013验证点击用户协议中，点击返回.py", line 219, in test_200013
+    tap_user_agreement_on_sign_in_disclaimer(driver, timeout_s=18)
+
+2026-05-18 15:27:07,824 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/android_privacy_policy_link.py", line 534, in tap_user_agreement_on_sign_in_disclaimer
+    raise TimeoutException(
+
+2026-05-18 15:27:07,825 - INFO - selenium.common.exceptions.TimeoutException: Message: 多次点击仍未进入用户协议页。请尝试环境变量 ANDROID_USER_AGREEMENT_LINK_X_RATIO（约 0.15~0.35 表示第二行左，0.88~0.97 表示行末右），或确认免责声明是否换行、文案是否与 DISCLAIMER_TEXT 一致。
+
+
+2026-05-18 15:27:08,406 - INFO - 已保存test_200013_failed失败截图: screenshots/test_200013_failed_1779089227.png
+2026-05-18 15:27:08,431 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260518_152548/android_20260518_152548_report.xlsx

@@ -1,0 +1,49 @@
+2026-05-19 11:03:04,495 - INFO - 🔄 步骤1: 重启APP
+2026-05-19 11:03:04,496 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-19 11:03:09,409 - INFO -     ✅ APP 已重启
+2026-05-19 11:03:09,409 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-19 11:03:09,410 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-19 11:03:09,417 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-19 11:03:09,546 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-19 11:03:10,166 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-19 11:03:10,166 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-19 11:03:10,209 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-19 11:03:10,210 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-19 11:03:10,210 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-19 11:03:10,210 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-19 11:03:10,271 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-19 11:03:10,913 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-19 11:03:12,415 - INFO - 🔄 步骤4: 输入密码
+2026-05-19 11:03:12,416 - INFO -     🔄 密码已填入（长度 9）
+2026-05-19 11:03:13,280 - INFO -     🔄 定位: //android.widget.ScrollView/android.widget.EditText[2]
+2026-05-19 11:03:13,664 - INFO - ✅ 步骤4: 输入密码 - 完成
+2026-05-19 11:03:13,665 - INFO - 🔄 步骤5: 点击密码可见性按钮
+2026-05-19 11:03:13,665 - INFO -     🔄 定位: //android.widget.ImageView[@content-desc="lock"]
+2026-05-19 11:03:14,382 - INFO - ❌ 步骤5: 点击密码可见性按钮失败: 密码仍为密文: 'true'
+assert 'true' in ('false', 'none', '')
+ +  where 'true' = <built-in method lower of str object at 0x105ff7330>()
+ +    where <built-in method lower of str object at 0x105ff7330> = 'true'.lower
+ +      where 'true' = str('true')
+2026-05-19 11:03:14,382 - INFO - 
+============================================================
+2026-05-19 11:03:14,382 - INFO - ❌ 测试失败
+2026-05-19 11:03:14,382 - INFO - 📍 失败步骤: 步骤5: 点击密码可见性按钮
+2026-05-19 11:03:14,382 - INFO - 📝 失败原因: 步骤5: 点击密码可见性按钮失败: 密码仍为密文: 'true'
+assert 'true' in ('false', 'none', '')
+ +  where 'true' = <built-in method lower of str object at 0x105ff7330>()
+ +    where <built-in method lower of str object at 0x105ff7330> = 'true'.lower
+ +      where 'true' = str('true')
+2026-05-19 11:03:14,383 - INFO - ============================================================
+2026-05-19 11:03:14,385 - INFO - Traceback (most recent call last):
+
+2026-05-19 11:03:14,386 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200018验证登录时，密码可以明文.py", line 254, in test_200018
+    assert str(masked).lower() in ("false", "none", ""), f"密码仍为密文: {masked!r}"
+
+2026-05-19 11:03:14,386 - INFO - AssertionError: 密码仍为密文: 'true'
+assert 'true' in ('false', 'none', '')
+ +  where 'true' = <built-in method lower of str object at 0x105ff7330>()
+ +    where <built-in method lower of str object at 0x105ff7330> = 'true'.lower
+ +      where 'true' = str('true')
+
+2026-05-19 11:03:14,868 - INFO - 已保存test_200018_failed失败截图: screenshots/test_200018_failed_1779159794.png
+2026-05-19 11:03:14,888 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260519_110301/android_20260519_110301_report.xlsx

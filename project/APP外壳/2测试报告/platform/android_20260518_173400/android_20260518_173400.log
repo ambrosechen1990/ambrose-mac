@@ -1,0 +1,24 @@
+2026-05-18 17:34:03,656 - INFO - 🔄 步骤1: 重启APP
+2026-05-18 17:34:03,657 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-18 17:34:08,546 - INFO -     ✅ APP 已重启
+2026-05-18 17:34:08,547 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-18 17:34:08,547 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-18 17:34:08,554 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-18 17:34:08,681 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-18 17:34:09,295 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-18 17:34:09,295 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-18 17:34:09,335 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-18 17:34:09,335 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-18 17:34:09,335 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-18 17:34:09,335 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-18 17:34:09,405 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-18 17:34:10,042 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-18 17:34:11,547 - INFO - 🔄 步骤4: 点击 Next 登录
+2026-05-18 17:34:11,547 - INFO -     🔄 定位: //android.widget.ImageView[@content-desc="next"]
+2026-05-18 17:34:12,889 - INFO - ✅ 步骤4: 点击 Next 登录 - 完成
+2026-05-18 17:34:12,889 - INFO - 🔄 步骤5: 断言提示文案
+2026-05-18 17:34:12,890 - INFO -     🔄 期望文案: Please enter a valid email address.
+2026-05-18 17:34:12,964 - INFO -     ✅ 已显示提示
+2026-05-18 17:34:12,964 - INFO - ✅ 步骤5: 断言提示文案 - 完成
+2026-05-18 17:34:12,964 - INFO - 🎉 测试用例 200009 执行成功！
+2026-05-18 17:34:12,994 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260518_173400/android_20260518_173400_report.xlsx

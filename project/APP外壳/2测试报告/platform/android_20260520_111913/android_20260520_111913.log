@@ -1,0 +1,46 @@
+2026-05-20 11:19:16,423 - INFO - 🔄 步骤1: 重启APP
+2026-05-20 11:19:16,424 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-20 11:19:21,405 - INFO -     ✅ APP 已重启
+2026-05-20 11:19:21,406 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-20 11:19:21,406 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-20 11:19:21,412 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-20 11:19:21,539 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-20 11:19:22,153 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-20 11:19:22,153 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-20 11:19:22,193 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-20 11:19:22,193 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-20 11:19:22,193 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-20 11:19:22,193 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-20 11:19:22,251 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-20 11:19:22,891 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-20 11:19:24,392 - INFO - 🔄 步骤4: 关闭手机网络（wifi+data）
+2026-05-20 11:19:24,397 - INFO -     ⚠️ mobile:shell 禁用，改用 adb: svc wifi disable
+2026-05-20 11:19:24,465 - INFO -     ⚠️ mobile:shell 禁用，改用 adb: svc data disable
+2026-05-20 11:19:26,003 - INFO - ✅ 步骤4: 关闭手机网络（wifi+data） - 完成
+2026-05-20 11:19:26,003 - INFO - 🔄 步骤5: 输入邮箱
+2026-05-20 11:19:26,004 - INFO -     🔄 邮箱: haoc51888@gmail.com
+2026-05-20 11:19:26,867 - INFO -     ✅ 聚焦: //android.widget.ScrollView/android.widget.EditText[1]/android.view.View[2]
+2026-05-20 11:19:26,869 - INFO -     🔄 定位: //android.widget.ScrollView/android.widget.EditText[1]
+2026-05-20 11:19:27,246 - INFO - ✅ 步骤5: 输入邮箱 - 完成
+2026-05-20 11:19:27,246 - INFO - 🔄 步骤6: 输入密码
+2026-05-20 11:19:27,246 - INFO -     🔄 密码已填入（长度 9）
+2026-05-20 11:19:27,971 - INFO -     🔄 定位: //android.widget.ScrollView/android.widget.EditText[2]
+2026-05-20 11:19:28,364 - INFO - ✅ 步骤6: 输入密码 - 完成
+2026-05-20 11:19:28,365 - INFO - 🔄 步骤7: 收起输入键盘
+2026-05-20 11:19:29,767 - INFO -     ✅ hide_keyboard 成功
+2026-05-20 11:19:30,170 - INFO - ✅ 步骤7: 收起输入键盘 - 完成
+2026-05-20 11:19:30,170 - INFO - 🔄 步骤8: 勾选用户协议与隐私政策
+2026-05-20 11:19:30,170 - INFO -     🔄 定位: //android.widget.ImageView[@content-desc="checkbox"]
+2026-05-20 11:19:31,056 - INFO - ✅ 步骤8: 勾选用户协议与隐私政策 - 完成
+2026-05-20 11:19:31,057 - INFO - 🔄 步骤9: 点击 Next 登录
+2026-05-20 11:19:31,057 - INFO -     🔄 定位: //android.widget.ImageView[@content-desc="next"]
+2026-05-20 11:19:32,414 - INFO - ✅ 步骤9: 点击 Next 登录 - 完成
+2026-05-20 11:19:32,414 - INFO - 🔄 步骤10: 断言提示文案
+2026-05-20 11:19:32,414 - INFO -     🔄 期望文案: Network connection error, please check
+2026-05-20 11:19:32,493 - INFO -     ✅ 已显示提示
+2026-05-20 11:19:32,493 - INFO - ✅ 步骤10: 断言提示文案 - 完成
+2026-05-20 11:19:32,493 - INFO - 🎉 测试用例 200020 执行成功！
+2026-05-20 11:19:32,493 - INFO -     🔄 finally: 恢复网络
+2026-05-20 11:19:32,499 - INFO -     ⚠️ mobile:shell 禁用，改用 adb: svc wifi enable
+2026-05-20 11:19:32,572 - INFO -     ⚠️ mobile:shell 禁用，改用 adb: svc data enable
+2026-05-20 11:19:34,160 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260520_111913/android_20260520_111913_report.xlsx

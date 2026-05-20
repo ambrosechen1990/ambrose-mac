@@ -1,0 +1,25 @@
+2026-05-19 11:00:32,510 - INFO - 🔄 步骤1: 重启APP
+2026-05-19 11:00:32,510 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-19 11:00:37,401 - INFO -     ✅ APP 已重启
+2026-05-19 11:00:37,402 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-19 11:00:37,402 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-19 11:00:37,409 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-19 11:00:37,540 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-19 11:00:38,155 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-19 11:00:38,155 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-19 11:00:38,195 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-19 11:00:38,195 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-19 11:00:38,195 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-19 11:00:38,195 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-19 11:00:38,250 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-19 11:00:38,891 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-19 11:00:40,393 - INFO - 🔄 步骤4: 点击 Privacy Policy 链接
+2026-05-19 11:00:40,393 - INFO -     🔄 _tap_privacy_policy_on_sign_in_disclaimer
+2026-05-19 11:00:47,375 - INFO - ✅ 步骤4: 点击 Privacy Policy 链接 - 完成
+2026-05-19 11:00:47,376 - INFO - 🔄 步骤5: 隐私政策页点击返回
+2026-05-19 11:00:49,471 - INFO - ✅ 步骤5: 隐私政策页点击返回 - 完成
+2026-05-19 11:00:49,471 - INFO - 🔄 步骤6: 断言回到 Sign In 页并显示协议整句
+2026-05-19 11:00:49,471 - INFO -     🔄 定位: //android.widget.TextView[@text="I have read and understood the Privacy Policy and agree to the User Agreement."] | //android.widget.TextView[contains(@text,"Privacy Policy") and contains(@text,"User Agreement") and string-length(@text) < 220]
+2026-05-19 11:00:49,535 - INFO - ✅ 步骤6: 断言回到 Sign In 页并显示协议整句 - 完成
+2026-05-19 11:00:49,536 - INFO - 🎉 测试用例 200011 执行成功！
+2026-05-19 11:00:49,563 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260519_110029/android_20260519_110029_report.xlsx

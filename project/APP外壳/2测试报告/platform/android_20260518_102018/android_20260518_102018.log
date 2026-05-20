@@ -1,0 +1,22 @@
+2026-05-18 10:20:56,306 - INFO - Traceback (most recent call last):
+
+2026-05-18 10:20:56,307 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200003验证正确密码，邮箱未注册，无法登录.py", line 215, in test_200003
+    _click_sign_in(driver)
+
+2026-05-18 10:20:56,308 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200003验证正确密码，邮箱未注册，无法登录.py", line 106, in _click_sign_in
+    WebDriverWait(driver, 18).until(EC.element_to_be_clickable((AppiumBy.XPATH, '//*[@text="Sign In"]'))).click()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-18 10:20:56,308 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-18 10:20:56,308 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-18 10:20:56,999 - INFO - 已保存test_200003_failed失败截图: screenshots/test_200003_failed_1779070856.png
+2026-05-18 10:20:57,029 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260518_102018/android_20260518_102018_report.xlsx

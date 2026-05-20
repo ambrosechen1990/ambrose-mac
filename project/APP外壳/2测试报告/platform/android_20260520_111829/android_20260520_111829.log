@@ -1,0 +1,25 @@
+2026-05-20 11:18:32,425 - INFO - 🔄 步骤1: 重启APP
+2026-05-20 11:18:32,425 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-20 11:18:37,336 - INFO -     ✅ APP 已重启
+2026-05-20 11:18:37,336 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-20 11:18:37,337 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-20 11:18:37,342 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-20 11:18:37,461 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-20 11:18:38,075 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-20 11:18:38,075 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-20 11:18:38,126 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-20 11:18:38,127 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-20 11:18:38,127 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-20 11:18:38,127 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-20 11:18:38,165 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-20 11:18:38,801 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-20 11:18:40,304 - INFO - 🔄 步骤4: 输入邮箱
+2026-05-20 11:18:40,304 - INFO -     🔄 邮箱: haoc51888@gmail.com
+2026-05-20 11:18:40,402 - INFO -     ✅ 聚焦: //android.widget.ScrollView/android.widget.EditText[1]/android.view.View[2]
+2026-05-20 11:18:40,403 - INFO -     🔄 定位: //android.widget.ScrollView/android.widget.EditText[1]
+2026-05-20 11:18:41,573 - INFO - ✅ 步骤4: 输入邮箱 - 完成
+2026-05-20 11:18:41,574 - INFO - 🔄 步骤5: 点击邮箱清空按钮
+2026-05-20 11:18:41,574 - INFO -     🔄 定位: (//android.widget.ImageView[@content-desc="clear"])[1]
+2026-05-20 11:18:42,913 - INFO - ✅ 步骤5: 点击邮箱清空按钮 - 完成
+2026-05-20 11:18:42,914 - INFO - 🎉 测试用例 200017 执行成功！
+2026-05-20 11:18:42,946 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260520_111829/android_20260520_111829_report.xlsx

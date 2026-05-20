@@ -1,0 +1,24 @@
+2026-05-19 11:01:12,834 - INFO - 🔄 步骤1: 重启APP
+2026-05-19 11:01:12,834 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-19 11:01:17,768 - INFO -     ✅ APP 已重启
+2026-05-19 11:01:17,768 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-19 11:01:17,768 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-19 11:01:17,777 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-19 11:01:18,772 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-19 11:01:19,396 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-19 11:01:19,396 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-19 11:01:19,447 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-19 11:01:19,447 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-19 11:01:19,447 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-19 11:01:19,447 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-19 11:01:19,504 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-19 11:01:20,142 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-19 11:01:21,647 - INFO - 🔄 步骤4: 点击 User Agreement（免责声明内超链接，非整句 TextView）
+2026-05-19 11:01:21,648 - INFO -     🔄 _tap_user_agreement_on_sign_in_disclaimer（换行时优先点第二行左侧 User Agreement）
+2026-05-19 11:01:30,281 - INFO - ✅ 步骤4: 点击 User Agreement（免责声明内超链接，非整句 TextView） - 完成
+2026-05-19 11:01:30,281 - INFO - 🔄 步骤5: 点击返回
+2026-05-19 11:01:32,449 - INFO - ✅ 步骤5: 点击返回 - 完成
+2026-05-19 11:01:32,449 - INFO - 🔄 步骤6: 断言免责声明整句
+2026-05-19 11:01:32,520 - INFO - ✅ 步骤6: 断言免责声明整句 - 完成
+2026-05-19 11:01:32,520 - INFO - 🎉 测试用例 200013 执行成功！
+2026-05-19 11:01:32,528 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260519_110109/android_20260519_110109_report.xlsx

@@ -1,0 +1,50 @@
+2026-05-20 10:07:21,255 - INFO - 🔄 步骤1: 重启APP
+2026-05-20 10:07:26,141 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-20 10:07:26,142 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-20 10:07:26,942 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-20 10:07:26,943 - INFO - 🔄 步骤3: 点击 Sign Up 进入注册页
+2026-05-20 10:07:29,194 - INFO - ✅ 步骤3: 点击 Sign Up 进入注册页 - 完成
+2026-05-20 10:07:29,196 - INFO -     📧 已注册邮箱: haoc51888@gmail.com
+2026-05-20 10:07:29,196 - INFO - 🔄 步骤4: 输入已注册邮箱
+2026-05-20 10:08:03,457 - INFO - ✅ 步骤4: 输入已注册邮箱 - 完成
+2026-05-20 10:08:03,458 - INFO - 🔄 步骤5: 勾选隐私政策
+2026-05-20 10:08:04,248 - INFO - ✅ 步骤5: 勾选隐私政策 - 完成
+2026-05-20 10:08:04,249 - INFO - 🔄 步骤6: 点击 Next
+2026-05-20 10:08:07,446 - INFO - ✅ 步骤6: 点击 Next - 完成
+2026-05-20 10:08:07,447 - INFO - 🔄 步骤7: 断言弹出已注册提示
+2026-05-20 10:08:08,253 - INFO -     ✅ 弹框提示: This email is already registered. Ready to sign in now?
+2026-05-20 10:08:08,253 - INFO - ✅ 步骤7: 断言弹出已注册提示 - 完成
+2026-05-20 10:08:08,253 - INFO - 🔄 步骤8: 点击 Cancel
+2026-05-20 10:08:20,027 - INFO - ✅ 步骤8: 点击 Cancel - 完成
+2026-05-20 10:08:20,030 - INFO - 🔄 步骤9: 断言仍停留在注册页
+2026-05-20 10:08:30,729 - INFO - 
+============================================================
+2026-05-20 10:08:30,730 - INFO - ❌ 测试失败
+2026-05-20 10:08:30,730 - INFO - 📍 失败步骤: 步骤9: 断言仍停留在注册页
+2026-05-20 10:08:30,730 - INFO - 📝 失败原因: 步骤9: 断言仍停留在注册页失败: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-20 10:08:30,730 - INFO - ============================================================
+2026-05-20 10:08:30,733 - INFO - Traceback (most recent call last):
+
+2026-05-20 10:08:30,733 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/200061 验证注册过的邮箱再次注册，提示当前账号已注册，取消立刻登录.py", line 342, in test_200061
+    email_el = WebDriverWait(driver, 8).until(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-20 10:08:30,734 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-20 10:08:30,734 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-20 10:08:31,260 - INFO - 已保存test_200061_failed失败截图: screenshots/test_200061_failed_1779242910.png
+2026-05-20 10:08:31,287 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260520_100717/android_20260520_100717_report.xlsx

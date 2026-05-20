@@ -1,0 +1,27 @@
+2026-05-08 22:48:08,497 - INFO - 🔄 步骤1: 进入Set Password页
+2026-05-08 22:50:37,907 - INFO - ✅ 步骤1: 进入Set Password页 - 完成
+2026-05-08 22:50:37,908 - INFO - 🔄 步骤2: 输入密码(两次)并收起键盘
+2026-05-08 22:50:43,264 - INFO - ✅ 步骤2: 输入密码(两次)并收起键盘 - 完成，password: XINGmai12?
+2026-05-08 22:50:43,265 - INFO - 🔄 步骤4: 校验Submit/完成按钮行为
+2026-05-08 22:51:07,515 - INFO - 
+============================================================
+2026-05-08 22:51:07,515 - INFO - ❌ 测试失败
+2026-05-08 22:51:07,516 - INFO - 📍 失败步骤: 步骤4: 校验Submit/完成按钮行为
+2026-05-08 22:51:07,516 - INFO - 📝 失败原因: 步骤4: 校验Submit/完成按钮行为失败
+2026-05-08 22:51:07,516 - INFO - ============================================================
+2026-05-08 22:51:07,519 - INFO - Traceback (most recent call last):
+
+2026-05-08 22:51:07,520 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/forgot_password_set_password_common.py", line 467, in run_password_rule_case
+    _assert_submit_enabled_and_success(
+
+2026-05-08 22:51:07,520 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/forgot_password_set_password_common.py", line 337, in _assert_submit_enabled_and_success
+    WebDriverWait(driver, timeout_s).until(lambda d: _left_set_password(d))
+
+2026-05-08 22:51:07,520 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-08 22:51:07,520 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+
+
+2026-05-08 22:51:07,814 - INFO - 已保存test_102156_failed失败截图: screenshots/test_102156_failed_1778251867.png
+2026-05-08 22:51:07,832 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260508_224806/ios_20260508_224806_report.xlsx

@@ -1,0 +1,27 @@
+2026-05-19 10:59:46,900 - INFO - 🔄 步骤1: 重启APP
+2026-05-19 10:59:46,900 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-19 10:59:51,795 - INFO -     ✅ APP 已重启
+2026-05-19 10:59:51,795 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-19 10:59:51,795 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-19 10:59:51,802 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-19 10:59:51,938 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-19 10:59:52,552 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-19 10:59:52,552 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-19 10:59:52,593 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-19 10:59:52,593 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-19 10:59:52,593 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-19 10:59:52,593 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-19 10:59:52,658 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-19 10:59:53,293 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-19 10:59:54,799 - INFO - 🔄 步骤4: 勾选用户协议与隐私政策
+2026-05-19 10:59:54,799 - INFO -     🔄 定位: //android.widget.ImageView[@content-desc="checkbox"]
+2026-05-19 10:59:55,326 - INFO - ✅ 步骤4: 勾选用户协议与隐私政策 - 完成
+2026-05-19 10:59:55,326 - INFO - 🔄 步骤5: 点击 Next 登录
+2026-05-19 10:59:55,326 - INFO -     🔄 定位: //android.widget.ImageView[@content-desc="next"]
+2026-05-19 10:59:56,667 - INFO - ✅ 步骤5: 点击 Next 登录 - 完成
+2026-05-19 10:59:56,668 - INFO - 🔄 步骤6: 断言提示文案
+2026-05-19 10:59:56,668 - INFO -     🔄 期望文案: Please enter a valid email address.
+2026-05-19 10:59:56,754 - INFO -     ✅ 已显示提示
+2026-05-19 10:59:56,754 - INFO - ✅ 步骤6: 断言提示文案 - 完成
+2026-05-19 10:59:56,755 - INFO - 🎉 测试用例 200008 执行成功！
+2026-05-19 10:59:56,776 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260519_105944/android_20260519_105944_report.xlsx

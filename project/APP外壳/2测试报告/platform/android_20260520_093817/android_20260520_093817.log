@@ -1,0 +1,50 @@
+2026-05-20 09:38:20,682 - INFO - 🔄 步骤1: 重启APP
+2026-05-20 09:38:25,565 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-20 09:38:25,566 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-20 09:38:26,379 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-20 09:38:26,380 - INFO - 🔄 步骤3: 点击 Sign Up 进入注册页
+2026-05-20 09:38:28,642 - INFO - ✅ 步骤3: 点击 Sign Up 进入注册页 - 完成
+2026-05-20 09:38:28,646 - INFO - 📧 生成简单邮箱地址: testuser336@163.com
+2026-05-20 09:38:28,646 - INFO - 🔄 步骤4: 输入邮箱并清空
+2026-05-20 09:39:08,911 - INFO - 
+============================================================
+2026-05-20 09:39:08,912 - INFO - ❌ 测试失败
+2026-05-20 09:39:08,913 - INFO - 📍 失败步骤: 步骤4: 输入邮箱并清空
+2026-05-20 09:39:08,913 - INFO - 📝 失败原因: 步骤4: 输入邮箱并清空失败: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-20 09:39:08,913 - INFO - ============================================================
+2026-05-20 09:39:08,919 - INFO - Traceback (most recent call last):
+
+2026-05-20 09:39:08,920 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/200047 验证清空邮箱的“×”按钮，可以清空邮箱.py", line 240, in test_200047
+    val = step_get_email_text(driver)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-20 09:39:08,921 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/register_case_base.py", line 202, in step_get_email_text
+    el = driver.find_element(AppiumBy.XPATH, XPATH_EMAIL)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-20 09:39:08,921 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 926, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-20 09:39:08,921 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+
+2026-05-20 09:39:08,921 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/appium/webdriver/errorhandler.py", line 125, in check_response
+    raise exception_class(msg=message, stacktrace=format_stacktrace(stacktrace))
+
+2026-05-20 09:39:08,921 - INFO - selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-20 09:39:09,444 - INFO - 已保存test_200047_failed失败截图: screenshots/test_200047_failed_1779241148.png
+2026-05-20 09:39:09,466 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260520_093817/android_20260520_093817_report.xlsx

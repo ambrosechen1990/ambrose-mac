@@ -1,0 +1,39 @@
+2026-05-20 11:14:01,351 - INFO - 🔄 步骤1: 重启APP
+2026-05-20 11:14:01,351 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-20 11:14:06,244 - INFO -     ✅ APP 已重启
+2026-05-20 11:14:06,244 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-20 11:14:06,244 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-20 11:14:06,247 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-20 11:14:06,371 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-20 11:14:06,989 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-20 11:14:06,989 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-20 11:14:07,031 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-20 11:14:07,031 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-20 11:14:07,032 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-20 11:14:07,032 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-20 11:14:07,073 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-20 11:14:07,701 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-20 11:14:09,206 - INFO - 🔄 步骤4: 输入邮箱
+2026-05-20 11:14:09,206 - INFO -     🔄 邮箱: haoc51888chenhao@gmail.com
+2026-05-20 11:14:09,284 - INFO -     ✅ 聚焦: //android.widget.ScrollView/android.widget.EditText[1]/android.view.View[2]
+2026-05-20 11:14:09,285 - INFO -     🔄 定位: //android.widget.ScrollView/android.widget.EditText[1]
+2026-05-20 11:14:10,439 - INFO - ✅ 步骤4: 输入邮箱 - 完成
+2026-05-20 11:14:10,440 - INFO - 🔄 步骤5: 输入密码
+2026-05-20 11:14:10,440 - INFO -     🔄 密码已填入（长度 9）
+2026-05-20 11:14:11,142 - INFO -     🔄 定位: //android.widget.ScrollView/android.widget.EditText[2]
+2026-05-20 11:14:11,524 - INFO - ✅ 步骤5: 输入密码 - 完成
+2026-05-20 11:14:11,524 - INFO - 🔄 步骤6: 收起输入键盘
+2026-05-20 11:14:12,853 - INFO -     ✅ hide_keyboard 成功
+2026-05-20 11:14:13,255 - INFO - ✅ 步骤6: 收起输入键盘 - 完成
+2026-05-20 11:14:13,255 - INFO - 🔄 步骤7: 勾选用户协议与隐私政策
+2026-05-20 11:14:13,256 - INFO -     🔄 定位: //android.widget.ImageView[@content-desc="checkbox"]
+2026-05-20 11:14:14,127 - INFO - ✅ 步骤7: 勾选用户协议与隐私政策 - 完成
+2026-05-20 11:14:14,128 - INFO - 🔄 步骤8: 点击 Next 登录
+2026-05-20 11:14:14,128 - INFO -     🔄 定位: //android.widget.ImageView[@content-desc="next"]
+2026-05-20 11:14:15,457 - INFO - ✅ 步骤8: 点击 Next 登录 - 完成
+2026-05-20 11:14:15,457 - INFO - 🔄 步骤9: 断言提示文案
+2026-05-20 11:14:15,457 - INFO -     🔄 期望文案: This email is not registered. Please check and re-enter.
+2026-05-20 11:14:15,518 - INFO -     ✅ 已显示提示
+2026-05-20 11:14:15,519 - INFO - ✅ 步骤9: 断言提示文案 - 完成
+2026-05-20 11:14:15,519 - INFO - 🎉 测试用例 200003 执行成功！
+2026-05-20 11:14:15,537 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260520_111358/android_20260520_111358_report.xlsx

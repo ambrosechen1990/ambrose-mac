@@ -1,0 +1,14 @@
+2026-05-12 10:04:45,841 - INFO - 🔄 点击协议文案中的 Privacy Policy 链接
+2026-05-12 10:05:34,241 - INFO - Traceback (most recent call last):
+
+2026-05-12 10:05:34,243 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200011验证点击隐私政策中，点击返回.py", line 354, in test_200011
+    _assert_opened_privacy_content_page(driver, timeout_s=24)
+
+2026-05-12 10:05:34,243 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200011验证点击隐私政策中，点击返回.py", line 310, in _assert_opened_privacy_content_page
+    raise TimeoutException(
+
+2026-05-12 10:05:34,243 - INFO - selenium.common.exceptions.TimeoutException: Message: 点击链接后未判定进入隐私政策页。若已跳转但结构特殊，可设 ANDROID_PRIVACY_LINK_X_RATIO 微调点击位置；或把隐私页稳定控件 xpath 补到 _privacy_content_page_indicators_hit。
+
+
+2026-05-12 10:05:34,770 - INFO - 已保存test_200011_failed失败截图: screenshots/test_200011_failed_1778551534.png
+2026-05-12 10:05:34,802 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260512_100426/android_20260512_100426_report.xlsx

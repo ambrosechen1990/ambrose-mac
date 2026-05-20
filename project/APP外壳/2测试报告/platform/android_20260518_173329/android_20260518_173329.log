@@ -1,0 +1,32 @@
+2026-05-18 17:33:32,654 - INFO - 🔄 步骤1: 重启APP
+2026-05-18 17:33:32,654 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-18 17:33:37,548 - INFO -     ✅ APP 已重启
+2026-05-18 17:33:37,550 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-18 17:33:37,550 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-18 17:33:37,569 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-18 17:33:37,702 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-18 17:33:38,322 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-18 17:33:38,322 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-18 17:33:38,362 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-18 17:33:38,362 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-18 17:33:38,362 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-18 17:33:38,362 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-18 17:33:38,449 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-18 17:33:39,096 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-18 17:33:40,601 - INFO - 🔄 步骤4: 输入邮箱
+2026-05-18 17:33:40,601 - INFO -     🔄 邮箱: haoc51888@gmail.com
+2026-05-18 17:33:40,709 - INFO -     ✅ 聚焦: //android.widget.ScrollView/android.widget.EditText[1]/android.view.View[2]
+2026-05-18 17:33:40,710 - INFO -     🔄 定位: //android.widget.ScrollView/android.widget.EditText[1]
+2026-05-18 17:33:41,875 - INFO - ✅ 步骤4: 输入邮箱 - 完成
+2026-05-18 17:33:41,875 - INFO - 🔄 步骤5: 收起输入键盘
+2026-05-18 17:33:43,291 - INFO -     ✅ hide_keyboard 成功
+2026-05-18 17:33:43,695 - INFO - ✅ 步骤5: 收起输入键盘 - 完成
+2026-05-18 17:33:43,696 - INFO - 🔄 步骤6: 点击 Next 登录
+2026-05-18 17:33:43,696 - INFO -     🔄 定位: //android.widget.ImageView[@content-desc="next"]
+2026-05-18 17:33:45,399 - INFO - ✅ 步骤6: 点击 Next 登录 - 完成
+2026-05-18 17:33:45,400 - INFO - 🔄 步骤7: 断言提示文案
+2026-05-18 17:33:45,400 - INFO -     🔄 期望文案: Incorrect password. Please confirm and try again.
+2026-05-18 17:33:45,478 - INFO -     ✅ 已显示提示
+2026-05-18 17:33:45,479 - INFO - ✅ 步骤7: 断言提示文案 - 完成
+2026-05-18 17:33:45,479 - INFO - 🎉 测试用例 200007 执行成功！
+2026-05-18 17:33:45,510 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260518_173329/android_20260518_173329_report.xlsx

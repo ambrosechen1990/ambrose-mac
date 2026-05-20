@@ -1,0 +1,34 @@
+2026-05-08 23:18:55,420 - INFO - 🔄 步骤1: 进入Set Password页
+2026-05-08 23:21:23,420 - INFO - ✅ 步骤1: 进入Set Password页 - 完成
+2026-05-08 23:21:23,422 - INFO - 🔄 步骤2: 等待超过5分钟（310s）
+2026-05-08 23:26:33,434 - INFO - ✅ 步骤2: 等待超过5分钟（310s） - 完成
+2026-05-08 23:26:33,436 - INFO - 🔄 步骤3: 输入新密码并点击Submit（预期失败）
+2026-05-08 23:27:04,581 - INFO - 
+============================================================
+2026-05-08 23:27:04,581 - INFO - ❌ 测试失败
+2026-05-08 23:27:04,581 - INFO - 📍 失败步骤: 步骤3: 输入新密码并点击Submit（预期失败）
+2026-05-08 23:27:04,582 - INFO - 📝 失败原因: 步骤3: 输入新密码并点击Submit（预期失败）失败
+2026-05-08 23:27:04,582 - INFO - ============================================================
+2026-05-08 23:27:04,589 - INFO - Traceback (most recent call last):
+
+2026-05-08 23:27:04,590 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/forgot_password_set_password_common.py", line 940, in run_wait_over_5min_then_cannot_submit_case
+    _assert_on_set_password_page(driver, timeout_s=10)
+
+2026-05-08 23:27:04,590 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/forgot_password_set_password_common.py", line 233, in _assert_on_set_password_page
+    WebDriverWait(driver, timeout_s).until(
+
+2026-05-08 23:27:04,590 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-08 23:27:04,591 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-08 23:27:04,879 - INFO - 已保存test_102166_failed失败截图: screenshots/test_102166_failed_1778254024.png
+2026-05-08 23:27:04,897 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260508_231853/ios_20260508_231853_report.xlsx

@@ -1,0 +1,69 @@
+2026-05-18 10:59:58,833 - INFO - 🔄 步骤1: 重启APP
+2026-05-18 11:00:03,385 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-18 11:00:03,386 - INFO - 🔄 步骤2: 检测登录态并回到 Sign In/Sign Up 落地页
+2026-05-18 11:00:03,932 - INFO -     ℹ️ 检测到已登录（More），执行登出…
+2026-05-18 11:00:03,932 - INFO -     [登出] 开始登出流程...
+2026-05-18 11:00:03,932 - INFO -     [登出] 步骤1: 检查页面是否有 More 按钮
+2026-05-18 11:00:04,051 - INFO -     [登出] ✅ 检测到 More 按钮: //androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[2]
+2026-05-18 11:00:04,051 - INFO -     [登出] 步骤2: 点击 More 按钮，进入 more 页面
+2026-05-18 11:00:04,085 - INFO -     [登出] ✅ 已点击 More 按钮 (使用: //androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[2])
+2026-05-18 11:00:06,089 - INFO -     [登出] 步骤3: 点击 edit 按钮
+2026-05-18 11:00:06,224 - INFO -     [登出] ✅ 已点击 edit 按钮
+2026-05-18 11:00:08,228 - INFO -     [登出] 步骤4: 点击 Log Out 按钮
+2026-05-18 11:00:18,281 - INFO -     [登出] ❌ 点击 Log Out 按钮失败: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-18 11:00:18,282 - INFO -     [登出] ⚠️ 尝试查找当前页面元素...
+2026-05-18 11:00:18,339 - INFO -     [登出] 当前页面源码片段: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<hierarchy index="0" class="hierarchy" rotation="0" width="1440" height="3120">
+  <android.widget.FrameLayout index="0" package="com.xingmai.tech" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1440,3120]" displayed="true" a11y-important="true" screen-re
+2026-05-18 11:00:18,339 - INFO -     [登出] ❌ 登出流程异常: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-18 11:00:18,343 - INFO -     [登出] 异常堆栈: Traceback (most recent call last):
+  File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/1共用脚本/logout_android.py", line 121, in check_and_logout
+    logout_btn = WebDriverWait(driver, 10).until(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-18 11:00:18,350 - INFO - Traceback (most recent call last):
+
+2026-05-18 11:00:18,351 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200001验证登录页面到APP首页的"返回键".py", line 246, in test_200001
+    _ensure_logged_out_and_on_landing(driver, timeout_s=30)
+
+2026-05-18 11:00:18,351 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200001验证登录页面到APP首页的"返回键".py", line 151, in _ensure_logged_out_and_on_landing
+    check_and_logout(driver)
+
+2026-05-18 11:00:18,351 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/1共用脚本/logout_android.py", line 121, in check_and_logout
+    logout_btn = WebDriverWait(driver, 10).until(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-18 11:00:18,351 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-18 11:00:18,351 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-18 11:00:18,887 - INFO - 已保存test_200001_failed失败截图: screenshots/test_200001_failed_1779073218.png
+2026-05-18 11:00:18,904 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260518_105954/android_20260518_105954_report.xlsx

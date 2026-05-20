@@ -1,0 +1,28 @@
+2026-05-19 15:59:28,968 - INFO - 🔄 步骤1: 重启APP
+2026-05-19 15:59:33,878 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-19 15:59:33,879 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-19 15:59:34,669 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-19 15:59:34,671 - INFO - 🔄 步骤3: 点击 Sign Up 进入注册页
+2026-05-19 15:59:36,914 - INFO - ✅ 步骤3: 点击 Sign Up 进入注册页 - 完成
+2026-05-19 15:59:36,917 - INFO - 📧 生成简单邮箱地址: testuser307@163.com
+2026-05-19 15:59:36,917 - INFO - 🔄 步骤4: 进入密码页并检查规则文案
+2026-05-19 16:00:55,885 - INFO - 
+============================================================
+2026-05-19 16:00:55,885 - INFO - ❌ 测试失败
+2026-05-19 16:00:55,885 - INFO - 📍 失败步骤: 步骤4: 进入密码页并检查规则文案
+2026-05-19 16:00:55,885 - INFO - 📝 失败原因: 步骤4: 进入密码页并检查规则文案失败: Message: 未找到文案: ['6', '20', 'character', '字符']
+
+2026-05-19 16:00:55,886 - INFO - ============================================================
+2026-05-19 16:00:55,889 - INFO - Traceback (most recent call last):
+
+2026-05-19 16:00:55,889 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/200064 验证“设置密码”页面的密码规则默认为灰色.py", line 238, in test_200064
+    step_assert_text_visible(driver, ["6", "20", "character", "字符"], timeout_s=10)
+
+2026-05-19 16:00:55,890 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/register_case_base.py", line 379, in step_assert_text_visible
+    raise TimeoutException(f"未找到文案: {list(texts)}")
+
+2026-05-19 16:00:55,890 - INFO - selenium.common.exceptions.TimeoutException: Message: 未找到文案: ['6', '20', 'character', '字符']
+
+
+2026-05-19 16:00:56,403 - INFO - 已保存test_200064_failed失败截图: screenshots/test_200064_failed_1779177655.png
+2026-05-19 16:00:56,428 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260519_155926/android_20260519_155926_report.xlsx

@@ -1,0 +1,25 @@
+2026-05-19 11:03:18,701 - INFO - 🔄 步骤1: 重启APP
+2026-05-19 11:03:18,702 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-19 11:03:23,587 - INFO -     ✅ APP 已重启
+2026-05-19 11:03:23,587 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-19 11:03:23,588 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-19 11:03:23,594 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-19 11:03:23,725 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-19 11:03:24,334 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-19 11:03:24,334 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-19 11:03:24,397 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-19 11:03:24,397 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-19 11:03:24,397 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-19 11:03:24,397 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-19 11:03:24,467 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-19 11:03:25,121 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-19 11:03:26,631 - INFO - 🔄 步骤4: 输入密码
+2026-05-19 11:03:26,632 - INFO -     🔄 密码已填入（长度 9）
+2026-05-19 11:03:27,511 - INFO -     🔄 定位: //android.widget.ScrollView/android.widget.EditText[2]
+2026-05-19 11:03:27,915 - INFO - ✅ 步骤4: 输入密码 - 完成
+2026-05-19 11:03:27,915 - INFO - 🔄 步骤5: 点击 lock 显示明文
+2026-05-19 11:03:28,570 - INFO - ✅ 步骤5: 点击 lock 显示明文 - 完成
+2026-05-19 11:03:28,570 - INFO - 🔄 步骤6: 再次点击 lock 隐藏密码
+2026-05-19 11:03:29,313 - INFO - ✅ 步骤6: 再次点击 lock 隐藏密码 - 完成
+2026-05-19 11:03:29,314 - INFO - 🎉 测试用例 200019 执行成功！
+2026-05-19 11:03:29,340 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260519_110315/android_20260519_110315_report.xlsx

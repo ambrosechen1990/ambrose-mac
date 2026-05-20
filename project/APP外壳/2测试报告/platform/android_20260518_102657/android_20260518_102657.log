@@ -1,0 +1,21 @@
+2026-05-18 10:27:35,603 - INFO - Traceback (most recent call last):
+
+2026-05-18 10:27:35,605 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200013验证点击用户协议中，点击返回.py", line 204, in test_200013
+    _assert_on_login_signup_landing(driver, timeout_s=18)
+
+2026-05-18 10:27:35,605 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200013验证点击用户协议中，点击返回.py", line 112, in _assert_on_login_signup_landing
+    WebDriverWait(driver, timeout_s).until(
+
+2026-05-18 10:27:35,605 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-18 10:27:35,605 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-18 10:27:36,310 - INFO - 已保存test_200013_failed失败截图: screenshots/test_200013_failed_1779071255.png
+2026-05-18 10:27:36,333 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260518_102657/android_20260518_102657_report.xlsx

@@ -1,0 +1,41 @@
+2026-05-19 15:32:48,864 - INFO - 🔄 步骤1: 重启APP
+2026-05-19 15:32:53,761 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-19 15:32:53,763 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-19 15:32:54,547 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-19 15:32:54,547 - INFO - 🔄 步骤3: 点击 Sign Up 进入注册页
+2026-05-19 15:32:56,802 - INFO - ✅ 步骤3: 点击 Sign Up 进入注册页 - 完成
+2026-05-19 15:32:56,803 - INFO - 📧 生成简单邮箱地址: testuser296@163.com
+2026-05-19 15:32:56,803 - INFO - 🔄 步骤4: 选择 China 并输入邮箱
+2026-05-19 15:33:48,916 - INFO - 
+============================================================
+2026-05-19 15:33:48,917 - INFO - ❌ 测试失败
+2026-05-19 15:33:48,917 - INFO - 📍 失败步骤: 步骤4: 选择 China 并输入邮箱
+2026-05-19 15:33:48,917 - INFO - 📝 失败原因: 步骤4: 选择 China 并输入邮箱失败: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-19 15:33:48,917 - INFO - ============================================================
+2026-05-19 15:33:48,920 - INFO - Traceback (most recent call last):
+
+2026-05-19 15:33:48,921 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/200039 验证注册地为"中国"，正确邮箱，可以注册.py", line 243, in test_200039
+    step_toggle_checkbox(driver)
+
+2026-05-19 15:33:48,921 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/register_case_base.py", line 150, in step_toggle_checkbox
+    WebDriverWait(driver, timeout_s).until(
+
+2026-05-19 15:33:48,921 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-19 15:33:48,921 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-19 15:33:49,497 - INFO - 已保存test_200039_failed失败截图: screenshots/test_200039_failed_1779176028.png
+2026-05-19 15:33:49,520 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260519_153245/android_20260519_153245_report.xlsx

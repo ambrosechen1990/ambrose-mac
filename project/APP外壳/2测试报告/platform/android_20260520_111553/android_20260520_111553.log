@@ -1,0 +1,36 @@
+2026-05-20 11:15:56,951 - INFO - 🔄 步骤1: 重启APP
+2026-05-20 11:15:56,952 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-20 11:16:01,873 - INFO -     ✅ APP 已重启
+2026-05-20 11:16:01,874 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-20 11:16:01,874 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-20 11:16:01,879 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-20 11:16:02,003 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-20 11:16:02,618 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-20 11:16:02,618 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-20 11:16:02,669 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-20 11:16:02,669 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-20 11:16:02,669 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-20 11:16:02,669 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-20 11:16:02,712 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-20 11:16:03,343 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-20 11:16:04,848 - INFO - 🔄 步骤4: 输入邮箱
+2026-05-20 11:16:04,849 - INFO -     🔄 邮箱: haoc51888@gmail.com
+2026-05-20 11:16:05,712 - INFO -     ✅ 聚焦: //android.widget.ScrollView/android.widget.EditText[1]/android.view.View[2]
+2026-05-20 11:16:05,712 - INFO -     🔄 定位: //android.widget.ScrollView/android.widget.EditText[1]
+2026-05-20 11:16:06,093 - INFO - ✅ 步骤4: 输入邮箱 - 完成
+2026-05-20 11:16:06,093 - INFO - 🔄 步骤5: 输入密码
+2026-05-20 11:16:06,094 - INFO -     🔄 密码已填入（长度 9）
+2026-05-20 11:16:06,210 - INFO -     🔄 定位: //android.widget.ScrollView/android.widget.EditText[2]
+2026-05-20 11:16:07,196 - INFO - ✅ 步骤5: 输入密码 - 完成
+2026-05-20 11:16:07,196 - INFO - 🔄 步骤6: 收起输入键盘
+2026-05-20 11:16:08,584 - INFO -     ✅ hide_keyboard 成功
+2026-05-20 11:16:08,989 - INFO - ✅ 步骤6: 收起输入键盘 - 完成
+2026-05-20 11:16:08,989 - INFO - 🔄 步骤7: 点击 Next 登录
+2026-05-20 11:16:08,989 - INFO -     🔄 定位: //android.widget.ImageView[@content-desc="next"]
+2026-05-20 11:16:10,723 - INFO - ✅ 步骤7: 点击 Next 登录 - 完成
+2026-05-20 11:16:10,724 - INFO - 🔄 步骤8: 断言提示文案
+2026-05-20 11:16:10,724 - INFO -     🔄 期望文案: Please confirm and tick the Privacy Policy and User Agreement
+2026-05-20 11:16:10,803 - INFO -     ✅ 已显示提示
+2026-05-20 11:16:10,804 - INFO - ✅ 步骤8: 断言提示文案 - 完成
+2026-05-20 11:16:10,804 - INFO - 🎉 测试用例 200010 执行成功！
+2026-05-20 11:16:10,828 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260520_111553/android_20260520_111553_report.xlsx

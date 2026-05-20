@@ -1,0 +1,35 @@
+2026-05-11 18:51:16,817 - INFO - 🔄 步骤0: 重启APP并确保登出
+2026-05-11 18:51:20,230 - INFO -     [登出] 开始登出流程...
+2026-05-11 18:51:20,230 - INFO -     [登出] 步骤1: 检查页面是否有 More 按钮
+2026-05-11 18:51:40,418 - INFO -     [登出] ℹ️ 未检测到 More 按钮，可能未登录，跳过登出流程
+2026-05-11 18:51:42,424 - INFO - ✅ 步骤0: 重启APP并确保登出 - 完成
+2026-05-11 18:51:42,425 - INFO - 🔄 步骤1: 点击 Sign Up 进入注册页
+2026-05-11 18:51:45,176 - INFO - ✅ 步骤1: 点击 Sign Up 进入注册页 - 完成
+2026-05-11 18:51:45,176 - INFO - 🔄 步骤2: 生成并输入包含不支持特殊字符的邮箱
+2026-05-11 18:51:45,181 - INFO - 📧 生成不支持特殊字符邮箱地址: 1/2-3；4*5_614@163.com
+2026-05-11 18:51:46,557 - INFO - ✅ 步骤2: 生成并输入包含不支持特殊字符的邮箱 - 完成，邮箱: 1/2-3；4*5_614@163.com
+2026-05-11 18:51:46,557 - INFO - 🔄 步骤3: 勾选协议
+2026-05-11 18:51:47,016 - INFO - ✅ 步骤3: 勾选协议 - 完成
+2026-05-11 18:51:47,016 - INFO - 🔄 步骤4: 点击 Next（预期置灰/无跳转）
+2026-05-11 18:51:57,627 - INFO - Traceback (most recent call last):
+
+2026-05-11 18:51:57,630 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/200021验证注册时邮箱显示包含不支持的特殊字符.py", line 213, in test_200021
+    _click_next(driver)
+
+2026-05-11 18:51:57,630 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/200021验证注册时邮箱显示包含不支持的特殊字符.py", line 147, in _click_next
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((AppiumBy.XPATH, "//android.widget.Button"))).click()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-11 18:51:57,630 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-11 18:51:57,630 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-11 18:51:58,105 - INFO - 已保存test_200021_failed失败截图: screenshots/test_200021_failed_1778496717.png
+2026-05-11 18:51:58,145 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260511_185113/android_20260511_185113_report.xlsx

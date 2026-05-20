@@ -1,0 +1,32 @@
+2026-05-09 10:37:53,080 - INFO - 🔄 步骤1: 重启APP并处理登录状态
+2026-05-09 10:37:59,258 - INFO - 开始登出流程...
+2026-05-09 10:37:59,445 - INFO - 检测到home sel元素
+2026-05-09 10:38:10,833 - INFO - ✅ 点击mine按钮: //XCUIElementTypeButton[@name="mine"]
+2026-05-09 10:38:13,035 - INFO - ✅ 点击CommonEdit编辑按钮: //XCUIElementTypeButton[@name="CommonEdit"]
+2026-05-09 10:38:15,263 - INFO - ✅ 点击Log Out: //XCUIElementTypeButton[@name="Log Out"]
+2026-05-09 10:38:17,473 - INFO - ✅ 点击Confirm: //XCUIElementTypeButton[@name="Confirm"]
+2026-05-09 10:38:18,978 - INFO - 登出操作完成
+2026-05-09 10:38:19,330 - INFO - ✅ 成功回到登录页面
+2026-05-09 10:38:21,463 - INFO - ✅ 步骤1: 重启APP并处理登录状态 - 完成
+2026-05-09 10:38:21,464 - INFO - 🔄 步骤2: 点击Sign In进入登录页
+2026-05-09 10:38:24,395 - INFO - ✅ 步骤2: 点击Sign In进入登录页 - 完成
+2026-05-09 10:38:24,395 - INFO - 🔄 步骤3: 点击Forgot password进入忘记密码页
+2026-05-09 10:38:27,446 - INFO - ✅ 步骤3: 点击Forgot password进入忘记密码页 - 完成
+2026-05-09 10:38:27,447 - INFO - 🔄 步骤4: 输入邮箱并点击Next进入验证码页
+2026-05-09 10:38:34,614 - INFO - ✅ 步骤4: 输入邮箱并点击Next进入验证码页 - 完成，邮箱: haoc51888@gmail.com
+2026-05-09 10:38:34,616 - INFO - 🔄 步骤5: Gmail获取最新验证码code
+2026-05-09 10:40:56,910 - INFO - ✅ 步骤5: Gmail获取最新验证码code - 完成，code: 078277
+2026-05-09 10:40:56,911 - INFO - 🔄 步骤6: 输入验证码进入Set Password页
+2026-05-09 10:41:06,218 - INFO - ✅ 步骤6: 输入验证码进入Set Password页 - 完成
+2026-05-09 10:41:06,219 - INFO - 🔄 步骤7: 输入<6位密码
+2026-05-09 10:41:09,825 - INFO - ✅ 步骤7: 输入<6位密码 - 完成（short_pwd: Csx15）
+2026-05-09 10:41:09,825 - INFO - 🔄 步骤8: 断言密码规则提示/颜色（参考102224）
+2026-05-09 10:41:10,233 - INFO - 📝 规则提示: • 6-20 characters 颜色: None
+2026-05-09 10:41:10,633 - INFO - 📝 规则提示: • contains letters 颜色: None
+2026-05-09 10:41:11,030 - INFO - 📝 规则提示: • contains numbers 颜色: None
+2026-05-09 10:41:11,429 - INFO - 📝 规则提示: • Supports special characters:! @ # $ % ^ & * ( ) - _ = + \ | [ ] { } ; : / ? . , ~ > < ` 颜色: None
+2026-05-09 10:41:11,430 - INFO - ✅ 步骤8: 断言密码规则提示/颜色（参考102224） - 完成
+2026-05-09 10:41:11,430 - INFO - 🔄 步骤9: Done收起键盘，点击Submit仍停留Set Password页
+2026-05-09 10:41:13,325 - INFO - ✅ 步骤9: Done收起键盘，点击Submit仍停留Set Password页 - 完成
+2026-05-09 10:41:13,326 - INFO - 🎉 测试用例102146执行成功！
+2026-05-09 10:41:15,355 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260509_103751/ios_20260509_103751_report.xlsx

@@ -1,0 +1,37 @@
+2026-05-11 19:16:47,578 - INFO - 🔄 步骤0: 重启APP并确保登出
+2026-05-11 19:16:50,976 - INFO -     [登出] 开始登出流程...
+2026-05-11 19:16:50,977 - INFO -     [登出] 步骤1: 检查页面是否有 More 按钮
+2026-05-11 19:16:51,490 - INFO -     [登出] ✅ 检测到 More 按钮: //android.view.View[@content-desc="More"]
+2026-05-11 19:16:51,490 - INFO -     [登出] 步骤2: 点击 More 按钮，进入 more 页面
+2026-05-11 19:16:51,537 - INFO -     [登出] ✅ 已点击 More 按钮 (使用: //android.view.View[@content-desc="More"])
+2026-05-11 19:16:53,547 - INFO -     [登出] 步骤3: 点击 edit 按钮
+2026-05-11 19:16:53,690 - INFO -     [登出] ✅ 已点击 edit 按钮
+2026-05-11 19:16:55,699 - INFO -     [登出] 步骤4: 点击 Log Out 按钮
+2026-05-11 19:16:56,693 - INFO -     [登出] ✅ 已点击 Log Out 按钮
+2026-05-11 19:16:58,202 - INFO -     [登出] 步骤5: 点击 Confirm 按钮，确认登出
+2026-05-11 19:16:58,921 - INFO -     [登出] ✅ 已点击 Confirm 按钮
+2026-05-11 19:17:06,961 - INFO -     [登出] ⚠️ 登出完成，但无法确认是否已返回登录页面
+2026-05-11 19:17:06,961 - INFO -     [登出] ✅ 登出流程完成
+2026-05-11 19:17:08,966 - INFO - ✅ 步骤0: 重启APP并确保登出 - 完成
+2026-05-11 19:17:08,966 - INFO - 🔄 步骤1: 点击 Sign Up 进入注册页
+2026-05-11 19:17:11,679 - INFO - ✅ 步骤1: 点击 Sign Up 进入注册页 - 完成
+2026-05-11 19:17:11,680 - INFO - 🔄 步骤2: 输入邮箱 haoc51888+android@gmail.com
+2026-05-11 19:17:14,882 - INFO - ✅ 步骤2: 输入邮箱 haoc51888+android@gmail.com - 完成
+2026-05-11 19:17:14,883 - INFO - 🔄 步骤3: 勾选协议
+2026-05-11 19:17:15,661 - INFO - ✅ 步骤3: 勾选协议 - 完成
+2026-05-11 19:17:15,661 - INFO - 🔄 步骤4: 点击 Next 进入设置密码页
+2026-05-11 19:17:18,684 - INFO - ✅ 步骤4: 点击 Next 进入设置密码页 - 完成
+2026-05-11 19:17:18,684 - INFO - 🔄 步骤5: 输入密码与确认密码，并点击 Next 进入用户名页
+2026-05-11 19:17:40,858 - INFO - Traceback (most recent call last):
+
+2026-05-11 19:17:40,859 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/200024验证输入用户名名字49个字符，点击“Submit”按钮.py", line 275, in test_200024
+    _type_passwords_on_set_password_page(driver, pwd)
+
+2026-05-11 19:17:40,859 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/200024验证输入用户名名字49个字符，点击“Submit”按钮.py", line 179, in _type_passwords_on_set_password_page
+    raise TimeoutException("未找到密码/确认密码两个输入框（EditText[1..2]）")
+
+2026-05-11 19:17:40,859 - INFO - selenium.common.exceptions.TimeoutException: Message: 未找到密码/确认密码两个输入框（EditText[1..2]）
+
+
+2026-05-11 19:17:41,266 - INFO - 已保存test_200024_failed失败截图: screenshots/test_200024_failed_1778498260.png
+2026-05-11 19:17:41,293 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260511_191644/android_20260511_191644_report.xlsx

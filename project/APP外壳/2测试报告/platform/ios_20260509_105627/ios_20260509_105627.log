@@ -1,0 +1,40 @@
+2026-05-09 10:56:28,921 - INFO - 🔄 步骤1: 重启APP并处理登录状态
+2026-05-09 10:56:50,088 - INFO - ✅ 步骤1: 重启APP并处理登录状态 - 完成
+2026-05-09 10:56:50,089 - INFO - 🔄 步骤2: 点击Sign In进入登录页
+2026-05-09 10:56:53,013 - INFO - ✅ 步骤2: 点击Sign In进入登录页 - 完成
+2026-05-09 10:56:53,013 - INFO - 🔄 步骤3: 点击Forgot password进入忘记密码页
+2026-05-09 10:56:56,045 - INFO - ✅ 步骤3: 点击Forgot password进入忘记密码页 - 完成
+2026-05-09 10:56:56,046 - INFO - 🔄 步骤4: 输入邮箱并点击Next进入验证码页
+2026-05-09 10:57:06,558 - INFO - ✅ 步骤4: 输入邮箱并点击Next进入验证码页 - 完成，邮箱: haoc51888@gmail.com
+2026-05-09 10:57:06,560 - INFO - 🔄 步骤5: Gmail获取最新验证码code
+2026-05-09 11:03:31,197 - INFO - ✅ 步骤5: Gmail获取最新验证码code - 完成，code: 952374
+2026-05-09 11:03:31,200 - INFO - 🔄 步骤6: 输入验证码进入Set Password页
+2026-05-09 11:04:00,913 - INFO - 
+============================================================
+2026-05-09 11:04:00,914 - INFO - ❌ 测试失败
+2026-05-09 11:04:00,915 - INFO - 📍 失败步骤: 步骤6: 输入验证码进入Set Password页
+2026-05-09 11:04:00,915 - INFO - 📝 失败原因: 步骤6: 输入验证码进入Set Password页失败
+2026-05-09 11:04:00,915 - INFO - ============================================================
+2026-05-09 11:04:00,920 - INFO - Traceback (most recent call last):
+
+2026-05-09 11:04:00,921 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102148验证密码等于6个字符时，“完成”按钮可点击.py", line 435, in test_102148
+    _assert_on_set_password_page(
+
+2026-05-09 11:04:00,922 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102148验证密码等于6个字符时，“完成”按钮可点击.py", line 232, in _assert_on_set_password_page
+    WebDriverWait(driver, timeout_s).until(
+
+2026-05-09 11:04:00,922 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-09 11:04:00,922 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-09 11:04:01,213 - INFO - 已保存test_102148_failed失败截图: screenshots/test_102148_failed_1778295840.png
+2026-05-09 11:04:01,234 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260509_105627/ios_20260509_105627_report.xlsx

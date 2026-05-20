@@ -1,0 +1,87 @@
+2026-04-29 11:12:37,365 - INFO - 🔄 步骤0: 登出，确保从登出状态开始测试
+2026-04-29 11:12:37,365 - INFO - 开始登出流程...
+2026-04-29 11:13:08,313 - INFO - 未检测到home sel/mine sel/mine，跳过登出流程
+2026-04-29 11:13:08,315 - INFO - ✅ 步骤0: 登出，确保从登出状态开始测试 - 完成
+2026-04-29 11:13:10,318 - INFO - 🔄 步骤1: 验证在APP首页（登录页面）
+2026-04-29 11:13:10,512 - INFO - ✅ 步骤1: 验证在APP首页（登录页面） - 完成，确认在APP首页（登录页面）
+2026-04-29 11:13:12,518 - INFO - 🔄 步骤2: 点击Sign Up按钮进入注册页面
+2026-04-29 11:13:13,518 - INFO - ✅ 步骤2: 点击Sign Up按钮进入注册页面 - 完成
+2026-04-29 11:13:16,524 - INFO - 🔄 步骤3: 验证进入Sign Up页面
+2026-04-29 11:13:16,782 - INFO - ✅ 步骤3: 验证进入Sign Up页面 - 完成，确认已进入Sign Up注册页面
+2026-04-29 11:13:18,787 - INFO - 🔄 步骤4: 输入邮箱
+2026-04-29 11:13:18,793 - INFO - 📧 生成简单邮箱地址: testuser68@163.com
+2026-04-29 11:13:20,733 - INFO - ✅ 步骤4: 输入邮箱 - 完成，邮箱: testuser68@163.com
+2026-04-29 11:13:22,737 - INFO - 🔄 步骤5: 勾选隐私政策和用户协议
+2026-04-29 11:13:28,794 - INFO - ✅ 隐私政策复选框已勾选
+2026-04-29 11:13:30,299 - INFO - 🔄 步骤5.1: 收起键盘（Done）
+2026-04-29 11:13:31,720 - INFO - ✅ 已点击Done收起键盘
+2026-04-29 11:13:32,720 - INFO - 🔄 步骤6: 点击Next进入set password页面
+2026-04-29 11:13:33,436 - INFO - ✅ 步骤6: 点击Next进入set password页面 - 完成，已点击Next按钮
+2026-04-29 11:13:36,443 - INFO - 🔄 步骤7: 验证进入set password页面
+2026-04-29 11:13:36,741 - INFO - ✅ 成功进入set password页面
+2026-04-29 11:13:38,245 - INFO - 🔄 步骤8: 输入密码并验证规则提示为灰色
+2026-04-29 11:13:39,905 - INFO - ✅ 已输入密码: Csx150128
+2026-04-29 11:13:41,832 - INFO - ❌ 步骤8: 输入密码并验证规则提示为灰色失败: Message: Unhandled endpoint: /session/F8420E9A-FA3D-4C27-A113-6EB976878AA0/element/E8000000-0000-0000-7708-000000000000/css/color -- http://127.0.0.1:8100/ with parameters {
+    wildcards =     (
+        "session/F8420E9A-FA3D-4C27-A113-6EB976878AA0/element/E8000000-0000-0000-7708-000000000000/css/color"
+    );
+}
+Stacktrace:
+ProxyRequestError: Request failed with status code 404
+    at JWProxy.proxy (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:279:13)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at ProtocolConverter.convertAndProxy (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/protocol-converter.js:309:12)
+    at JWProxy.proxyCommand (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:313:12)
+    at JWProxy.proxyReqRes (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:399:32)
+2026-04-29 11:13:41,832 - INFO - 
+============================================================
+2026-04-29 11:13:41,833 - INFO - ❌ 测试失败
+2026-04-29 11:13:41,833 - INFO - 📍 失败步骤: 步骤8: 输入密码并验证规则提示为灰色
+2026-04-29 11:13:41,833 - INFO - 📝 失败原因: 步骤8: 输入密码并验证规则提示为灰色失败: Message: Unhandled endpoint: /session/F8420E9A-FA3D-4C27-A113-6EB976878AA0/element/E8000000-0000-0000-7708-000000000000/css/color -- http://127.0.0.1:8100/ with parameters {
+    wildcards =     (
+        "session/F8420E9A-FA3D-4C27-A113-6EB976878AA0/element/E8000000-0000-0000-7708-000000000000/css/color"
+    );
+}
+Stacktrace:
+ProxyRequestError: Request failed with status code 404
+    at JWProxy.proxy (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:279:13)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at ProtocolConverter.convertAndProxy (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/protocol-converter.js:309:12)
+    at JWProxy.proxyCommand (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:313:12)
+    at JWProxy.proxyReqRes (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:399:32)
+2026-04-29 11:13:41,833 - INFO - ============================================================
+2026-04-29 11:13:41,837 - INFO - Traceback (most recent call last):
+
+2026-04-29 11:13:41,839 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/2注册/102223 验证“设置密码”页面的密码规则默认为灰色.py", line 273, in test_102223
+    color = rule_elem.value_of_css_property("color") if hasattr(rule_elem, "value_of_css_property") else None
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-04-29 11:13:41,839 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 398, in value_of_css_property
+    return self._execute(Command.GET_ELEMENT_VALUE_OF_CSS_PROPERTY, {"propertyName": property_name})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-04-29 11:13:41,839 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 572, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-04-29 11:13:41,839 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+
+2026-04-29 11:13:41,839 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/appium/webdriver/errorhandler.py", line 125, in check_response
+    raise exception_class(msg=message, stacktrace=format_stacktrace(stacktrace))
+
+2026-04-29 11:13:41,839 - INFO - selenium.common.exceptions.UnknownMethodException: Message: Unhandled endpoint: /session/F8420E9A-FA3D-4C27-A113-6EB976878AA0/element/E8000000-0000-0000-7708-000000000000/css/color -- http://127.0.0.1:8100/ with parameters {
+    wildcards =     (
+        "session/F8420E9A-FA3D-4C27-A113-6EB976878AA0/element/E8000000-0000-0000-7708-000000000000/css/color"
+    );
+}
+Stacktrace:
+ProxyRequestError: Request failed with status code 404
+    at JWProxy.proxy (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:279:13)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at ProtocolConverter.convertAndProxy (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/protocol-converter.js:309:12)
+    at JWProxy.proxyCommand (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:313:12)
+    at JWProxy.proxyReqRes (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:399:32)
+
+2026-04-29 11:13:42,147 - INFO - 已保存test_102223_failed失败截图: screenshots/test_102223_failed_1777432421.png
+2026-04-29 11:13:42,171 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260429_111235/ios_20260429_111235_report.xlsx

@@ -1,0 +1,36 @@
+2026-05-12 10:55:51,954 - INFO - 🔄 步骤0: 登出，确保从登出状态开始测试
+2026-05-12 10:55:51,955 - INFO - 开始登出流程...
+2026-05-12 10:56:22,857 - INFO - 未检测到home sel/mine sel/mine，跳过登出流程
+2026-05-12 10:56:22,859 - INFO - ✅ 步骤0: 登出，确保从登出状态开始测试 - 完成
+2026-05-12 10:56:24,868 - INFO - 🔄 步骤1: 验证在APP首页（登录页面）
+2026-05-12 10:56:25,035 - INFO - ✅ 步骤1: 验证在APP首页（登录页面） - 完成，确认在APP首页（登录页面）
+2026-05-12 10:56:27,046 - INFO - 🔄 步骤2: 点击Sign Up按钮进入注册页面
+2026-05-12 10:56:28,000 - INFO - ✅ 步骤2: 点击Sign Up按钮进入注册页面 - 完成
+2026-05-12 10:56:31,008 - INFO - 🔄 步骤3: 验证进入Sign Up页面
+2026-05-12 10:56:31,242 - INFO - ✅ 步骤3: 验证进入Sign Up页面 - 完成，确认已进入Sign Up注册页面
+2026-05-12 10:56:33,252 - INFO - 🔄 步骤4: 输入邮箱（value="Email"）
+2026-05-12 10:56:33,256 - INFO - 📧 生成简单邮箱地址: testuser263@163.com
+2026-05-12 10:56:35,131 - INFO - ✅ 步骤4: 输入邮箱（value="Email"） - 完成，邮箱: testuser263@163.com
+2026-05-12 10:56:38,279 - INFO - 🔄 步骤5: 点击Done按钮收起键盘
+2026-05-12 10:56:43,390 - INFO - ℹ️ 步骤5: 点击Done按钮收起键盘 - Done按钮未出现或无法点击，可能键盘未弹出或已收起，跳过: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-12 10:56:44,395 - INFO - 🔄 步骤6: 勾选隐私政策和用户协议
+2026-05-12 10:56:51,163 - INFO - ℹ️ 未检测到 selected（可忽略），继续下一步用页面跳转验证是否勾选成功
+2026-05-12 10:56:51,163 - INFO - ✅ 步骤6: 勾选隐私政策和用户协议 - 完成
+2026-05-12 10:56:53,170 - INFO - 🔄 步骤7: 点击Next按钮进入密码设置页面
+2026-05-12 10:56:53,887 - INFO - ✅ 步骤7: 点击Next按钮进入密码设置页面 - 完成，已点击Next按钮
+2026-05-12 10:56:56,400 - INFO - 🔄 步骤8: 点击左上角返回按钮（name="nav back"）
+2026-05-12 10:56:57,555 - INFO - ✅ 步骤8: 点击左上角返回按钮（name="nav back"） - 完成
+2026-05-12 10:56:58,564 - INFO - 🔄 步骤9: 返回后点击login check sel，出现提示即成功
+2026-05-12 10:56:59,435 - INFO - ✅ 已出现提示文案：Please confirm and tick the Privacy Policy and User Agreement
+2026-05-12 10:56:59,435 - INFO - ✅ 步骤9: 返回后点击login check sel，出现提示即成功 - 完成
+2026-05-12 10:57:01,443 - INFO - 🎉 测试用例102199执行成功！
+2026-05-12 10:57:01,444 - INFO - ✅ 102199：勾选协议进入密码页后返回，协议回到未勾选态并出现提示文案
+2026-05-12 10:57:03,472 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260512_105550/ios_20260512_105550_report.xlsx

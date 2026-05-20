@@ -1,0 +1,152 @@
+2026-05-20 11:22:33,264 - INFO - 🔄 步骤1: 重启APP
+2026-05-20 11:22:38,194 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-20 11:22:38,194 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-20 11:22:38,356 - INFO -     [登出] 开始登出流程...
+2026-05-20 11:22:38,356 - INFO -     [登出] 步骤1: 检查页面是否有 More 按钮
+2026-05-20 11:22:38,418 - INFO -     [登出] ✅ 检测到 More 按钮: //android.view.View[@content-desc="More"]
+2026-05-20 11:22:38,418 - INFO -     [登出] 步骤2: 点击 More 按钮，进入 more 页面
+2026-05-20 11:22:38,466 - INFO -     [登出] ✅ 已点击 More 按钮 (使用: //android.view.View[@content-desc="More"])
+2026-05-20 11:22:40,471 - INFO -     [登出] 步骤3: 点击 edit 按钮
+2026-05-20 11:22:40,617 - INFO -     [登出] ✅ 已点击 edit 按钮
+2026-05-20 11:22:42,621 - INFO -     [登出] 步骤4: 点击 Log Out 按钮
+2026-05-20 11:22:43,594 - INFO -     [登出] ✅ 已点击 Log Out 按钮
+2026-05-20 11:22:45,096 - INFO -     [登出] 步骤5: 点击 Confirm 按钮，确认登出
+2026-05-20 11:22:45,817 - INFO -     [登出] ✅ 已点击 Confirm 按钮
+2026-05-20 11:22:53,848 - INFO -     [登出] ⚠️ 登出完成，但无法确认是否已返回登录页面
+2026-05-20 11:22:53,848 - INFO -     [登出] ✅ 登出流程完成
+2026-05-20 11:22:55,898 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-20 11:22:55,899 - INFO - 🔄 步骤3: 点击 Sign Up 进入注册页
+2026-05-20 11:22:58,190 - INFO - ✅ 步骤3: 点击 Sign Up 进入注册页 - 完成
+2026-05-20 11:22:58,194 - INFO - 📧 生成简单邮箱地址: testuser345@163.com
+2026-05-20 11:22:58,194 - INFO - 🔄 步骤4: 输入49字符用户名并 Submit
+2026-05-20 11:23:47,472 - INFO - 
+============================================================
+2026-05-20 11:23:47,472 - INFO - ❌ 测试失败
+2026-05-20 11:23:47,472 - INFO - 📍 失败步骤: 步骤4: 输入49字符用户名并 Submit
+2026-05-20 11:23:47,472 - INFO - 📝 失败原因: 步骤4: 输入49字符用户名并 Submit失败: Message: androidx.test.uiautomator.StaleObjectException; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+io.appium.uiautomator2.common.exceptions.StaleElementReferenceException: androidx.test.uiautomator.StaleObjectException
+	at io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:63)
+	at io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:261)
+	at io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:255)
+	at io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:356)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:107)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:356)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:434)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:249)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:354)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:293)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:354)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1429)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:168)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.handle(AbstractNioChannel.java:445)
+	at io.netty.channel.nio.NioIoHandler$DefaultNioRegistration.handle(NioIoHandler.java:388)
+	at io.netty.channel.nio.NioIoHandler.processSelectedKey(NioIoHandler.java:596)
+	at io.netty.channel.nio.NioIoHandler.processSelectedKeysOptimized(NioIoHandler.java:571)
+	at io.netty.channel.nio.NioIoHandler.processSelectedKeys(NioIoHandler.java:512)
+	at io.netty.channel.nio.NioIoHandler.run(NioIoHandler.java:484)
+	at io.netty.channel.SingleThreadIoEventLoop.runIo(SingleThreadIoEventLoop.java:225)
+	at io.netty.channel.SingleThreadIoEventLoop.run(SingleThreadIoEventLoop.java:196)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:1193)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:1564)
+Caused by: androidx.test.uiautomator.StaleObjectException
+	at androidx.test.uiautomator.UiObject2.getAccessibilityNodeInfo(UiObject2.java:1018)
+	at androidx.test.uiautomator.UiObject2.hashCode(UiObject2.java:139)
+	at java.lang.Object.toString(Object.java:316)
+	at java.util.Formatter$FormatSpecifier.printString(Formatter.java:3216)
+	at java.util.Formatter$FormatSpecifier.print(Formatter.java:3093)
+	at java.util.Formatter.format(Formatter.java:2704)
+	at java.util.Formatter.format(Formatter.java:2640)
+	at java.lang.String.format(String.java:4448)
+	at io.appium.uiautomator2.utils.ReflectionUtils.invoke(ReflectionUtils.java:85)
+	at io.appium.uiautomator2.core.AxNodeInfoExtractor.extractAxNodeInfo(AxNodeInfoExtractor.java:58)
+	at io.appium.uiautomator2.core.AxNodeInfoExtractor.toAxNodeInfo(AxNodeInfoExtractor.java:48)
+	at io.appium.uiautomator2.utils.ElementHelpers.canSetProgress(ElementHelpers.java:48)
+	at io.appium.uiautomator2.model.BaseElement.canSetProgress(BaseElement.java:166)
+	at io.appium.uiautomator2.handler.SendKeysToElement.setProgress(SendKeysToElement.java:47)
+	at io.appium.uiautomator2.handler.SendKeysToElement.safeHandle(SendKeysToElement.java:111)
+	at io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)
+	... 28 more
+
+2026-05-20 11:23:47,473 - INFO - ============================================================
+2026-05-20 11:23:47,482 - INFO - Traceback (most recent call last):
+
+2026-05-20 11:23:47,484 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/200024验证输入用户名名字49个字符，点击“Submit”按钮.py", line 241, in test_200024
+    step_type_username(driver, username)
+
+2026-05-20 11:23:47,484 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/register_case_base.py", line 612, in step_type_username
+    el.send_keys(username)
+
+2026-05-20 11:23:47,484 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/appium/webdriver/webelement.py", line 129, in send_keys
+    self._execute(RemoteCommand.SEND_KEYS_TO_ELEMENT, {'text': ''.join(keys), 'value': keys})
+
+2026-05-20 11:23:47,484 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 572, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-20 11:23:47,484 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+
+2026-05-20 11:23:47,484 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/appium/webdriver/errorhandler.py", line 125, in check_response
+    raise exception_class(msg=message, stacktrace=format_stacktrace(stacktrace))
+
+2026-05-20 11:23:47,484 - INFO - selenium.common.exceptions.StaleElementReferenceException: Message: androidx.test.uiautomator.StaleObjectException; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+io.appium.uiautomator2.common.exceptions.StaleElementReferenceException: androidx.test.uiautomator.StaleObjectException
+	at io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:63)
+	at io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:261)
+	at io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:255)
+	at io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:356)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:107)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:356)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:434)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:249)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:354)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:293)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:354)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1429)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:168)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.handle(AbstractNioChannel.java:445)
+	at io.netty.channel.nio.NioIoHandler$DefaultNioRegistration.handle(NioIoHandler.java:388)
+	at io.netty.channel.nio.NioIoHandler.processSelectedKey(NioIoHandler.java:596)
+	at io.netty.channel.nio.NioIoHandler.processSelectedKeysOptimized(NioIoHandler.java:571)
+	at io.netty.channel.nio.NioIoHandler.processSelectedKeys(NioIoHandler.java:512)
+	at io.netty.channel.nio.NioIoHandler.run(NioIoHandler.java:484)
+	at io.netty.channel.SingleThreadIoEventLoop.runIo(SingleThreadIoEventLoop.java:225)
+	at io.netty.channel.SingleThreadIoEventLoop.run(SingleThreadIoEventLoop.java:196)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:1193)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:1564)
+Caused by: androidx.test.uiautomator.StaleObjectException
+	at androidx.test.uiautomator.UiObject2.getAccessibilityNodeInfo(UiObject2.java:1018)
+	at androidx.test.uiautomator.UiObject2.hashCode(UiObject2.java:139)
+	at java.lang.Object.toString(Object.java:316)
+	at java.util.Formatter$FormatSpecifier.printString(Formatter.java:3216)
+	at java.util.Formatter$FormatSpecifier.print(Formatter.java:3093)
+	at java.util.Formatter.format(Formatter.java:2704)
+	at java.util.Formatter.format(Formatter.java:2640)
+	at java.lang.String.format(String.java:4448)
+	at io.appium.uiautomator2.utils.ReflectionUtils.invoke(ReflectionUtils.java:85)
+	at io.appium.uiautomator2.core.AxNodeInfoExtractor.extractAxNodeInfo(AxNodeInfoExtractor.java:58)
+	at io.appium.uiautomator2.core.AxNodeInfoExtractor.toAxNodeInfo(AxNodeInfoExtractor.java:48)
+	at io.appium.uiautomator2.utils.ElementHelpers.canSetProgress(ElementHelpers.java:48)
+	at io.appium.uiautomator2.model.BaseElement.canSetProgress(BaseElement.java:166)
+	at io.appium.uiautomator2.handler.SendKeysToElement.setProgress(SendKeysToElement.java:47)
+	at io.appium.uiautomator2.handler.SendKeysToElement.safeHandle(SendKeysToElement.java:111)
+	at io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)
+	... 28 more
+
+
+2026-05-20 11:23:48,032 - INFO - 已保存test_200024_failed失败截图: screenshots/test_200024_failed_1779247427.png
+2026-05-20 11:23:48,043 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260520_112229/android_20260520_112229_report.xlsx

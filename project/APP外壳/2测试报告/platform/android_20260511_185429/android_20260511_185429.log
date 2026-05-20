@@ -1,0 +1,33 @@
+2026-05-11 18:54:32,389 - INFO - 🔄 步骤0: 重启APP并确保登出
+2026-05-11 18:54:35,796 - INFO -     [登出] 开始登出流程...
+2026-05-11 18:54:35,797 - INFO -     [登出] 步骤1: 检查页面是否有 More 按钮
+2026-05-11 18:54:55,980 - INFO -     [登出] ℹ️ 未检测到 More 按钮，可能未登录，跳过登出流程
+2026-05-11 18:54:57,983 - INFO - ✅ 步骤0: 重启APP并确保登出 - 完成
+2026-05-11 18:54:57,983 - INFO - 🔄 步骤1: 点击 Sign Up 进入注册页
+2026-05-11 18:55:00,758 - INFO - ✅ 步骤1: 点击 Sign Up 进入注册页 - 完成
+2026-05-11 18:55:00,759 - INFO - 🔄 步骤2: 生成并输入包含不支持特殊字符的邮箱
+2026-05-11 18:55:00,761 - INFO - 📧 生成不支持特殊字符邮箱地址: 1/2-3；4*5_616@163.com
+2026-05-11 18:55:04,048 - INFO - ✅ 步骤2: 生成并输入包含不支持特殊字符的邮箱 - 完成，邮箱: 1/2-3；4*5_616@163.com
+2026-05-11 18:55:04,049 - INFO - 🔄 步骤3: 勾选协议
+2026-05-11 18:55:04,836 - INFO - ✅ 步骤3: 勾选协议 - 完成
+2026-05-11 18:55:04,837 - INFO - 🔄 步骤4: 点击 Next（预期置灰/无跳转）
+2026-05-11 18:55:06,756 - INFO - ✅ 步骤4: 点击 Next（预期置灰/无跳转） - 完成
+2026-05-11 18:55:06,757 - INFO - 🔄 步骤5: 断言仍停留注册页 + 出现邮箱格式错误提示
+2026-05-11 18:55:28,011 - INFO - Traceback (most recent call last):
+
+2026-05-11 18:55:28,013 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/200021验证注册时邮箱显示包含不支持的特殊字符.py", line 240, in test_200021
+    _assert_invalid_email_hint(driver)
+
+2026-05-11 18:55:28,013 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/2注册/200021验证注册时邮箱显示包含不支持的特殊字符.py", line 181, in _assert_invalid_email_hint
+    raise AssertionError(f"未看到邮箱格式错误提示: {last}")
+
+2026-05-11 18:55:28,013 - INFO - AssertionError: 未看到邮箱格式错误提示: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-11 18:55:28,581 - INFO - 已保存test_200021_failed失败截图: screenshots/test_200021_failed_1778496928.png
+2026-05-11 18:55:28,595 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260511_185429/android_20260511_185429_report.xlsx

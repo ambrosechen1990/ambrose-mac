@@ -1,0 +1,60 @@
+2026-05-08 09:25:13,895 - INFO - 🔄 步骤1: 重启APP并处理登录状态
+2026-05-08 09:25:35,065 - INFO - ✅ 步骤1: 重启APP并处理登录状态 - 完成
+2026-05-08 09:25:35,066 - INFO - 🔄 步骤2: 点击Sign In进入登录页
+2026-05-08 09:25:37,998 - INFO - ✅ 步骤2: 点击Sign In进入登录页 - 完成
+2026-05-08 09:25:37,998 - INFO - 🔄 步骤3: 点击Forgot password进入忘记密码页
+2026-05-08 09:25:41,034 - INFO - ✅ 步骤3: 点击Forgot password进入忘记密码页 - 完成
+2026-05-08 09:25:41,034 - INFO - 🔄 步骤4: 输入邮箱并点击Next进入验证码页
+2026-05-08 09:25:51,329 - INFO - ✅ 步骤4: 输入邮箱并点击Next进入验证码页 - 完成，邮箱: haoc51888@gmail.com
+2026-05-08 09:25:51,330 - INFO - 🔄 步骤5: Gmail获取最新验证码code
+2026-05-08 09:29:15,603 - INFO - 
+============================================================
+2026-05-08 09:29:15,604 - INFO - ❌ 测试失败
+2026-05-08 09:29:15,605 - INFO - 📍 失败步骤: 步骤5: Gmail获取最新验证码code
+2026-05-08 09:29:15,605 - INFO - 📝 失败原因: 步骤5: Gmail获取最新验证码code失败
+2026-05-08 09:29:15,605 - INFO - ============================================================
+2026-05-08 09:29:15,611 - INFO - Traceback (most recent call last):
+
+2026-05-08 09:29:15,614 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102144验证“设置密码”页面的密码规则默认为灰色.py", line 421, in test_102144
+    driver.activate_app(beatbot_bundle_id)
+
+2026-05-08 09:29:15,614 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/appium/webdriver/extensions/applications.py", line 187, in activate_app
+    self.assert_extension_exists(ext_name).execute_script(
+
+2026-05-08 09:29:15,615 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 555, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-08 09:29:15,615 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+
+2026-05-08 09:29:15,615 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/appium/webdriver/errorhandler.py", line 125, in check_response
+    raise exception_class(msg=message, stacktrace=format_stacktrace(stacktrace))
+
+2026-05-08 09:29:15,615 - INFO - selenium.common.exceptions.InvalidSessionIdException: Message: Session does not exist; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+ProxyRequestError: Request failed with status code 404
+    at JWProxy.proxy (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:279:13)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at JWProxy.proxyCommand (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:309:14)
+    at JWProxy.command (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:327:32)
+    at XCUITestDriver.proxyCommand (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/proxy-helper.js:89:33)
+    at XCUITestDriver.mobileActivateApp (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/app-management.js:151:3)
+    at XCUITestDriver.executeMethod (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/execute.ts:61:12)
+    at XCUITestDriver.execute (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/execute.js:48:12)
+
+2026-05-08 09:29:16,659 - INFO - 保存截图失败: Message: Session does not exist; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+ProxyRequestError: Request failed with status code 404
+    at JWProxy.proxy (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:279:13)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at ProtocolConverter.convertAndProxy (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/protocol-converter.js:309:12)
+    at JWProxy.proxyCommand (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:313:12)
+    at JWProxy.command (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/jsonwp-proxy/proxy.js:327:32)
+    at XCUITestDriver.proxyCommand (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/proxy-helper.js:89:33)
+    at getScreenshotFromWDA (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/screenshots.js:34:18)
+    at wrapped (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/asyncbox/lib/asyncbox.js:93:13)
+    at retry (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/asyncbox/lib/asyncbox.js:66:13)
+    at retryInterval (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/asyncbox/lib/asyncbox.js:103:10)
+    at XCUITestDriver.getScreenshot (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/screenshots.js:71:33)
+2026-05-08 09:29:16,688 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260508_092512/ios_20260508_092512_report.xlsx

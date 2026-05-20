@@ -1,0 +1,73 @@
+2026-05-18 17:36:08,740 - INFO - 🔄 步骤1: 重启APP
+2026-05-18 17:36:08,741 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-18 17:36:13,640 - INFO -     ✅ APP 已重启
+2026-05-18 17:36:13,641 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-18 17:36:13,641 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-18 17:36:13,647 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-18 17:36:14,237 - INFO -     ✅ 检测到已登录: //android.view.View[@content-desc="More"]
+2026-05-18 17:36:14,242 - INFO -     🔄 已登录，执行 check_and_logout（logout_android.py）
+2026-05-18 17:36:14,242 - INFO -     [登出] 开始登出流程...
+2026-05-18 17:36:14,242 - INFO -     [登出] 步骤1: 检查页面是否有 More 按钮
+2026-05-18 17:36:14,308 - INFO -     [登出] ✅ 检测到 More 按钮: //android.view.View[@content-desc="More"]
+2026-05-18 17:36:14,309 - INFO -     [登出] 步骤2: 点击 More 按钮，进入 more 页面
+2026-05-18 17:36:14,348 - INFO -     [登出] ✅ 已点击 More 按钮 (使用: //android.view.View[@content-desc="More"])
+2026-05-18 17:36:16,352 - INFO -     [登出] 步骤3: 点击 edit 按钮
+2026-05-18 17:36:16,475 - INFO -     [登出] ✅ 已点击 edit 按钮
+2026-05-18 17:36:18,480 - INFO -     [登出] 步骤4: 点击 Log Out 按钮
+2026-05-18 17:36:18,622 - INFO -     [登出] ✅ 已点击 Log Out 按钮
+2026-05-18 17:36:20,126 - INFO -     [登出] 步骤5: 点击 Confirm 按钮，确认登出
+2026-05-18 17:36:22,052 - INFO -     [登出] ✅ 已点击 Confirm 按钮
+2026-05-18 17:36:30,096 - INFO -     [登出] ⚠️ 登出完成，但无法确认是否已返回登录页面
+2026-05-18 17:36:30,096 - INFO -     [登出] ✅ 登出流程完成
+2026-05-18 17:36:30,097 - INFO -     ✅ 登出完成
+2026-05-18 17:36:32,100 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-18 17:36:32,145 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-18 17:36:32,145 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-18 17:36:32,145 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-18 17:36:32,145 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-18 17:36:32,210 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-18 17:36:32,868 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-18 17:36:34,372 - INFO - 🔄 步骤4: 输入密码
+2026-05-18 17:36:34,373 - INFO -     🔄 密码已填入（长度 9）
+2026-05-18 17:36:34,487 - INFO -     🔄 定位: //android.widget.ScrollView/android.widget.EditText[2]
+2026-05-18 17:36:35,648 - INFO - ✅ 步骤4: 输入密码 - 完成
+2026-05-18 17:36:35,651 - INFO - 🔄 步骤5: 点击密码清空按钮
+2026-05-18 17:36:35,651 - INFO -     🔄 定位: (//android.widget.ImageView[@content-desc="clear"])[2]
+2026-05-18 17:36:57,365 - INFO - ❌ 步骤5: 点击密码清空按钮失败: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-18 17:36:57,366 - INFO - 
+============================================================
+2026-05-18 17:36:57,366 - INFO - ❌ 测试失败
+2026-05-18 17:36:57,366 - INFO - 📍 失败步骤: 步骤5: 点击密码清空按钮
+2026-05-18 17:36:57,366 - INFO - 📝 失败原因: 步骤5: 点击密码清空按钮失败: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-18 17:36:57,366 - INFO - ============================================================
+2026-05-18 17:36:57,369 - INFO - Traceback (most recent call last):
+
+2026-05-18 17:36:57,370 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200016验证清空密码的"×"按钮，可以清空密码.py", line 247, in test_200016
+    clear_btn = WebDriverWait(driver, 18).until(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-18 17:36:57,371 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-18 17:36:57,371 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-18 17:36:57,851 - INFO - 已保存test_200016_failed失败截图: screenshots/test_200016_failed_1779097017.png
+2026-05-18 17:36:57,872 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260518_173605/android_20260518_173605_report.xlsx

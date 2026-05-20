@@ -1,0 +1,28 @@
+2026-05-09 18:43:32,760 - INFO - 🔄 步骤0: 登出，确保从登出状态开始测试
+2026-05-09 18:43:32,760 - INFO - 开始登出流程...
+2026-05-09 18:43:33,022 - INFO - 检测到home sel元素
+2026-05-09 18:43:44,428 - INFO - ✅ 点击mine按钮: //XCUIElementTypeButton[@name="mine"]
+2026-05-09 18:43:46,640 - INFO - ✅ 点击CommonEdit编辑按钮: //XCUIElementTypeButton[@name="CommonEdit"]
+2026-05-09 18:43:48,839 - INFO - ✅ 点击Log Out: //XCUIElementTypeButton[@name="Log Out"]
+2026-05-09 18:43:51,040 - INFO - ✅ 点击Confirm: //XCUIElementTypeButton[@name="Confirm"]
+2026-05-09 18:43:52,548 - INFO - 登出操作完成
+2026-05-09 18:43:52,882 - INFO - ✅ 成功回到登录页面
+2026-05-09 18:43:52,882 - INFO - ✅ 步骤0: 登出，确保从登出状态开始测试 - 完成
+2026-05-09 18:43:54,890 - INFO - 🔄 步骤1: 验证在APP首页（登录页面）
+2026-05-09 18:43:55,078 - INFO - ✅ 步骤1: 验证在APP首页（登录页面） - 完成，确认在APP首页（登录页面）
+2026-05-09 18:43:57,087 - INFO - 🔄 步骤2: 点击Sign Up按钮
+2026-05-09 18:43:58,061 - INFO - ✅ 步骤2: 点击Sign Up按钮 - 完成
+2026-05-09 18:44:01,066 - INFO - 🔄 步骤3: 验证跳转到Sign Up页面 - 验证'Sign Up'文本元素
+2026-05-09 18:44:01,417 - INFO - ✅ 步骤3: 验证跳转到Sign Up页面 - 验证'Sign Up'文本元素 - 完成，找到Sign Up文本元素: Sign Up
+2026-05-09 18:44:02,426 - INFO - 🔄 步骤4: 验证隐私政策文本元素
+2026-05-09 18:44:02,736 - INFO - ✅ 步骤4: 验证隐私政策文本元素 - 完成，找到隐私政策文本元素
+2026-05-09 18:44:02,736 - INFO - 📝 隐私政策文本内容: I have read and understood the Privacy Policy and agree to the User Agreement.
+2026-05-09 18:44:03,745 - INFO - 🔄 步骤5: 验证页面跳转成功（综合验证）
+2026-05-09 18:44:04,199 - INFO - ✅ 步骤5: 验证页面跳转成功（综合验证） - 完成
+2026-05-09 18:44:04,199 - INFO - ✅ 确认已成功跳转到Sign Up注册页面
+2026-05-09 18:44:04,199 - INFO - ✅ 页面包含以下关键元素：
+2026-05-09 18:44:04,248 - INFO -    - Sign Up文本: Sign Up
+2026-05-09 18:44:04,303 - INFO -    - 隐私政策文本: I have read and understood the Privacy Policy and agree to the User Agreement.
+2026-05-09 18:44:05,310 - INFO - 🎉 测试用例102181执行成功！
+2026-05-09 18:44:05,310 - INFO - ✅ 点击Sign Up按钮后能够正常跳转到注册页面
+2026-05-09 18:44:07,352 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260509_184330/ios_20260509_184330_report.xlsx

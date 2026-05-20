@@ -1,0 +1,7 @@
+2026-05-08 17:48:48,802 - INFO - 🔄 步骤1: 进入Set Password页
+2026-05-08 17:51:17,756 - INFO - ✅ 步骤1: 进入Set Password页 - 完成
+2026-05-08 17:51:17,757 - INFO - 🔄 步骤2: 输入密码并断言默认密文
+2026-05-08 17:51:20,545 - INFO - 📝 默认状态 value: '•••••••••', type: 'XCUIElementTypeSecureTextField'
+2026-05-08 17:51:20,545 - INFO - ✅ 步骤2: 输入密码并断言默认密文 - 完成
+2026-05-08 17:51:20,546 - INFO - 🎉 测试用例102162执行成功！
+2026-05-08 17:51:20,568 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260508_174847/ios_20260508_174847_report.xlsx

@@ -1,0 +1,28 @@
+2026-05-08 08:55:22,006 - INFO - 🔄 步骤1: 重启APP并处理登录状态
+2026-05-08 08:55:43,183 - INFO - ✅ 步骤1: 重启APP并处理登录状态 - 完成
+2026-05-08 08:55:43,184 - INFO - 🔄 步骤2: 点击Sign In进入登录页
+2026-05-08 08:55:46,127 - INFO - ✅ 步骤2: 点击Sign In进入登录页 - 完成
+2026-05-08 08:55:46,127 - INFO - 🔄 步骤3: 点击Forgot password进入忘记密码页
+2026-05-08 08:55:49,169 - INFO - ✅ 步骤3: 点击Forgot password进入忘记密码页 - 完成
+2026-05-08 08:55:49,170 - INFO - 🔄 步骤4: 输入未注册邮箱
+2026-05-08 08:55:52,057 - INFO - ✅ 步骤4: 输入未注册邮箱 - 完成，邮箱: unreg_1778201722@example-test.com
+2026-05-08 08:55:52,057 - INFO - 🔄 步骤5: 点击Next提交
+2026-05-08 08:55:52,894 - INFO - 
+============================================================
+2026-05-08 08:55:52,895 - INFO - ❌ 测试失败
+2026-05-08 08:55:52,895 - INFO - 📍 失败步骤: 步骤5: 点击Next提交
+2026-05-08 08:55:52,895 - INFO - 📝 失败原因: 步骤5: 点击Next提交失败
+2026-05-08 08:55:52,895 - INFO - ============================================================
+2026-05-08 08:55:52,897 - INFO - Traceback (most recent call last):
+
+2026-05-08 08:55:52,898 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102133验证错误邮箱-未注册的邮箱，不能找回密码.py", line 222, in test_102133
+    _click_with_tap_fallback(
+
+2026-05-08 08:55:52,898 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102133验证错误邮箱-未注册的邮箱，不能找回密码.py", line 94, in _click_with_tap_fallback
+    raise TimeoutException("未找到可点击元素")
+
+2026-05-08 08:55:52,898 - INFO - selenium.common.exceptions.TimeoutException: Message: 未找到可点击元素
+
+
+2026-05-08 08:55:53,183 - INFO - 已保存test_102133_failed失败截图: screenshots/test_102133_failed_1778201752.png
+2026-05-08 08:55:53,193 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260508_085520/ios_20260508_085520_report.xlsx

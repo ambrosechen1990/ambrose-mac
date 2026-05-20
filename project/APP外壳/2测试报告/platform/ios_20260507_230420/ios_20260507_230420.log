@@ -1,0 +1,43 @@
+2026-05-07 23:04:22,136 - INFO - 🔄 步骤1: 重启APP并处理登录状态
+2026-05-07 23:04:43,413 - INFO - ✅ 步骤1: 重启APP并处理登录状态 - 完成
+2026-05-07 23:04:43,414 - INFO - 🔄 步骤2: 点击Sign In进入登录页
+2026-05-07 23:04:46,349 - INFO - ✅ 步骤2: 点击Sign In进入登录页 - 完成
+2026-05-07 23:04:46,350 - INFO - 🔄 步骤3: 点击Forgot password进入忘记密码页
+2026-05-07 23:04:49,368 - INFO - ✅ 步骤3: 点击Forgot password进入忘记密码页 - 完成
+2026-05-07 23:04:49,368 - INFO - 🔄 步骤4: 输入邮箱并点击Next进入验证码页
+2026-05-07 23:04:59,775 - INFO - ✅ 步骤4: 输入邮箱并点击Next进入验证码页 - 完成，邮箱: haoc51888@gmail.com
+2026-05-07 23:04:59,776 - INFO - 🔄 步骤5: Gmail获取最新验证码code
+2026-05-07 23:06:44,255 - INFO - ✅ 步骤5: Gmail获取最新验证码code - 完成，code: 036096
+2026-05-07 23:06:44,256 - INFO - 🔄 步骤6: 输入验证码进入Set Password页
+2026-05-07 23:06:53,564 - INFO - ✅ 步骤6: 输入验证码进入Set Password页 - 完成
+2026-05-07 23:06:53,565 - INFO - 🔄 步骤7: 验证密码规则默认为灰色
+2026-05-07 23:07:09,844 - INFO - 
+============================================================
+2026-05-07 23:07:09,845 - INFO - ❌ 测试失败
+2026-05-07 23:07:09,845 - INFO - 📍 失败步骤: 步骤7: 验证密码规则默认为灰色
+2026-05-07 23:07:09,845 - INFO - 📝 失败原因: 步骤7: 验证密码规则默认为灰色失败
+2026-05-07 23:07:09,846 - INFO - ============================================================
+2026-05-07 23:07:09,850 - INFO - Traceback (most recent call last):
+
+2026-05-07 23:07:09,851 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102144验证“设置密码”页面的密码规则默认为灰色.py", line 436, in test_102144
+    _assert_password_rules_default_gray(
+
+2026-05-07 23:07:09,851 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102144验证“设置密码”页面的密码规则默认为灰色.py", line 278, in _assert_password_rules_default_gray
+    rule_elem = WebDriverWait(driver, timeout_s).until(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-07 23:07:09,851 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-07 23:07:09,852 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-07 23:07:10,162 - INFO - 已保存test_102144_failed失败截图: screenshots/test_102144_failed_1778166429.png
+2026-05-07 23:07:10,182 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260507_230420/ios_20260507_230420_report.xlsx

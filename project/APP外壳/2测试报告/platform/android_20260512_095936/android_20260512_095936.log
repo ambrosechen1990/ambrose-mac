@@ -1,0 +1,20 @@
+2026-05-12 09:59:55,642 - INFO - 🔄 点击协议文案中的 Privacy Policy 链接
+2026-05-12 10:01:45,266 - INFO - Traceback (most recent call last):
+
+2026-05-12 10:01:45,268 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200011验证点击隐私政策中，点击返回.py", line 274, in test_200011
+    _assert_opened_privacy_content_page(driver, timeout_s=18)
+
+2026-05-12 10:01:45,268 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200011验证点击隐私政策中，点击返回.py", line 234, in _assert_opened_privacy_content_page
+    raise TimeoutException(f"点击链接后未检测到隐私政策内容页（WebView/标题等）: {last}")
+
+2026-05-12 10:01:45,268 - INFO - selenium.common.exceptions.TimeoutException: Message: 点击链接后未检测到隐私政策内容页（WebView/标题等）: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-uiautomator2-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+
+2026-05-12 10:01:45,865 - INFO - 已保存test_200011_failed失败截图: screenshots/test_200011_failed_1778551305.png
+2026-05-12 10:01:45,897 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260512_095936/android_20260512_095936_report.xlsx

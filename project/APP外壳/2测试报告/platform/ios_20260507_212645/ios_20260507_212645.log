@@ -1,0 +1,63 @@
+2026-05-07 21:26:47,475 - INFO - 🔄 步骤0: 登出，确保从登出状态开始测试
+2026-05-07 21:26:47,475 - INFO - 开始登出流程...
+2026-05-07 21:27:18,409 - INFO - 未检测到home sel/mine sel/mine，跳过登出流程
+2026-05-07 21:27:18,410 - INFO - ✅ 步骤0: 登出，确保从登出状态开始测试 - 完成
+2026-05-07 21:27:20,420 - INFO - 🔄 步骤1: 验证在APP首页（登录页面）
+2026-05-07 21:27:20,587 - INFO - ✅ 步骤1: 验证在APP首页（登录页面） - 完成，确认在APP首页（登录页面）
+2026-05-07 21:27:22,593 - INFO - 🔄 步骤2: 点击Sign Up按钮进入注册页面
+2026-05-07 21:27:23,571 - INFO - ✅ 步骤2: 点击Sign Up按钮进入注册页面 - 完成
+2026-05-07 21:27:26,577 - INFO - 🔄 步骤3: 验证进入Sign Up页面
+2026-05-07 21:27:26,809 - INFO - ✅ 步骤3: 验证进入Sign Up页面 - 完成，确认已进入Sign Up注册页面
+2026-05-07 21:27:28,812 - INFO - 🔄 步骤4: 输入邮箱
+2026-05-07 21:27:28,817 - INFO - 📧 生成简单邮箱地址: testuser101@163.com
+2026-05-07 21:27:30,705 - INFO - ✅ 步骤4: 输入邮箱 - 完成，邮箱: testuser101@163.com
+2026-05-07 21:27:32,710 - INFO - 🔄 步骤5: 点击Done按钮收起键盘
+2026-05-07 21:27:34,010 - INFO - ✅ 步骤5: 点击Done按钮收起键盘 - 完成
+2026-05-07 21:27:36,015 - INFO - 🔄 步骤6: 勾选隐私政策和用户协议
+2026-05-07 21:27:41,792 - INFO - ✅ 隐私政策复选框已勾选
+2026-05-07 21:27:42,802 - INFO - ✅ 步骤6: 勾选隐私政策和用户协议 - 完成
+2026-05-07 21:27:44,812 - INFO - 🔄 步骤7: 再次点击隐私框（取消勾选）
+2026-05-07 21:27:55,538 - INFO - ❌ 步骤7: 再次点击隐私框（取消勾选）失败: 无法找到或点击已勾选的复选框 - Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-07 21:27:55,538 - INFO - 
+============================================================
+2026-05-07 21:27:55,538 - INFO - ❌ 测试失败
+2026-05-07 21:27:55,538 - INFO - 📍 失败步骤: 步骤7: 再次点击隐私框（取消勾选）
+2026-05-07 21:27:55,538 - INFO - 📝 失败原因: 步骤7: 再次点击隐私框（取消勾选）失败: 无法找到或点击已勾选的复选框 - Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-07 21:27:55,538 - INFO - ============================================================
+2026-05-07 21:27:55,542 - INFO - Traceback (most recent call last):
+
+2026-05-07 21:27:55,543 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/2注册/102199 验证"隐私政策、用户协议"取消勾选.py", line 225, in test_102199
+    checked_btn = WebDriverWait(driver, 8).until(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-07 21:27:55,543 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-07 21:27:55,543 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-05-07 21:27:55,843 - INFO - 已保存test_102199_failed失败截图: screenshots/test_102199_failed_1778160475.png
+2026-05-07 21:27:55,859 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260507_212645/ios_20260507_212645_report.xlsx

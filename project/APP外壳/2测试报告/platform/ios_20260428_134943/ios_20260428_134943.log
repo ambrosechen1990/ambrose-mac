@@ -1,0 +1,55 @@
+2026-04-28 13:49:47,312 - INFO - 🔄 步骤0: 登出，确保从登出状态开始测试
+2026-04-28 13:49:47,312 - INFO - 开始登出流程...
+2026-04-28 13:50:18,277 - INFO - 未检测到home sel/mine sel/mine，跳过登出流程
+2026-04-28 13:50:18,279 - INFO - ✅ 步骤0: 登出，确保从登出状态开始测试 - 完成
+2026-04-28 13:50:20,290 - INFO - 🔄 步骤1: 验证在APP首页（登录页面）
+2026-04-28 13:50:20,524 - INFO - ✅ 步骤1: 验证在APP首页（登录页面） - 完成，确认在APP首页（登录页面）
+2026-04-28 13:50:22,529 - INFO - 🔄 步骤2: 点击Sign Up按钮进入注册页面
+2026-04-28 13:50:23,256 - INFO - ✅ 步骤2: 点击Sign Up按钮进入注册页面 - 完成
+2026-04-28 13:50:26,261 - INFO - 🔄 步骤3: 验证进入Sign Up页面
+2026-04-28 13:50:26,431 - INFO - ✅ 步骤3: 验证进入Sign Up页面 - 完成，确认已进入Sign Up注册页面
+2026-04-28 13:50:28,436 - INFO - 🔄 步骤4: 验证Next按钮存在并检查初始状态
+2026-04-28 13:50:39,125 - INFO - ❌ 步骤4: 验证Next按钮存在并检查初始状态失败: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-04-28 13:50:39,127 - INFO - 
+============================================================
+2026-04-28 13:50:39,127 - INFO - ❌ 测试失败
+2026-04-28 13:50:39,127 - INFO - 📍 失败步骤: 步骤4: 验证Next按钮存在并检查初始状态
+2026-04-28 13:50:39,128 - INFO - 📝 失败原因: 步骤4: 验证Next按钮存在并检查初始状态失败: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-04-28 13:50:39,128 - INFO - ============================================================
+2026-04-28 13:50:39,147 - INFO - Traceback (most recent call last):
+
+2026-04-28 13:50:39,167 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/2注册/102202 验证"Next"按钮，初始状态为浅色，不可点击.py", line 165, in test_102202
+    next_btn = WebDriverWait(driver, 10).until(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-04-28 13:50:39,173 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-04-28 13:50:39,176 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+2026-04-28 13:50:39,567 - INFO - 已保存test_102202_failed失败截图: screenshots/test_102202_failed_1777355439.png
+2026-04-28 13:50:39,636 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260428_134943/ios_20260428_134943_report.xlsx

@@ -1,0 +1,36 @@
+2026-05-18 17:35:31,931 - INFO - 🔄 步骤1: 重启APP
+2026-05-18 17:35:31,932 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-18 17:35:36,843 - INFO -     ✅ APP 已重启
+2026-05-18 17:35:36,844 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-18 17:35:36,844 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-18 17:35:36,866 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-18 17:35:36,999 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-18 17:35:37,615 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-18 17:35:37,615 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-18 17:35:37,671 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-18 17:35:37,672 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-18 17:35:37,672 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-18 17:35:37,672 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-18 17:35:37,741 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-18 17:35:38,379 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-18 17:35:39,883 - INFO - 🔄 步骤4: 点击 User Agreement 并断言 Last Modified + Introduction
+2026-05-18 17:35:41,226 - INFO - ❌ 步骤4: 点击 User Agreement 并断言 Last Modified + Introduction失败: name '_x_ratio_for_phrase_in_line' is not defined
+2026-05-18 17:35:41,227 - INFO - 
+============================================================
+2026-05-18 17:35:41,227 - INFO - ❌ 测试失败
+2026-05-18 17:35:41,227 - INFO - 📍 失败步骤: 步骤4: 点击 User Agreement 并断言 Last Modified + Introduction
+2026-05-18 17:35:41,227 - INFO - 📝 失败原因: 步骤4: 点击 User Agreement 并断言 Last Modified + Introduction失败: name '_x_ratio_for_phrase_in_line' is not defined
+2026-05-18 17:35:41,227 - INFO - ============================================================
+2026-05-18 17:35:41,229 - INFO - Traceback (most recent call last):
+
+2026-05-18 17:35:41,230 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200014验证点击用户协议.py", line 588, in test_200014
+    _tap_user_agreement_on_sign_in_disclaimer(driver, timeout_s=18)
+
+2026-05-18 17:35:41,230 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200014验证点击用户协议.py", line 383, in _tap_user_agreement_on_sign_in_disclaimer
+    base_ratio = _x_ratio_for_phrase_in_line(text, USER_AGREEMENT_LINK_PHRASE)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-18 17:35:41,231 - INFO - NameError: name '_x_ratio_for_phrase_in_line' is not defined
+
+2026-05-18 17:35:41,785 - INFO - 已保存test_200014_failed失败截图: screenshots/test_200014_failed_1779096941.png
+2026-05-18 17:35:41,818 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260518_173528/android_20260518_173528_report.xlsx

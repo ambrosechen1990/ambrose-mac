@@ -1,0 +1,37 @@
+2026-05-08 15:06:36,997 - INFO - 🔄 步骤0: 登出，确保从登出状态开始测试
+2026-05-08 15:06:36,997 - INFO - 开始登出流程...
+2026-05-08 15:07:07,902 - INFO - 未检测到home sel/mine sel/mine，跳过登出流程
+2026-05-08 15:07:07,903 - INFO - ✅ 步骤0: 登出，确保从登出状态开始测试 - 完成
+2026-05-08 15:07:09,904 - INFO - 🔄 步骤1: 验证在APP首页（登录页面）
+2026-05-08 15:07:10,060 - INFO - ✅ 步骤1: 验证在APP首页（登录页面） - 完成，确认在APP首页（登录页面）
+2026-05-08 15:07:12,065 - INFO - 🔄 步骤2: 点击Sign Up按钮进入注册页面
+2026-05-08 15:07:13,032 - INFO - ✅ 步骤2: 点击Sign Up按钮进入注册页面 - 完成
+2026-05-08 15:07:16,036 - INFO - 🔄 步骤4: 输入邮箱（value="Email"）
+2026-05-08 15:07:16,039 - INFO - 📧 生成简单邮箱地址: testuser140@163.com
+2026-05-08 15:07:17,931 - INFO - ✅ 步骤4: 输入邮箱（value="Email"） - 完成，邮箱: testuser140@163.com
+2026-05-08 15:07:19,936 - INFO - 🔄 步骤5: 点击Done按钮收起键盘
+2026-05-08 15:07:21,193 - INFO - ✅ 步骤5: 点击Done按钮收起键盘 - 完成
+2026-05-08 15:07:23,196 - INFO - 🔄 步骤7: 点击Next按钮（不勾选隐私协议）
+2026-05-08 15:07:31,481 - INFO - ❌ 步骤7: 点击Next按钮（不勾选隐私协议）失败: Message: 
+
+2026-05-08 15:07:31,483 - INFO - 
+============================================================
+2026-05-08 15:07:31,483 - INFO - ❌ 测试失败
+2026-05-08 15:07:31,483 - INFO - 📍 失败步骤: 步骤7: 点击Next按钮（不勾选隐私协议）
+2026-05-08 15:07:31,483 - INFO - 📝 失败原因: 步骤7: 点击Next按钮（不勾选隐私协议）失败: Message: 
+
+2026-05-08 15:07:31,483 - INFO - ============================================================
+2026-05-08 15:07:31,485 - INFO - Traceback (most recent call last):
+
+2026-05-08 15:07:31,486 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/2注册/102197 验证“隐私政策、用户协议”默认不勾选.py", line 197, in test_102197
+    next_btn = WebDriverWait(driver, 8).until(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-05-08 15:07:31,486 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+
+2026-05-08 15:07:31,486 - INFO - selenium.common.exceptions.TimeoutException: Message: 
+
+
+2026-05-08 15:07:31,785 - INFO - 已保存test_102197_failed失败截图: screenshots/test_102197_failed_1778224051.png
+2026-05-08 15:07:31,797 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260508_150635/ios_20260508_150635_report.xlsx

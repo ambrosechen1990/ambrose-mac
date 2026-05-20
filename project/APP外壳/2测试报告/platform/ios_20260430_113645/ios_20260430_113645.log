@@ -1,0 +1,50 @@
+2026-04-30 11:36:48,376 - INFO - 🔄 步骤1: 重启APP并处理登录状态
+2026-04-30 11:37:09,996 - INFO - ✅ 步骤1: 重启APP并处理登录状态 - 完成
+2026-04-30 11:37:10,000 - INFO - 🔄 步骤2: 点击Sign In进入登录页
+2026-04-30 11:37:12,920 - INFO - ✅ 步骤2: 点击Sign In进入登录页 - 完成
+2026-04-30 11:37:12,921 - INFO - 🔄 步骤3: 点击Forgot password进入忘记密码页
+2026-04-30 11:37:15,973 - INFO - ✅ 步骤3: 点击Forgot password进入忘记密码页 - 完成
+2026-04-30 11:37:15,974 - INFO - 🔄 步骤4: 输入邮箱
+2026-04-30 11:37:20,221 - INFO - ✅ 步骤4: 输入邮箱 - 完成，邮箱: haoc51888@gmail.com
+2026-04-30 11:37:20,223 - INFO - 🔄 步骤5: 点击Next进入验证码页并触发发码
+2026-04-30 11:37:28,539 - INFO - ✅ 步骤5: 点击Next进入验证码页并触发发码 - 完成
+2026-04-30 11:37:28,541 - INFO - 🔄 步骤6: Gmail获取最新验证码code1
+2026-04-30 11:37:30,283 - INFO - 
+============================================================
+2026-04-30 11:37:30,283 - INFO - ❌ 测试失败
+2026-04-30 11:37:30,283 - INFO - 📍 失败步骤: 步骤6: Gmail获取最新验证码code1
+2026-04-30 11:37:30,283 - INFO - 📝 失败原因: 步骤6: Gmail获取最新验证码code1失败
+2026-04-30 11:37:30,283 - INFO - ============================================================
+2026-04-30 11:37:30,290 - INFO - Traceback (most recent call last):
+
+2026-04-30 11:37:30,294 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/1共用脚本/gmail_code_utils.py", line 124, in fetch_latest_verification_code
+    imap.login(addr, pwd)
+
+2026-04-30 11:37:30,294 - INFO -   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/imaplib.py", line 612, in login
+    raise self.error(dat[-1])
+
+2026-04-30 11:37:30,294 - INFO - imaplib.IMAP4.error: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+
+2026-04-30 11:37:30,295 - INFO - 
+The above exception was the direct cause of the following exception:
+
+
+2026-04-30 11:37:30,295 - INFO - Traceback (most recent call last):
+
+2026-04-30 11:37:30,295 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/IOS/3忘记密码/102135验证重新发送验证码后，上次的验证码会失效，会提示重填.py", line 360, in test_102135
+    code1 = fetch_latest_verification_code(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2026-04-30 11:37:30,295 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/1共用脚本/gmail_code_utils.py", line 166, in fetch_latest_verification_code
+    raise RuntimeError(
+
+2026-04-30 11:37:30,295 - INFO - RuntimeError: Gmail IMAP 认证失败（AUTHENTICATIONFAILED）。
+解决方式：
+1) Gmail 账号开启两步验证（2FA）
+2) 在 Google 账号里创建“应用专用密码”（App Password）
+3) 将应用专用密码配置到环境变量 GMAIL_PASSWORD（推荐），或更新 1共用脚本/constant.py 的 password
+4) 环境变量 GMAIL_ADDRESS 设置为实际 Gmail 地址
+注：普通登录密码通常无法用于 IMAP。
+
+2026-04-30 11:37:30,556 - INFO - 已保存test_102135_failed失败截图: screenshots/test_102135_failed_1777520250.png
+2026-04-30 11:37:30,598 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260430_113645/ios_20260430_113645_report.xlsx

@@ -1,0 +1,19 @@
+2026-05-19 11:00:53,524 - INFO - 🔄 步骤1: 重启APP
+2026-05-19 11:00:53,524 - INFO -     🔄 driver.terminate_app / activate_app: com.xingmai.tech
+2026-05-19 11:00:58,457 - INFO -     ✅ APP 已重启
+2026-05-19 11:00:58,457 - INFO - ✅ 步骤1: 重启APP - 完成
+2026-05-19 11:00:58,457 - INFO - 🔄 步骤2: 检测登录状态并确保在登录/注册入口页
+2026-05-19 11:00:58,461 - INFO -     🔄 检测已登录元素: //android.view.View[@content-desc="More"]
+2026-05-19 11:00:58,578 - INFO -     🔄 检测已登录元素: //*[@content-desc="More"]
+2026-05-19 11:00:59,211 - INFO -     ℹ️ 未检测到 More，判定未登录
+2026-05-19 11:00:59,211 - INFO -     🔄 等待登录/注册入口页: //*[(@text="Sign In" or @text="Sign Up") or contains(@text,"Sign In") or contains(@text,"Sign Up") or @content-desc="Sign In" or @content-desc="Sign Up"]
+2026-05-19 11:00:59,260 - INFO -     ✅ 已处于登录/注册入口页
+2026-05-19 11:00:59,261 - INFO - ✅ 步骤2: 检测登录状态并确保在登录/注册入口页 - 完成
+2026-05-19 11:00:59,261 - INFO - 🔄 步骤3: 点击 Sign In 进入登录页
+2026-05-19 11:00:59,261 - INFO -     🔄 定位 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-19 11:00:59,934 - INFO -     ✅ 找到 Sign In: //android.widget.TextView[@text="Sign In"]
+2026-05-19 11:01:00,580 - INFO - ✅ 步骤3: 点击 Sign In 进入登录页 - 完成
+2026-05-19 11:01:02,081 - INFO - 🔄 步骤4: 点击 Privacy Policy 并断言页面
+2026-05-19 11:01:08,750 - INFO - ✅ 步骤4: 点击 Privacy Policy 并断言页面 - 完成
+2026-05-19 11:01:08,751 - INFO - 🎉 测试用例 200012 执行成功！
+2026-05-19 11:01:08,773 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260519_110050/android_20260519_110050_report.xlsx

@@ -1,0 +1,7 @@
+2026-05-08 23:13:03,615 - INFO - 🔄 步骤1: 进入Set Password页
+2026-05-08 23:15:30,445 - INFO - ✅ 步骤1: 进入Set Password页 - 完成
+2026-05-08 23:15:30,447 - INFO - 🔄 步骤2: 明文后再次隐藏
+2026-05-08 23:15:37,106 - INFO - 📝 隐藏后value: '•••••••••', type: 'XCUIElementTypeSecureTextField'
+2026-05-08 23:15:37,107 - INFO - ✅ 步骤2: 明文后再次隐藏 - 完成
+2026-05-08 23:15:37,107 - INFO - 🎉 测试用例102164执行成功！
+2026-05-08 23:15:37,132 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260508_231301/ios_20260508_231301_report.xlsx

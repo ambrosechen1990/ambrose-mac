@@ -1,0 +1,32 @@
+2026-05-12 11:03:23,900 - INFO - 🔄 步骤0: 登出，确保从登出状态开始测试
+2026-05-12 11:03:23,900 - INFO - 开始登出流程...
+2026-05-12 11:03:54,837 - INFO - 未检测到home sel/mine sel/mine，跳过登出流程
+2026-05-12 11:03:54,839 - INFO - ✅ 步骤0: 登出，确保从登出状态开始测试 - 完成
+2026-05-12 11:03:56,845 - INFO - 🔄 步骤1: 验证在APP首页（登录页面）
+2026-05-12 11:03:57,009 - INFO - ✅ 步骤1: 验证在APP首页（登录页面） - 完成，确认在APP首页（登录页面）
+2026-05-12 11:03:59,018 - INFO - 🔄 步骤2: 点击Sign Up按钮进入注册页面
+2026-05-12 11:03:59,967 - INFO - ✅ 步骤2: 点击Sign Up按钮进入注册页面 - 完成
+2026-05-12 11:04:02,972 - INFO - 🔄 步骤3: 验证进入Sign Up页面
+2026-05-12 11:04:03,197 - INFO - ✅ 步骤3: 验证进入Sign Up页面 - 完成，确认已进入Sign Up注册页面
+2026-05-12 11:04:05,207 - INFO - 🔄 步骤4: 邮箱保持为空
+2026-05-12 11:04:05,557 - INFO - ✅ 步骤4: 邮箱保持为空 - 完成，邮箱保持为空
+2026-05-12 11:04:07,561 - INFO - 🔄 步骤5: 勾选隐私政策和用户协议
+2026-05-12 11:04:13,283 - INFO - ✅ 隐私政策复选框已勾选
+2026-05-12 11:04:14,790 - INFO - 🔄 步骤5.1: 收起键盘（Done）
+2026-05-12 11:04:19,897 - INFO - ℹ️ 步骤5.1: 收起键盘（Done） - 未找到Done按钮，可能键盘已收起: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:116:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at XCUITestDriver.findNativeElementOrElements (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:69:10)
+    at XCUITestDriver.findElOrEls (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/lib/commands/find.js:13:12)
+    at XCUITestDriver.findElOrElsWithProcessing (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at XCUITestDriver.findElement (/Users/ambrose.chen/.appium/node_modules/appium-xcuitest-driver/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2026-05-12 11:04:20,406 - INFO - 🔄 步骤6: 点击Next按钮
+2026-05-12 11:04:21,085 - INFO - ✅ 步骤6: 点击Next按钮 - 完成，已点击Next按钮
+2026-05-12 11:04:23,091 - INFO - 🔄 步骤7: 验证停留当前页面并出现提示
+2026-05-12 11:04:23,597 - INFO - ✅ 找到提示信息元素，选择器: //XCUIElementTypeStaticText[@name="Please sign up using your email address"]
+2026-05-12 11:04:23,598 - INFO - ✅ 步骤7: 验证停留当前页面并出现提示 - 完成，提示信息: Please sign up using your email address
+2026-05-12 11:04:25,603 - INFO - 🎉 测试用例102208执行成功！
+2026-05-12 11:04:25,603 - INFO - ✅ 验证邮箱为空，勾选隐私政策后点击Next，停留当前页并提示“Please sign up using your email address”
+2026-05-12 11:04:27,631 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/ios_20260512_110322/ios_20260512_110322_report.xlsx

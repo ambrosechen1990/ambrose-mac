@@ -1,0 +1,14 @@
+2026-05-18 11:25:38,418 - INFO - 🔄 点击 User Agreement 链接（与 200011 同类策略）
+2026-05-18 11:26:43,257 - INFO - Traceback (most recent call last):
+
+2026-05-18 11:26:43,258 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/200013验证点击用户协议中，点击返回.py", line 209, in test_200013
+    tap_user_agreement_on_sign_in_disclaimer(driver, timeout_s=18)
+
+2026-05-18 11:26:43,258 - INFO -   File "/Users/ambrose.chen/Desktop/iot/project/APP外壳/3功能/1平台/Android/1登录/android_privacy_policy_link.py", line 534, in tap_user_agreement_on_sign_in_disclaimer
+    raise TimeoutException(
+
+2026-05-18 11:26:43,259 - INFO - selenium.common.exceptions.TimeoutException: Message: 多次点击仍未进入用户协议页。请尝试环境变量 ANDROID_USER_AGREEMENT_LINK_X_RATIO（约 0.15~0.35 表示第二行左，0.88~0.97 表示行末右），或确认免责声明是否换行、文案是否与 DISCLAIMER_TEXT 一致。
+
+
+2026-05-18 11:26:43,855 - INFO - 已保存test_200013_failed失败截图: screenshots/test_200013_failed_1779074803.png
+2026-05-18 11:26:43,877 - INFO - ✅ 报告已生成: /Users/ambrose.chen/Desktop/iot/project/APP外壳/2测试报告/platform/android_20260518_112519/android_20260518_112519_report.xlsx
