@@ -16,7 +16,6 @@ venv/
 .idea/
 .vscode/
 .DS_Store
-*.log
 
 # Beatbot / 构建产物
 **/dist/
@@ -28,12 +27,37 @@ venv/
 # 测试/缓存
 .pytest_cache/
 .mypy_cache/
+
+# 日志 / 日志包（只备份脚本，不备份运行产物）
+*.log
+*.tar
+*.tgz
+*.tar.gz
+
+# Excel / 表格数据
+*.xlsx
+*.xls
+*.xlsm
+*.csv
 *.xlsx~
 ~$*.xlsx
 
-# 大视频 / 文案库（GitHub 单文件上限 100MB，超过会整次 push 失败）
+# 视频
 *.mp4
 *.avi
 *.mov
 *.mkv
-*文案库.xlsx
+*.wmv
+*.flv
+*.webm
+*.m4v
+*.mpeg
+*.mpg
+*.3gp
+
+# 测试报告 / 截图产物
+**/reports/
+**/screenshots/
+Beatbot-tools/主程序/picture/
+Beatbot-tools/spjz/video/
+Beatbot-tools/spjz/output/

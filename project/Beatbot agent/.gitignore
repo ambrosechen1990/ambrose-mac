@@ -6,6 +6,3 @@ __pycache__/
 .DS_Store
 output/
 test_output/
-*.xlsx
-!data/*.xlsx
-!config/*.xlsx
