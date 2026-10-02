@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+*.egg
+.venv/
+.venv_*/
+venv/
+.env
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+*.log
+
+# Beatbot / 构建产物
+**/dist/
+**/build/
+**/.venv_build/
+**/.venv_run/
+**/__pycache__/
+
+# 测试/缓存
+.pytest_cache/
+.mypy_cache/
+*.xlsx~
+~$*.xlsx
+
+# 大视频 / 文案库（GitHub 单文件上限 100MB，超过会整次 push 失败）
+*.mp4
+*.avi
+*.mov
+*.mkv
+*文案库.xlsx

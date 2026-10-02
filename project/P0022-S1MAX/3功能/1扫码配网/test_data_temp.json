@@ -1,0 +1,177 @@
+{
+  "total_tests": 18,
+  "success_count": 17,
+  "failure_count": 1,
+  "detailed_results": {
+    "google_pixel_9_pro": {
+      "routers": {}
+    },
+    "galaxy_s24_ultra": {
+      "routers": {}
+    },
+    "galaxy_s10": {
+      "routers": {}
+    },
+    "google_pixel_7_pro": {
+      "routers": {}
+    },
+    "1+11": {
+      "routers": {
+        "ASUS": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "10:57:47"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:01:57"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:06:04"
+            }
+          ]
+        },
+        "TP-Link_C87E": {
+          "success": 2,
+          "failure": 1,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:10:23"
+            },
+            {
+              "round": 2,
+              "result": "error",
+              "message": "无法找到add device按钮",
+              "timestamp": "11:11:46"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:16:17"
+            }
+          ]
+        },
+        "Deco": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:20:18"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:24:28"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:28:40"
+            }
+          ]
+        },
+        "setup320D.ybd": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:32:45"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:36:59"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:41:17"
+            }
+          ]
+        },
+        "softtest": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:45:20"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:49:39"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:53:57"
+            }
+          ]
+        },
+        "NETGEAR34": {
+          "success": 3,
+          "failure": 0,
+          "rounds": [
+            {
+              "round": 1,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "11:58:17"
+            },
+            {
+              "round": 2,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "12:02:44"
+            },
+            {
+              "round": 3,
+              "result": "success",
+              "message": "配网成功",
+              "timestamp": "12:07:12"
+            }
+          ]
+        }
+      }
+    },
+    "galaxy_s25_ultra": {
+      "routers": {}
+    }
+  },
+  "test_config": {
+    "loop_count_per_router": 3,
+    "timeout_seconds": 180,
+    "success_rate_threshold": 0.8
+  },
+  "interrupted": false,
+  "timestamp": "2026-01-31 12:07:15"
+}

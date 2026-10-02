@@ -1,0 +1,160 @@
+{
+  "total_tests": 18,
+  "success_count": 17,
+  "failure_count": 1,
+  "detailed_results": {
+    "1+11": {
+      "ASUS": {
+        "success": 3,
+        "failure": 0,
+        "rounds": [
+          {
+            "round": 1,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:00:23"
+          },
+          {
+            "round": 2,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:03:27"
+          },
+          {
+            "round": 3,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:06:56"
+          }
+        ]
+      },
+      "TP-Link_C87E": {
+        "success": 3,
+        "failure": 0,
+        "rounds": [
+          {
+            "round": 1,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:13:14"
+          },
+          {
+            "round": 2,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:16:43"
+          },
+          {
+            "round": 3,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:19:39"
+          }
+        ]
+      },
+      "Deco": {
+        "success": 2,
+        "failure": 1,
+        "rounds": [
+          {
+            "round": 1,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:22:11"
+          },
+          {
+            "round": 2,
+            "result": "error",
+            "message": "选择设备失败",
+            "timestamp": "09:26:04"
+          },
+          {
+            "round": 3,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:29:08"
+          }
+        ]
+      },
+      "setup320D.ybd": {
+        "success": 3,
+        "failure": 0,
+        "rounds": [
+          {
+            "round": 1,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:31:48"
+          },
+          {
+            "round": 2,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:35:05"
+          },
+          {
+            "round": 3,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:38:03"
+          }
+        ]
+      },
+      "softtest": {
+        "success": 3,
+        "failure": 0,
+        "rounds": [
+          {
+            "round": 1,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:41:10"
+          },
+          {
+            "round": 2,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:44:01"
+          },
+          {
+            "round": 3,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:47:11"
+          }
+        ]
+      },
+      "NETGEAR34": {
+        "success": 3,
+        "failure": 0,
+        "rounds": [
+          {
+            "round": 1,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:49:39"
+          },
+          {
+            "round": 2,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:52:22"
+          },
+          {
+            "round": 3,
+            "result": "success",
+            "message": "配网成功",
+            "timestamp": "09:55:58"
+          }
+        ]
+      }
+    }
+  },
+  "test_config": {
+    "loop_count_per_router": 3,
+    "timeout_seconds": 180,
+    "success_rate_threshold": 0.8
+  },
+  "interrupted": false,
+  "timestamp": "2026-01-23 09:55:58"
+}

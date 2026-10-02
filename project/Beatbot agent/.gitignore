@@ -1,0 +1,11 @@
+.browser_profile*/
+.browser_profiles_concurrent/
+.py_pkgs/
+__pycache__/
+*.pyc
+.DS_Store
+output/
+test_output/
+*.xlsx
+!data/*.xlsx
+!config/*.xlsx

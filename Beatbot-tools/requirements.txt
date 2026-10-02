@@ -1,0 +1,9 @@
+numpy
+opencv-python
+Pillow
+openpyxl
+pytesseract
+pyserial
+zstandard
+# 拖拽导入（Finder / 资源管理器）
+tkinterdnd2

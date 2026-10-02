@@ -1,0 +1,136 @@
+{
+  "device_configs": {
+    "google_pixel_9_pro": {
+      "platform": "android",
+      "port": 4725,
+      "device_name": "49261FDAS002YV",
+      "platform_version": "16",
+      "app_package": "com.xingmai.tech",
+      "app_activity": "com.xingmai.splash.SplashActivity",
+      "description": "Google Pixel 9 Pro 设备"
+    },
+    "galaxy_s24_ultra": {
+      "platform": "android",
+      "port": 4726,
+      "device_name": "RFCY10F52AW",
+      "platform_version": "15",
+      "app_package": "com.xingmai.tech",
+      "app_activity": "com.xingmai.splash.SplashActivity",
+      "description": "Samsung Galaxy S25 Ultra 设备"
+    },
+    "galaxy_s10": {
+      "platform": "android",
+      "port": 4727,
+      "device_name": "1a7967582d037ece",
+      "platform_version": "10",
+      "app_package": "com.xingmai.tech",
+      "app_activity": "com.xingmai.splash.SplashActivity",
+      "description": "Samsung Galaxy 10 设备"
+    },
+    "google_pixel_7_pro": {
+      "platform": "android",
+      "port": 4728,
+      "device_name": "2A081FDH300GV4",
+      "platform_version": "16",
+      "app_package": "com.xingmai.tech",
+      "app_activity": "com.xingmai.splash.SplashActivity",
+      "description": "Google_pixel_7_pro 设备"
+    },
+    "1+11": {
+      "platform": "android",
+      "port": 4729,
+      "device_name": "e6ba68de",
+      "platform_version": "16",
+      "app_package": "com.xingmai.tech",
+      "app_activity": "com.xingmai.splash.SplashActivity",
+      "description": "1+11 设备"
+    },
+    "galaxy_s25_ultra": {
+      "platform": "android",
+      "port": 4730,
+      "device_name": "RFCY10F52AW",
+      "platform_version": "15",
+      "app_package": "com.xingmai.tech",
+      "app_activity": "com.xingmai.splash.SplashActivity",
+      "description": "Samsung Galaxy S25 Ultra 设备"
+    },
+    "iPhone 15": {
+      "platform": "ios",
+      "port": 4735,
+      "device_name": "iPhone 15",
+      "platform_version": "18.5",
+      "bundle_id": "com.xingmai.tech",
+      "udid": "00008120-001471081AE0A01E",
+      "description": "iPhone 15 设备",
+      "wda_team_id": "95PVV7PLLF",
+      "wda_bundle_id": "com.chenhao.WebDriverAgentRunner"
+    },
+    "iPhone 16 pro max": {
+      "platform": "ios",
+      "port": 4736,
+      "device_name": "iPhone 16 pro max",
+      "platform_version": "18.5",
+      "bundle_id": "com.xingmai.tech",
+      "udid": "00008140-00041C980A50801C",
+      "description": "iPhone 16 pro max 设备",
+      "wda_team_id": "95PVV7PLLF",
+      "wda_bundle_id": "com.chenhao.WebDriverAgentRunner"
+    },
+    "iPhone 13 mini": {
+      "platform": "ios",
+      "port": 4737,
+      "device_name": "iPhone 13 mini",
+      "platform_version": "18.5",
+      "bundle_id": "com.xingmai.tech",
+      "udid": "00008110-000411A12E53801E",
+      "description": "iPhone 13 mini 设备",
+      "wda_team_id": "95PVV7PLLF",
+      "wda_bundle_id": "com.chenhao.WebDriverAgentRunner"
+    }
+  },
+  "target_device": {
+    "device_sn": "0053",
+    "device_name": "iSkim",
+    "description": "目标配网设备 - 机器人设备"
+  },
+  "wifi_configs": [
+    {
+      "name": "ASUS",
+      "password": "Xm220704",
+      "description": "路由器5 - ASUS"
+    },
+    {
+      "name": "TP-Link_C87E",
+      "password": "Xm220704",
+      "description": "路由器1 - TP-link"
+    },
+    {
+      "name": "Deco",
+      "password": "vastzoo455",
+      "description": "路由器2 - TP-link"
+    },
+    {
+      "name": "setup320D.ybd",
+      "password": "W2C9TNC3",
+      "description": "路由器3 - Google"
+    },
+    {
+      "name": "softtest",
+      "password": "vastzoo45512",
+      "description": "路由器4 - Google"
+    },
+    {
+      "name": "NETGEAR34",
+      "password": "Xm220704",
+      "description": "路由器6 - NETGEAR34"
+    }
+  ],
+  "test_config": {
+    "loop_count_per_router": 3,
+    "timeout_seconds": 180,
+    "success_rate_threshold": 0.8,
+    "robot_serial_port": "/dev/cu.usbserial-1120",
+    "robot_serial_baud": 115200
+  }
+}
+

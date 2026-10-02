@@ -1,0 +1,9 @@
+Politique de confidentialité relative à la Reconnaissance intelligente basée sur l'IA
+Veuillez noter que lorsque vous activez la fonction de Reconnaissance intelligente basée sur l'IA, votre robot, identifiera les types d'obstacles en fonction de leurs caractéristiques et déterminera votre type de piscine. Ces photos peuvent également inclure les zones environnantes afin d'améliorer le fonctionnement de l'IA du robot. Par conséquent, nous vous rappelons que les photos prises peuvent contenir des informations personnelles, telles que des informations concernant votre vie privée ou celle d'autres personnes, votre portrait ou des informations de reconnaissance faciale.
+Afin d'optimiser la sécurité de vos informations personnelles, nous avons adopté des mesures de protection strictes. Uniquement dans le
+cas où vous acceptez la fonction de partage des données, lorsque le robot sera en charge, les photos seront chiffrées et téléchargées sur le serveur pour une analyse plus approfondie. Une fois le transfert terminé, la photo locales sera automatiquement supprimée. Vous pouvez activer ou désactiver cette fonction à tout moment. Si vous désactivez cette fonction, les photos ne seront pas téléchargées sur le serveur.
+Politique de confidentialité
+prendra des photos sous l'eau
+Toutefois, lorsque vous utilisez la fonction d'assistance pour signaler une erreur d'identification d'obstacle, la photo signalées sera téléchargée sur le serveur et nous recevrons cette photo afin d'analyser la raison de l'erreur d'identification.
+Pour plus d'informations sur cette fonction, vous pouvez vous reporter au mode d'emploi du produit ou aux instructions distinctes concernant la protection de la vie privée pour cette fonction.
+Merci d'avoir pris le temps de lire cette politique de confidentialité !

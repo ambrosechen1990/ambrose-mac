@@ -1,0 +1,13 @@
+{
+  "total_tests": 0,
+  "success_count": 0,
+  "failure_count": 0,
+  "detailed_results": {},
+  "test_config": {
+    "loop_count_per_router": 3,
+    "timeout_seconds": 180,
+    "success_rate_threshold": 0.8
+  },
+  "interrupted": false,
+  "timestamp": "2026-01-21 13:44:27"
+}

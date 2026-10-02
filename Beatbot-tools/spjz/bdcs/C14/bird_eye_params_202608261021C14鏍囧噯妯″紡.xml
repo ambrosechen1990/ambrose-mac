@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<H type_id="opencv-matrix">
+  <rows>3</rows>
+  <cols>3</cols>
+  <dt>d</dt>
+  <data>
+    0.9565897270096656 -0.15570462323033391 -285.60400005354205
+    0.052093855577122393 0.83887655478405043 -109.6194467672795
+    -3.0805156169614669e-05 -0.00012586528423324877 1.</data></H>
+<dst_width>1100</dst_width>
+<dst_height>900</dst_height>
+</opencv_storage>

@@ -1,0 +1,69 @@
+Beatbot-tools / 工具脚本 — 说明
+================================
+
+更新时间：2026-09-17
+本目录仅保留与「macOS 打包 / 构建」直接相关的脚本。
+
+---------------------------------------------------------------------------
+一、保留（请勿删）
+---------------------------------------------------------------------------
+
+1) 打包脚本_mac.py
+   作用：把主程序打成 macOS 客户端 Beatbot软测工具.app
+   入口：主程序/Beatbot.py
+   用法：
+     - 双击仓库根目录 build_app_mac.command
+     - 或：python3 工具脚本/打包脚本_mac.py
+   说明：会创建/使用 .venv_build，产物在 dist/
+
+2) Beatbot软测工具.spec
+   作用：PyInstaller 规格文件（相对路径推导 Beatbot-tools 根目录）
+   说明：打包脚本会引用；一般无需手改。改名/搬迁仓库后也不应再写死绝对路径。
+
+3) .gitignore
+   作用：忽略本目录下的 .venv / dist / __pycache__ 等构建产物
+
+4) 脚本说明.txt（本文件）
+   作用：记录本目录各文件用途与清理原则
+
+---------------------------------------------------------------------------
+二、已删除 / 建议不要再加回的内容（与当前 mac 工具链无关）
+---------------------------------------------------------------------------
+
+以下类型已从本目录清理（或明确不应保留）：
+
+- Beatbot_20250808.spec
+  旧快照打包配置（2025-08），入口指向历史 Softwaretest.py，已过时。
+
+- 打包脚本.py + make_app_icon.py
+  Windows 版 exe 打包与 ICO 生成；面向 Softwaretest-win / D: E: 路径，
+  不属于 Beatbot-tools（macOS）日常流程。若需打 Windows 包，应在 Win 工程目录维护。
+
+- upload_to_github.py / setup_github_ssh.py / fix_ssh_path.py
+  + README_GitHub_Upload.md
+  面向旧 SoftTest → ambrose-windows 仓库的上传与 SSH 修复；
+  当前工程已在 iot 仓库下，用不到。
+
+- folder_structure_analyzer.py + README_文件夹架构分析.md + structure_report.txt
+  一次性目录扫描工具与旧报告（路径还是 E:\\py\\Softwaretest），无持续价值。
+
+- tuya_api_example.py
+  涂鸦开放平台 API 示例，与软测工具打包无关。
+
+- test_install_features.py
+  空文件，无内容。
+
+- __pycache__/
+  Python 缓存，可随时再生。
+
+---------------------------------------------------------------------------
+三、日常怎么用
+---------------------------------------------------------------------------
+
+打包 Mac 客户端：
+  cd Beatbot-tools
+  python3 工具脚本/打包脚本_mac.py
+
+运行源码（不打包）：
+  双击 run_Beatbot_tools.command
+  或：cd 主程序 && python3 Beatbot.py

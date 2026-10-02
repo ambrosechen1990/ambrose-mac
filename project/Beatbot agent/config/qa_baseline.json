@@ -1,0 +1,59 @@
+[
+  {
+    "id": "sora10-depth",
+    "product": "Sora 10",
+    "question": "Sora 10 的工作水深是多少？",
+    "expect_keywords": ["0.5", "3.5"],
+    "note": "推荐工作水深 0.5~3.5 米"
+  },
+  {
+    "id": "sora10-track-width",
+    "product": "Sora 10",
+    "question": "Sora 10 的履带宽度是多少？",
+    "expect_keywords": ["35.7"],
+    "note": "履带宽度 35.7 mm"
+  },
+  {
+    "id": "sora10-dimensions",
+    "product": "Sora 10",
+    "question": "Sora 10 的外形尺寸是多少？",
+    "expect_keywords": ["460", "430", "250"],
+    "note": "460 x 430 x 250 mm"
+  },
+  {
+    "id": "sora10-saltwater",
+    "product": "Sora 10",
+    "question": "Sora 10 是否适合盐水池？",
+    "any_keywords": ["可以", "支持", "适合"],
+    "expect_keywords": ["5000"],
+    "note": "支持盐水池，盐度上限 5000 ppm"
+  },
+  {
+    "id": "sora10-areas",
+    "product": "Sora 10",
+    "question": "Sora 10 支持哪些清洁区域？",
+    "expect_keywords": ["池底", "池壁", "水线"],
+    "note": "池底 / 池壁 / 水线"
+  },
+  {
+    "id": "sora10-battery-view",
+    "product": "Sora 10",
+    "question": "Sora 10 如何查看电量？",
+    "any_keywords": ["App", "应用", "手机"],
+    "note": "通过 Beatbot App 主界面查看电量百分比"
+  },
+  {
+    "id": "sorap3-max-depth",
+    "product": "Sora P3",
+    "question": "Sora P3 最大工作水深是多少？",
+    "expect_keywords": ["3.5"],
+    "note": "最大工作水深 3.5 米"
+  },
+  {
+    "id": "sora10-charge-fail",
+    "product": "Sora 10",
+    "question": "Sora 10 为什么充不上电？",
+    "any_keywords": ["充电触点", "充电器", "插座", "电源"],
+    "note": "应给出可执行的排查步骤"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "server": {
+    "port": 4725,
+    "use-drivers": ["uiautomator2"],
+    "relaxed-security": true,
+    "allow-insecure": ["adb_shell"]
+  }
+} 

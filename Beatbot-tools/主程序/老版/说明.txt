@@ -1,0 +1,5 @@
+本目录存放已归档的旧入口，日常请用上级目录的 Beatbot.py / Beatbot-test.py。
+
+- Softwaretest.py：早期 macOS 入口（已由 Beatbot.py 替代）
+
+注意：platform_compat.py 仍在主程序根目录，被 Beatbot.py / 串口 / MCU 等引用，不可挪到此处。
